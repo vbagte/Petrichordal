@@ -10,11 +10,17 @@ public class DestroyByContact : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Projectile")
+        if (other.tag == "Boundary")
         {
-            Instantiate(explosion, explosionPoint.position, transform.rotation);
+            return;
+        }
+        Instantiate(explosion, explosionPoint.position, transform.rotation);
+        Destroy(other.gameObject);
+        Destroy(gameObject);
+        if (other.tag == "Player")
+        {
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            Instantiate(explosion, other.GetComponent<Transform>().position, other.GetComponent<Transform>().rotation);
         }
     }
 

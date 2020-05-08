@@ -5,14 +5,16 @@ using UnityEngine;
 public class RandomRotator : MonoBehaviour
 {
 
-    public float tumble;
-
-    private Rigidbody rigidbody;
+    private float tumble;
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.angularVelocity = Random.insideUnitSphere * tumble;
+        tumble = Random.Range(50, 150);
+    }
+
+    private void Update()
+    {
+        transform.Rotate(0, 0, tumble * Time.deltaTime);
     }
 
 }
