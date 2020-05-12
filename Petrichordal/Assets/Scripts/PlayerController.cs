@@ -12,13 +12,12 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed;
-    public float tilt;
     public float fireRate;
     public Boundary boundary;
     public GameObject shot;
     public Transform shotSpawn;
 
-    public float nextFire;
+    private float nextFire;
     private Rigidbody2D rigidbody;
 
     private void Start()
@@ -66,14 +65,13 @@ public class PlayerController : MonoBehaviour
             moveY = 0;
         }
 
-        Vector3 movement = new Vector3(moveX, moveY, 0);
+        Vector2 movement = new Vector2(moveX, moveY);
         rigidbody.velocity = movement * speed;
 
-        rigidbody.position = new Vector3
+        rigidbody.position = new Vector2
         (
             Mathf.Clamp(rigidbody.position.x, boundary.xMin, boundary.xMax),
-            Mathf.Clamp(rigidbody.position.y, boundary.yMin, boundary.yMax),
-            0
+            Mathf.Clamp(rigidbody.position.y, boundary.yMin, boundary.yMax)
         );
     }
 }
