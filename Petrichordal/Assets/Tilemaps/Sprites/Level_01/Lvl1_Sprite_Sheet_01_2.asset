@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lvl1_Sprite_Sheet_01_2
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300004, guid: 7d8f4f97739950a4b90296440baec51f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
   m_Transform:
     e00: 1
     e01: 0
@@ -33,4 +33,4 @@ MonoBehaviour:
     e33: 1
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
-  m_ColliderType: 1
+  m_ColliderType: 0

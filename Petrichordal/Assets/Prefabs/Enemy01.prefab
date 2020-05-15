@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fcacb4cc728a146be8fe72cbc775dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 8261534149583812572, guid: 00809f22e34d56746a7838b3ad03078c, type: 3}
+  shot: {fileID: 710932778825749343, guid: 00809f22e34d56746a7838b3ad03078c, type: 3}
   shotSpawn: {fileID: 566215728288566998}
   fireRate: 1
   delay: 0.5

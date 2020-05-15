@@ -10,26 +10,26 @@ public class DestroyByContact : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Boundary"))
-        {
-            return;
-        }
-        if (other.CompareTag("PlayerShot") && this.CompareTag("EnemyShot"))
-        {
-            return;
-        }
-        if (other.CompareTag("EnemyShot") && this.CompareTag("EnemyShot"))
-        {
-            return;
-        }
-        if (other.CompareTag("EnemyShot") && this.CompareTag("Enemy"))
-        {
-            return;
-        }
-        if (other.CompareTag("Enemy") && this.CompareTag("EnemyShot"))
-        {
-            return;
-        }
+        //if (other.CompareTag("Boundary"))
+        //{
+        //    return;
+        //}
+        //if (other.CompareTag("PlayerShot") && this.CompareTag("EnemyShot"))
+        //{
+        //    return;
+        //}
+        //if (other.CompareTag("EnemyShot") && this.CompareTag("EnemyShot"))
+        //{
+        //    return;
+        //}
+        //if (other.CompareTag("EnemyShot") && this.CompareTag("Enemy"))
+        //{
+        //    return;
+        //}
+        //if (other.CompareTag("Enemy") && this.CompareTag("EnemyShot"))
+        //{
+        //    return;
+        //}
         if (other.CompareTag("Player") && this.CompareTag("EnemyShot"))
         {
             if (other.GetComponent<PlayerController>().health > this.GetComponent<EnemyShotLogic>().damage)
