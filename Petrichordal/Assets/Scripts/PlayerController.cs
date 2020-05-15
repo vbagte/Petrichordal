@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Boundary
@@ -11,11 +12,14 @@ public class Boundary
 public class PlayerController : MonoBehaviour
 {
 
+    public int health;
+    public int iTimer;
     public float speed;
     public float fireRate;
     public Boundary boundary;
     public GameObject shot;
     public Transform shotSpawn;
+    public Text healthText;
 
     private float nextFire;
     private Rigidbody2D rigidbody;
@@ -74,4 +78,13 @@ public class PlayerController : MonoBehaviour
             Mathf.Clamp(rigidbody.position.y, boundary.yMin, boundary.yMax)
         );
     }
+
+    IEnumerator PlayerITimer()
+    {
+        healthText.text = "X " + health;
+        GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(iTimer);
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
 }

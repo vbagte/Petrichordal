@@ -68,12 +68,15 @@
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\DestroyByTime.cs" />
+    <Compile Include="Assets\Scripts\EnemyLogic.cs" />
+    <Compile Include="Assets\Scripts\EnemyShotLogic.cs" />
     <Compile Include="Assets\Scripts\EvasiveManuever.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Level_01\Lvl1_EnemyWave01.cs" />
     <Compile Include="Assets\Scripts\Level_01\Lvl1_Wave01Mover.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerShotLogic.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Unity/Petrichordal/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

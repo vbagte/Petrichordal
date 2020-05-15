@@ -17,7 +17,7 @@ public class Lvl1_Wave01Mover : MonoBehaviour
     private float yMove;
     private Rigidbody2D rb;
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         xMove = movement.xSpeed;

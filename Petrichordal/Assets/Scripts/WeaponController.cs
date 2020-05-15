@@ -9,6 +9,7 @@ public class WeaponController : MonoBehaviour
     public Transform shotSpawn;
     public float fireRate;
     public float delay;
+    public float damage;
 
     private AudioSource audioSource;
 
