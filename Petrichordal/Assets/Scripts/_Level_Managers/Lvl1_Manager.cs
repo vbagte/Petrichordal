@@ -12,32 +12,38 @@ public class EnemyMovement
 public class PlayerStart
 {
     public float playerTakeOffDelay, playerEnable, takeOffSpeed;
+    public GameObject readyText;
+    public GameObject goText;
+    public GameObject[] backgrounds;
 }
 
 [System.Serializable]
 public class Stalags
 {
-    public float stalagtiteSpawn, stalagmiteSpawn, stalagSpeed, stalagtiteDelay, stalagmiteDelay;
+    public float stalagtiteYSpawn, stalagmiteYSpawn, stalagSpeed, stalagStart, stalagtiteDelay, stalagmiteDelay;
     public GameObject stalagtite, stalagmite;
     public bool stalagSpawn = false;
+}
+
+[System.Serializable]
+public class Wave01
+{
+    public GameObject enemy;
 }
 
 public class Lvl1_Manager : MonoBehaviour
 {
 
-    public int enemies;
-    public int enemySpawnWait;
-    public float delay;
-    public float fireRate;
-    public float waveSpawn;
     public GameObject player;
     public GameObject enemy01;
-    public GameObject readyText;
-    public GameObject goText;
-    public GameObject[] backgrounds;
+    public int enemies;
+    public int enemySpawnDelay;
+    public float enemySpawnStartY;
+    public float enemyFireDelay;
+    public float fireRate;
     public PlayerStart playerStart;
     public Stalags stalag;
-    public EnemyMovement movement;
+    public EnemyMovement eMovement;
 
     private Vector3 startPosition;
     private Vector3 stalagtiteSpawnStart;
@@ -45,9 +51,9 @@ public class Lvl1_Manager : MonoBehaviour
 
     private void Start()
     {
-        startPosition = new Vector3(10, waveSpawn, 0);
-        stalagtiteSpawnStart = new Vector3(10, stalag.stalagtiteSpawn, 0);
-        stalagmiteSpawnStart = new Vector3(10, stalag.stalagmiteSpawn, 0);
+        player.GetComponent<PlayerController>().enabled = false;
+        stalagtiteSpawnStart = new Vector3(10, stalag.stalagtiteYSpawn, 0);
+        stalagmiteSpawnStart = new Vector3(10, stalag.stalagmiteYSpawn, 0);
         stalag.stalagtite.GetComponent<Mover>().speed = stalag.stalagSpeed;
         stalag.stalagmite.GetComponent<Mover>().speed = stalag.stalagSpeed;
         StartCoroutine(PlayerStart());
@@ -56,24 +62,26 @@ public class Lvl1_Manager : MonoBehaviour
     IEnumerator PlayerStart()
     {
         yield return new WaitForSeconds(playerStart.playerTakeOffDelay);
-        readyText.GetComponent<Animation>().Play();
+        playerStart.readyText.GetComponent<Animation>().Play();
         Vector2 movement = new Vector2(0, playerStart.takeOffSpeed);
         player.GetComponent<Rigidbody2D>().velocity = movement;
         yield return new WaitForSeconds(playerStart.playerEnable);
-        goText.GetComponent<Animation>().Play();
+        playerStart.goText.GetComponent<Animation>().Play();
         Vector2 movement2 = new Vector2(0, 0);
         player.GetComponent<Rigidbody2D>().velocity = movement2;
         player.GetComponent<PlayerController>().enabled = true;
-        for (int i = 0; i < backgrounds.Length; i++)
+        for (int i = 0; i < playerStart.backgrounds.Length; i++)
         {
-            backgrounds[i].GetComponent<BGScrollerX>().enabled = true;
+            playerStart.backgrounds[i].GetComponent<BGScrollerX>().enabled = true;
         }
         stalag.stalagSpawn = true;
         StartCoroutine(StalagSpawn());
+        StartCoroutine(Wave01());
     }
 
     IEnumerator StalagSpawn()
     {
+        yield return new WaitForSeconds(stalag.stalagStart);
         while(stalag.stalagSpawn)
         {
             SpawnStalagtite();
@@ -93,23 +101,26 @@ public class Lvl1_Manager : MonoBehaviour
         Instantiate(stalag.stalagmite, stalagmiteSpawnStart, stalag.stalagmite.GetComponent<Transform>().rotation);
     }
 
-    IEnumerator SpawnWave()
+    IEnumerator Wave01()
     {
-        for (int i = 0; i < enemies; i++)
-        {
-            SpawnEnemy();
-            yield return new WaitForSeconds(enemySpawnWait);
-        }
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = 0;
+        SpawnEnemy();
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = 2.5f;
+        SpawnEnemy();
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = -2.5f;
+        SpawnEnemy();
     }
 
     void SpawnEnemy()
     {
-        enemy01.GetComponent<WeaponController>().delay = delay;
-        enemy01.GetComponent<WeaponController>().fireRate = fireRate;
-        enemy01.GetComponent<Lvl1_Manager>().movement.xSpeed = movement.xSpeed;
-        enemy01.GetComponent<Lvl1_Manager>().movement.ySpeed = movement.ySpeed;
-        enemy01.GetComponent<Lvl1_Manager>().movement.yMax = movement.yMax;
-        enemy01.GetComponent<Lvl1_Manager>().movement.yMin = movement.yMin;
+        startPosition = new Vector3(10, enemySpawnStartY, 0);
+        enemy01.GetComponent<Enemy_Movement_01>().movement.xSpeed = eMovement.xSpeed;
+        enemy01.GetComponent<Enemy_Movement_01>().movement.ySpeed = eMovement.ySpeed;
+        enemy01.GetComponent<Enemy_Movement_01>().movement.yMax = eMovement.yMax;
+        enemy01.GetComponent<Enemy_Movement_01>().movement.yMin = eMovement.yMin;
         Instantiate(enemy01, startPosition, enemy01.GetComponent<Transform>().rotation);
     }
 

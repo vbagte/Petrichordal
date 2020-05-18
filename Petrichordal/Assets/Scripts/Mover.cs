@@ -6,12 +6,12 @@ public class Mover : MonoBehaviour
 {
 
     public float speed;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.velocity = new Vector3(speed, 0, 0);
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector3(speed, 0, 0);
     }
 
 }

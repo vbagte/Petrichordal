@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Addons\Simple Health Bar\Editor\SimpleHealthBarEditor.cs" />
+    <Compile Include="Assets\Addons\Simple Health Bar\Editor\SimpleHealthBarWindow.cs" />
     <Compile Include="Assets\Tilemap\Brushes\Coordinate Brush\Scripts\Editor\CoordinateBrush.cs" />
     <Compile Include="Assets\Tilemap\Brushes\GameObject Brush\Scripts\Editor\GameObjectBrush.cs" />
     <Compile Include="Assets\Tilemap\Brushes\Group Brush\Scripts\Editor\GroupBrush.cs" />

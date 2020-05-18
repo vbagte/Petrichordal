@@ -8,6 +8,10 @@ public class GameController : MonoBehaviour
 {
 
     public float timeDelay;
+    public GameObject player;
+    public GameObject[] bg;
+    public GameObject[] stalags;
+    public GameObject levelManager;
 
     private void Update()
     {
@@ -16,6 +20,28 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("Level_01");
             timeDelay = Time.time;
         }
+        if (player.GetComponent<Health>().health <= 0 || player == null)
+        {
+            for (int i = 0; i < bg.Length; i++)
+            {
+                bg[i].GetComponent<BGScrollerX>().enabled = false;
+            }
+            levelManager.GetComponent<Lvl1_Manager>().stalag.stalagSpeed = 0;
+            levelManager.SetActive(false);
+            stalags = GameObject.FindGameObjectsWithTag("Stalag");
+            foreach (GameObject stalag in stalags)
+            {
+                Vector2 movement = new Vector2(0, 0);
+                stalag.GetComponent<Rigidbody2D>().velocity = movement;
+                stalag.GetComponent<Rigidbody2D>().isKinematic = false;
+                stalag.GetComponent<Mover>().speed = 0;
+            }
+        }
+    }
+
+    public void PlayerDeath()
+    {
+        player.SetActive(false);
     }
 
 }

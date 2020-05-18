@@ -9,33 +9,88 @@ public class Boundary
     public float xMin, xMax, yMin, yMax;
 }
 
+[System.Serializable]
+public class Voltage
+{
+    public int voltageSawtooth;
+}
+
+[System.Serializable]
+public class HealthVoltage
+{
+    public Text healthText;
+    public SimpleHealthBar healthBar;
+    public Text voltageText;
+    public SimpleHealthBar voltageBar;
+}
 public class PlayerController : MonoBehaviour
 {
 
-    public int health;
-    public int iTimer;
-    public float speed;
-    public float fireRate;
     public Boundary boundary;
-    public GameObject shot;
+    public HealthVoltage hv;
+    public Voltage v;
+    public int voltageMax;
+    public int voltageRechargeAmount;
+    public float voltageRechargeSpeed;
+    public float speed;
+    public int evadeSpeed;
+    public float evadeTime;
+    public float evadeCooldownTime;
+    public float fireRate;
+    public GameObject shotSawtooth;
     public Transform shotSpawn;
-    public Text healthText;
 
+    private int weaponType = 0;
     private float nextFire;
-    private Rigidbody2D rigidbody;
+    private int healthMax;
+    private int voltageCurrent;
+    private bool voltageRechargeActive = false;
+    private bool evadeActive = false;
+    public bool evadeCooldownActive = false;
+    private bool stopped = false;
+    private Rigidbody2D rb;
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        healthMax = GetComponent<Health>().health;
+        voltageCurrent = voltageMax;
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire)
+        hv.healthText.text = GetComponent<Health>().health + "/" + healthMax;
+        hv.voltageText.text = voltageCurrent + "/" + voltageMax;
+        hv.healthBar.UpdateBar(GetComponent<Health>().health, healthMax);
+        hv.voltageBar.UpdateBar(voltageCurrent, voltageMax);
+
+        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0)
         {
             nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shot.GetComponent<Transform>().rotation);
-            //GetComponent<AudioSource>().Play();
+            Instantiate(shotSawtooth, shotSpawn.position, shotSawtooth.GetComponent<Transform>().rotation);
+            voltageCurrent -= v.voltageSawtooth;
+            StopCoroutine("VoltageRecharge");
+            StartCoroutine("VoltageRecharge");
+        }
+        if (voltageCurrent < voltageMax)
+        {
+            voltageRechargeActive = true;
+        }
+        else if (voltageCurrent >= voltageMax)
+        {
+            voltageRechargeActive = false;
+        }
+        if (voltageCurrent > voltageMax)
+        {
+            voltageCurrent = voltageMax;
+        }
+        if (GetComponent<Health>().health < 0)
+        {
+            GetComponent<Health>().health = 0;
+        }
+        if (GetComponent<Health>().health > healthMax)
+        {
+            GetComponent<Health>().health = healthMax;
         }
     }
 
@@ -44,47 +99,118 @@ public class PlayerController : MonoBehaviour
         int moveX = 0;
         int moveY = 0;
 
-        if (Input.GetKey(KeyCode.D))
+        if (evadeActive == false)
         {
-            moveX = 1;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveX = -1;
-        }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
-        {
-            moveX = 0;
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            moveY = 1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            moveY = -1;
-        }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
-        {
-            moveY = 0;
+            if (Input.GetKey(KeyCode.D))
+            {
+                moveX = 1;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                moveX = -1;
+            }
+            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            {
+                moveX = 0;
+                stopped = false;
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                moveY = 1;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                moveY = -1;
+            }
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+            {
+                moveY = 0;
+                stopped = false;
+            }
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+            {
+                moveY = 0;
+                stopped = true;
+            }
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+            {
+                moveX = 0;
+                stopped = true;
+            }
+            if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.D) && Input.GetKey(KeyCode.Space))
+            {
+                if (evadeCooldownActive == false && stopped == false)
+                {
+                    moveX = evadeSpeed;
+                    StartCoroutine(Evade());
+                    StartCoroutine(EvadeCooldown());
+                }
+            }
+            else if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.Space))
+            {
+                if (evadeCooldownActive == false && stopped == false)
+                {
+                    moveX = -evadeSpeed;
+                    StartCoroutine(Evade());
+                    StartCoroutine(EvadeCooldown());
+                }
+            }
+            else if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.Space))
+            {
+                if (evadeCooldownActive == false && stopped == false)
+                {
+                    moveY = evadeSpeed;
+                    StartCoroutine(Evade());
+                    StartCoroutine(EvadeCooldown());
+                }
+            }
+            else if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) && Input.GetKey(KeyCode.Space))
+            {
+                if (evadeCooldownActive == false && stopped == false)
+                {
+                    moveY = -evadeSpeed;
+                    StartCoroutine(Evade());
+                    StartCoroutine(EvadeCooldown());
+                }
+            }
+            Vector2 movement = new Vector2(moveX, moveY);
+            rb.velocity = movement * speed;
         }
 
-        Vector2 movement = new Vector2(moveX, moveY);
-        rigidbody.velocity = movement * speed;
-
-        rigidbody.position = new Vector2
+        rb.position = new Vector2
         (
-            Mathf.Clamp(rigidbody.position.x, boundary.xMin, boundary.xMax),
-            Mathf.Clamp(rigidbody.position.y, boundary.yMin, boundary.yMax)
+            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+            Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax)
         );
     }
 
-    IEnumerator PlayerITimer()
+    public void HealthUpdate()
     {
-        healthText.text = "X " + health;
-        GetComponent<BoxCollider2D>().enabled = false;
-        yield return new WaitForSeconds(iTimer);
-        GetComponent<BoxCollider2D>().enabled = true;
+        hv.healthText.text = GetComponent<Health>().health + "/" + healthMax;
+        hv.healthBar.UpdateBar(GetComponent<Health>().health, healthMax);
+    }
+
+    IEnumerator Evade()
+    {
+        evadeActive = true;
+        yield return new WaitForSeconds(evadeTime);
+        evadeActive = false;
+    }
+
+    IEnumerator EvadeCooldown()
+    {
+        evadeCooldownActive = true;
+        yield return new WaitForSeconds(evadeCooldownTime);
+        evadeCooldownActive = false;
+    }
+
+    IEnumerator VoltageRecharge()
+    {
+        while (voltageRechargeActive)
+        {
+            yield return new WaitForSeconds(voltageRechargeSpeed);
+            voltageCurrent += voltageRechargeAmount;
+        }
     }
 
 }

@@ -93,10 +93,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 710932778825749343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff011fe97f81a2c40ae70c57af814598, type: 3}
+  m_Script: {fileID: 11500000, guid: d9fcf4a5b0cc13e479a3c0edc22b5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 222
 --- !u!114 &4977854478147738577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
-  playerExplosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
-    type: 3}
+  otherExplosion: {fileID: 0}
+  playerIFramesTime: 0
 --- !u!50 &8651240422536377936
 Rigidbody2D:
   serializedVersion: 4
