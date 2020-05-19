@@ -65,19 +65,19 @@
   <ItemGroup>
     <Compile Include="Assets\Addons\Simple Health Bar\Editor\SimpleHealthBarEditor.cs" />
     <Compile Include="Assets\Addons\Simple Health Bar\Editor\SimpleHealthBarWindow.cs" />
-    <Compile Include="Assets\Tilemap\Brushes\Coordinate Brush\Scripts\Editor\CoordinateBrush.cs" />
-    <Compile Include="Assets\Tilemap\Brushes\GameObject Brush\Scripts\Editor\GameObjectBrush.cs" />
-    <Compile Include="Assets\Tilemap\Brushes\Group Brush\Scripts\Editor\GroupBrush.cs" />
-    <Compile Include="Assets\Tilemap\Brushes\Line Brush\Scripts\Editor\LineBrush.cs" />
-    <Compile Include="Assets\Tilemap\Brushes\Prefab Brush\Scripts\Editor\PrefabBrush.cs" />
-    <Compile Include="Assets\Tilemap\Brushes\Random Brush\Scripts\Editor\RandomBrush.cs" />
-    <Compile Include="Assets\Tilemap\Brushes\Tint Brush Smooth\Scripts\Editor\TintBrushSmooth.cs" />
-    <Compile Include="Assets\Tilemap\Brushes\Tint Brush\Scripts\Editor\TintBrush.cs" />
-    <Compile Include="Assets\Tilemap\Tiles\Hexagonal Rule Tile\Editor\HexagonalRuleTileEditor.cs" />
-    <Compile Include="Assets\Tilemap\Tiles\Isometric Rule Tile\Editor\IsometricRuleTileEditor.cs" />
-    <Compile Include="Assets\Tilemap\Tiles\Rule Override Tile\Scripts\Editor\RuleOverrideTileEditor.cs" />
-    <Compile Include="Assets\Tilemap\Tiles\Rule Tile\Scripts\Editor\CustomRuleTileMenu.cs" />
-    <Compile Include="Assets\Tilemap\Tiles\Rule Tile\Scripts\Editor\RuleTileEditor.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Brushes\Coordinate Brush\Scripts\Editor\CoordinateBrush.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Brushes\GameObject Brush\Scripts\Editor\GameObjectBrush.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Brushes\Group Brush\Scripts\Editor\GroupBrush.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Brushes\Line Brush\Scripts\Editor\LineBrush.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Brushes\Prefab Brush\Scripts\Editor\PrefabBrush.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Brushes\Random Brush\Scripts\Editor\RandomBrush.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Brushes\Tint Brush Smooth\Scripts\Editor\TintBrushSmooth.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Brushes\Tint Brush\Scripts\Editor\TintBrush.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Tiles\Hexagonal Rule Tile\Editor\HexagonalRuleTileEditor.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Tiles\Isometric Rule Tile\Editor\IsometricRuleTileEditor.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Tiles\Rule Override Tile\Scripts\Editor\RuleOverrideTileEditor.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Tiles\Rule Tile\Scripts\Editor\CustomRuleTileMenu.cs" />
+    <Compile Include="Assets\Addons\Tilemap\Tiles\Rule Tile\Scripts\Editor\RuleTileEditor.cs" />
     <Reference Include="Unity.2D.PixelPerfect.Editor">
       <HintPath>C:/Users/CodyLarkin/Documents/Github_Reed/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>

@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     public int voltageRechargeAmount;
     public float voltageRechargeSpeed;
     public float speed;
-    public int evadeSpeed;
+    public float evadeSpeed;
     public float evadeTime;
     public float evadeCooldownTime;
     public float fireRate;
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     private int healthMax;
     private int voltageCurrent;
     private bool voltageRechargeActive = false;
-    private bool evadeActive = false;
+    public bool evadeActive = false;
     public bool evadeCooldownActive = false;
     private bool stopped = false;
     private Rigidbody2D rb;
@@ -92,12 +92,9 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<Health>().health = healthMax;
         }
-    }
 
-    private void FixedUpdate()
-    {
-        int moveX = 0;
-        int moveY = 0;
+        float moveX = 0;
+        float moveY = 0;
 
         if (evadeActive == false)
         {
@@ -105,7 +102,7 @@ public class PlayerController : MonoBehaviour
             {
                 moveX = 1;
             }
-            if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(KeyCode.A))
             {
                 moveX = -1;
             }
@@ -118,7 +115,7 @@ public class PlayerController : MonoBehaviour
             {
                 moveY = 1;
             }
-            if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S))
             {
                 moveY = -1;
             }
@@ -146,7 +143,7 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(EvadeCooldown());
                 }
             }
-            else if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.Space))
             {
                 if (evadeCooldownActive == false && stopped == false)
                 {
@@ -155,7 +152,7 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(EvadeCooldown());
                 }
             }
-            else if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.Space))
             {
                 if (evadeCooldownActive == false && stopped == false)
                 {
@@ -164,7 +161,7 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(EvadeCooldown());
                 }
             }
-            else if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) && Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) && Input.GetKey(KeyCode.Space))
             {
                 if (evadeCooldownActive == false && stopped == false)
                 {
@@ -182,6 +179,7 @@ public class PlayerController : MonoBehaviour
             Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
             Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax)
         );
+
     }
 
     public void HealthUpdate()

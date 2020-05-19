@@ -9,6 +9,7 @@ TagManager:
   - EnemyShot
   - PlayerShot
   - Stalag
+  - Fireball
   layers:
   - Default
   - TransparentFX

@@ -33,9 +33,9 @@ public class GameController : MonoBehaviour
             {
                 Vector2 movement = new Vector2(0, 0);
                 stalag.GetComponent<Rigidbody2D>().velocity = movement;
-                stalag.GetComponent<Rigidbody2D>().isKinematic = false;
                 stalag.GetComponent<Mover>().speed = 0;
             }
+            levelManager.GetComponent<Lvl1_Manager>().lava.fireballActive = false;
         }
     }
 

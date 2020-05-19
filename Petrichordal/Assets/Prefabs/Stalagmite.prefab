@@ -115,7 +115,7 @@ MonoBehaviour:
     type: 3}
   otherExplosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
-  playerIFramesTime: 1
+  playerIFramesTime: 0.5
 --- !u!114 &114489230161712990
 MonoBehaviour:
   m_ObjectHideFlags: 0

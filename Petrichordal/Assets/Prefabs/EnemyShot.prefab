@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5852674559289005220}
   - component: {fileID: 6392384465636565615}
   - component: {fileID: 816538775570488906}
-  - component: {fileID: 4977854478147738577}
+  - component: {fileID: 114966904548750592}
   - component: {fileID: 360299234191970458}
   - component: {fileID: 8651240422536377936}
   - component: {fileID: 9084678455656338164}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 710932778825749343}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.41880703, y: 0.41880703, z: 0.41880703}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fcf4a5b0cc13e479a3c0edc22b5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 222
---- !u!114 &4977854478147738577
+  damage: 50
+--- !u!114 &114966904548750592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c499f7668fe4145b39e4a74437d0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -10
+  speed: -8
 --- !u!114 &360299234191970458
 MonoBehaviour:
   m_ObjectHideFlags: 0
