@@ -20,7 +20,13 @@ public class Enemy01
 [System.Serializable]
 public class Enemy02
 {
-    public float xSpeed, moveInTime, fireTime, moveOutTime;
+    public float xSpeed, moveInTime, fireTime, fireRate, moveOutTime;
+}
+
+[System.Serializable]
+public class Enemy03
+{
+    public float xSpeed, fireDelay, fireRate;
 }
 
 [System.Serializable]
@@ -39,13 +45,22 @@ public class Lava
     public bool fireballActive;
 }
 
+[System.Serializable]
+public class Smoke
+{
+    public float smokeSpawnDelay;
+    public GameObject pipe;
+    public bool pipeActive;
+}
+
 public class Lvl1_Manager : MonoBehaviour
 {
-
     public GameObject player;
     public GameObject enemy01;
     public GameObject enemy02;
+    public GameObject enemy03;
     public GameObject stoneFloor;
+    public ParticleSystem ps;
     public int enemySpawnDelay = 3;
     public float enemySpawnStartY;
     public float enemyFireDelay;
@@ -53,10 +68,12 @@ public class Lvl1_Manager : MonoBehaviour
     public PlayerStart playerStart;
     public Stalags stalag;
     public Lava lava;
+    public Smoke smoke;
     public Enemy01 e01;
     public Enemy02 e02;
+    public Enemy03 e03;
 
-    private int enemies;
+    private bool enemy03Active;
     private Vector3 startPosition;
     private Vector3 stalagtiteSpawnStart;
     private Vector3 stalagmiteSpawnStart;
@@ -88,95 +105,151 @@ public class Lvl1_Manager : MonoBehaviour
         }
         stalag.stalagSpawn = true;
         StartCoroutine(StalagSpawn());
-        StartCoroutine(Wave03());
+        StartCoroutine(Wave01());
     }
 
-    //IEnumerator Wave01()
-    //{
-    //    //part 1
-    //    yield return new WaitForSeconds(enemySpawnDelay);
-    //    enemySpawnStartY = 0;
-    //    SpawnEnemy01();
-    //    yield return new WaitForSeconds(enemySpawnDelay);
-    //    enemySpawnStartY = 2.5f;
-    //    SpawnEnemy01();
-    //    yield return new WaitForSeconds(enemySpawnDelay);
-    //    enemySpawnStartY = -2.5f;
-    //    SpawnEnemy01();
-    //    //part 2
-    //    yield return new WaitForSeconds(enemySpawnDelay + 3);
-    //    enemySpawnStartY = 3.5f;
-    //    e01.ySpeed = 3;
-    //    e01.yMax = 3.5f;
-    //    e01.yMin = -3.5f;
-    //    SpawnEnemy01();
-    //    yield return new WaitForSeconds(enemySpawnDelay);
-    //    enemySpawnStartY = -3.5f;
-    //    SpawnEnemy01();
-    //    yield return new WaitForSeconds(enemySpawnDelay);
-    //    enemySpawnStartY = -3.5f;
-    //    SpawnEnemy01();
-    //    enemySpawnStartY = 3.5f;
-    //    SpawnEnemy01();
-    //    StartCoroutine(Wave02());
-    //}
+    IEnumerator Wave01()
+    {
+        //part 1
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = 0;
+        SpawnEnemy01();
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = 2.5f;
+        SpawnEnemy01();
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = -2.5f;
+        SpawnEnemy01();
+        //part 2
+        yield return new WaitForSeconds(enemySpawnDelay + 3);
+        enemySpawnStartY = 3.5f;
+        e01.ySpeed = 3;
+        e01.yMax = 3.5f;
+        e01.yMin = -3.5f;
+        SpawnEnemy01();
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = -3.5f;
+        SpawnEnemy01();
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = -3.5f;
+        SpawnEnemy01();
+        enemySpawnStartY = 3.5f;
+        SpawnEnemy01();
+        StartCoroutine(Wave02());
+    }
 
-    //IEnumerator Wave02()
-    //{
-    //    stalag.stalagmiteDelay += 3;
-    //    stalag.stalagtiteDelay += 3;
-    //    yield return new WaitForSeconds(enemySpawnDelay + 6);
-    //    lava.lavaObject.GetComponent<Animation>().Play("Lava_Enter");
-    //    yield return new WaitForSeconds(2);
-    //    lava.fireballActive = true;
-    //    StartCoroutine("FireballSpawn");
-    //    yield return new WaitForSeconds(2);
-    //    enemySpawnStartY = 0;
-    //    SpawnEnemy02();
-    //    yield return new WaitForSeconds(enemySpawnDelay);
-    //    enemySpawnStartY = 0;
-    //    SpawnEnemy01();
-    //    enemySpawnStartY = -2.3f;
-    //    SpawnEnemy02();
-    //    enemySpawnStartY = 2.3f;
-    //    SpawnEnemy02();
-    //    yield return new WaitForSeconds(enemySpawnDelay);
-    //    enemySpawnStartY = -2.3f;
-    //    SpawnEnemy02();
-    //    yield return new WaitForSeconds(1);
-    //    enemySpawnStartY = 0;
-    //    SpawnEnemy02();
-    //    yield return new WaitForSeconds(1);
-    //    enemySpawnStartY = 2.3f;
-    //    SpawnEnemy02();
-    //    yield return new WaitForSeconds(enemySpawnDelay);
-    //    enemySpawnStartY = -3.5f;
-    //    e01.ySpeed = 3;
-    //    SpawnEnemy01();
-    //    enemySpawnStartY = 3.5f;
-    //    e01.ySpeed = 3;
-    //    SpawnEnemy01();
-    //    enemySpawnStartY = 2.3f;
-    //    SpawnEnemy02();
-    //    e02.fireTime = 2;
-    //    enemySpawnStartY = 0;
-    //    SpawnEnemy02();
-    //    e02.fireTime = 3;
-    //    enemySpawnStartY = -2.3f;
-    //    SpawnEnemy02();
-    //    yield return new WaitForSeconds(enemySpawnDelay + 5);
-    //    StartCoroutine(Wave03());
-    //}
+    IEnumerator Wave02()
+    {
+        stalag.stalagmiteDelay += 3;
+        stalag.stalagtiteDelay += 3;
+        yield return new WaitForSeconds(enemySpawnDelay + 6);
+        lava.lavaObject.GetComponent<Animation>().Play("Lava_Enter");
+        yield return new WaitForSeconds(2);
+        lava.fireballActive = true;
+        StartCoroutine("FireballSpawn");
+        yield return new WaitForSeconds(2);
+        enemySpawnStartY = 0;
+        SpawnEnemy02();
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = 0;
+        SpawnEnemy01();
+        enemySpawnStartY = -2.3f;
+        SpawnEnemy02();
+        enemySpawnStartY = 2.3f;
+        SpawnEnemy02();
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = -2.3f;
+        SpawnEnemy02();
+        yield return new WaitForSeconds(1);
+        enemySpawnStartY = 0;
+        SpawnEnemy02();
+        yield return new WaitForSeconds(1);
+        enemySpawnStartY = 2.3f;
+        SpawnEnemy02();
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemySpawnStartY = -2.5f;
+        e01.ySpeed = 3;
+        e01.yMax = 2.5f;
+        e01.yMin = -2.5f;
+        SpawnEnemy01();
+        enemySpawnStartY = 2.5f;
+        e01.ySpeed = 3;
+        SpawnEnemy01();
+        enemySpawnStartY = 2.3f;
+        SpawnEnemy02();
+        e02.fireTime = 2;
+        enemySpawnStartY = 0;
+        SpawnEnemy02();
+        e02.fireTime = 3;
+        enemySpawnStartY = -2.3f;
+        SpawnEnemy02();
+        yield return new WaitForSeconds(enemySpawnDelay + 5);
+        StartCoroutine(Wave03());
+    }
 
     IEnumerator Wave03()
     {
         lava.fireballActive = false;
         stalag.stalagSpawn = false;
+        smoke.pipeActive = true;
         StopCoroutine("FireballSpawn");
         StopCoroutine("StalagSpawn");
+        StartCoroutine("PipeSpawn");
         lava.lavaObject.GetComponent<Animation>().Play("Lava_Exit");
         yield return new WaitForSeconds(enemySpawnDelay);
         stoneFloor.GetComponent<Animation>().Play("Stone_Floor_Enter");
+        yield return new WaitForSeconds(enemySpawnDelay);
+        enemy03Active = true;
+        StartCoroutine("Enemy03Spawn");
+        yield return new WaitForSeconds(2);
+        e01.ySpeed = 0;
+        enemySpawnStartY = 1.5f;
+        SpawnEnemy01();
+        enemySpawnStartY = -1.5f;
+        SpawnEnemy01();
+        yield return new WaitForSeconds(1);
+        enemySpawnStartY = 0;
+        e02.fireTime = 1;
+        SpawnEnemy02();
+        yield return new WaitForSeconds(3);
+        enemySpawnStartY = -3.5f;
+        e01.ySpeed = 3;
+        SpawnEnemy01();
+        yield return new WaitForSeconds(3);
+        enemySpawnStartY = 0;
+        e02.fireRate = 2;
+        e02.moveOutTime = 6;
+        SpawnEnemy02();
+        yield return new WaitForSeconds(1);
+        enemySpawnStartY = 3.5f;
+        e01.ySpeed = 3;
+        SpawnEnemy01();
+        yield return new WaitForSeconds(5);
+        enemySpawnStartY = 0;
+        e01.ySpeed = 0;
+        SpawnEnemy01();
+        yield return new WaitForSeconds(1);
+        e01.ySpeed = 0;
+        enemySpawnStartY = -2.5f;
+        e01.ySpeed = 3;
+        SpawnEnemy01();
+        enemySpawnStartY = 2.5f;
+        e01.ySpeed = 3;
+        SpawnEnemy01();
+        yield return new WaitForSeconds(2);
+        enemySpawnStartY = 0;
+        SpawnEnemy02();
+        enemySpawnStartY = 2.5f;
+        SpawnEnemy02();
+        enemySpawnStartY = -2.5f;
+        SpawnEnemy02();
+        yield return new WaitForSeconds(1);
+        smoke.pipeActive = false;
+        enemy03Active = false;
+        StopCoroutine("PipeSpawn");
+        StopCoroutine("Enemy03Spawn");
+        yield return new WaitForSeconds(10);
+        stoneFloor.GetComponent<Animation>().Play("Stone_Floor_Exit");
     }
 
     IEnumerator StalagSpawn()
@@ -201,6 +274,34 @@ public class Lvl1_Manager : MonoBehaviour
             Instantiate(lava.fireball, fireballSpawn, lava.fireball.transform.rotation);
             yield return new WaitForSeconds(lava.lavaGlowDelay);
         } while (lava.fireballActive);
+    }
+
+    IEnumerator PipeSpawn()
+    {
+        while (smoke.pipeActive == true)
+        {
+            yield return new WaitForSeconds(smoke.smokeSpawnDelay);
+            Vector2 spawn = new Vector2(9.3f, 3.3f);
+            GameObject pipe = Instantiate(smoke.pipe, spawn, smoke.pipe.transform.rotation);
+            ps = pipe.GetComponentInChildren<ParticleSystem>();
+            GameObject smokeTrigger = GameObject.Find("Smoke_Trigger");
+            yield return new WaitForSeconds(Random.Range(2,5));
+            ps.Play();
+            yield return new WaitForSeconds(1);
+            smokeTrigger.GetComponent<BoxCollider2D>().enabled = true;
+            yield return new WaitForSeconds(5);
+            smokeTrigger.GetComponent<BoxCollider2D>().enabled = false;
+        }
+    }
+
+    IEnumerator Enemy03Spawn()
+    {
+        while (enemy03Active)
+        {
+            enemySpawnStartY = -3;
+            SpawnEnemy03();
+            yield return new WaitForSeconds(5);
+        }
     }
 
     void SpawnStalagtite()
@@ -230,17 +331,17 @@ public class Lvl1_Manager : MonoBehaviour
         enemy02.GetComponent<Enemy_Movement_02>().moveInTime = e02.moveInTime;
         enemy02.GetComponent<Enemy_Movement_02>().fireTime = e02.fireTime;
         enemy02.GetComponent<Enemy_Movement_02>().moveOutTime = e02.moveOutTime;
+        enemy02.GetComponent<WeaponController>().fireRate = e02.fireRate;
         Instantiate(enemy02, startPosition, enemy02.GetComponent<Transform>().rotation);
     }
 
     void SpawnEnemy03()
     {
         startPosition = new Vector3(10, enemySpawnStartY, 0);
-        enemy02.GetComponent<Enemy_Movement_02>().xMove = e02.xSpeed;
-        enemy02.GetComponent<Enemy_Movement_02>().moveInTime = e02.moveInTime;
-        enemy02.GetComponent<Enemy_Movement_02>().fireTime = e02.fireTime;
-        enemy02.GetComponent<Enemy_Movement_02>().moveOutTime = e02.moveOutTime;
-        Instantiate(enemy02, startPosition, enemy02.GetComponent<Transform>().rotation);
+        enemy03.GetComponent<Mover>().speed = e03.xSpeed;
+        enemy03.GetComponent<WeaponController>().fireDelay = e03.fireDelay;
+        enemy03.GetComponent<WeaponController>().fireRate = e03.fireRate;
+        Instantiate(enemy03, startPosition, enemy03.GetComponent<Transform>().rotation);
     }
 
 }

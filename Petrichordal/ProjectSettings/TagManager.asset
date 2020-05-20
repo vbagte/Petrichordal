@@ -10,6 +10,8 @@ TagManager:
   - PlayerShot
   - Stalag
   - Fireball
+  - Life
+  - Pipe
   layers:
   - Default
   - TransparentFX

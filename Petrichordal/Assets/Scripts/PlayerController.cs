@@ -31,46 +31,38 @@ public class PlayerController : MonoBehaviour
     public Voltage v;
     public int voltageMax;
     public int voltageRechargeAmount;
-    public int[] lives;
+    public int lives;
     public float voltageRechargeSpeed;
     public float speed;
     public float evadeSpeed;
     public float evadeTime;
     public float evadeCooldownTime;
     public float fireRate;
+    public GameObject[] livesIcon;
     public GameObject shotSawtooth;
     public Transform shotSpawn;
 
     private int weaponType = 0;
     private float nextFire;
-    private int healthMax;
+    public int healthMax;
     private int voltageCurrent;
     private bool voltageRechargeActive = false;
     public bool evadeActive = false;
     public bool evadeCooldownActive = false;
     private bool stopped = false;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-    private BeatSystem bS;
-    private FMOD.Studio.EventInstance songInstance;
     private FMOD.Studio.EventInstance sawInstance;
     //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
 
     private void Start()
-    {
+    {       
+        livesIcon = GameObject.FindGameObjectsWithTag("Life");
+        lives = livesIcon.Length;
         rb = GetComponent<Rigidbody2D>();
         healthMax = GetComponent<Health>().health;
         voltageCurrent = voltageMax;
-
-        //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-        songInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/lvl1/main");
-        bS = GetComponent<BeatSystem>();
-        bS.AssignBeatEvent(songInstance);
-        songInstance.start();
-        songInstance.release();
-        //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-
     }
 
     private void Update()
@@ -206,6 +198,16 @@ public class PlayerController : MonoBehaviour
             Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax)
         );
 
+    }
+
+    public void LifeLost()
+    {
+        livesIcon[lives - 1].SetActive(false);
+        lives -= 1;
+        if (lives <= 0)
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().PlayerDeath();
+        }
     }
 
     public void HealthUpdate()
