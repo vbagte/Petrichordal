@@ -51,11 +51,26 @@ public class PlayerController : MonoBehaviour
     private bool stopped = false;
     private Rigidbody2D rb;
 
+    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+    private BeatSystem bS;
+    private FMOD.Studio.EventInstance songInstance;
+    private FMOD.Studio.EventInstance sawInstance;
+    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         healthMax = GetComponent<Health>().health;
         voltageCurrent = voltageMax;
+
+        //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+        songInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/lvl1/main");
+        bS = GetComponent<BeatSystem>();
+        bS.AssignBeatEvent(songInstance);
+        songInstance.start();
+        songInstance.release();
+        //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+
     }
 
     private void Update()
@@ -65,8 +80,18 @@ public class PlayerController : MonoBehaviour
         hv.healthBar.UpdateBar(GetComponent<Health>().health, healthMax);
         hv.voltageBar.UpdateBar(voltageCurrent, voltageMax);
 
+        //Debug.Log(BeatSystem.bar);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
+
         if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0)
         {
+
+            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+            sawInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Game/lv01/waveform abilities/main/saw");
+            sawInstance.start();
+            sawInstance.release();
+            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+
             nextFire = Time.time + fireRate;
             Instantiate(shotSawtooth, shotSpawn.position, shotSawtooth.GetComponent<Transform>().rotation);
             voltageCurrent -= v.voltageSawtooth;
