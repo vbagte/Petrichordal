@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public Voltage v;
     public int voltageMax;
     public int voltageRechargeAmount;
+    public int[] lives;
     public float voltageRechargeSpeed;
     public float speed;
     public float evadeSpeed;
