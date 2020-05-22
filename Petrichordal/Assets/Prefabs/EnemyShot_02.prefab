@@ -125,7 +125,6 @@ MonoBehaviour:
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
   otherExplosion: {fileID: 0}
-  playerIFramesTime: 0
 --- !u!50 &8651240422536377936
 Rigidbody2D:
   serializedVersion: 4

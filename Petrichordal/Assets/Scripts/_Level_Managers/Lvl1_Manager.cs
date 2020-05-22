@@ -60,6 +60,7 @@ public class Lvl1_Manager : MonoBehaviour
     public GameObject enemy02;
     public GameObject enemy03;
     public GameObject stoneFloor;
+    public GameObject boss;
     public ParticleSystem ps;
     public int enemySpawnDelay = 3;
     public float enemySpawnStartY;
@@ -74,6 +75,8 @@ public class Lvl1_Manager : MonoBehaviour
     public Enemy03 e03;
 
     private bool enemy03Active;
+    public bool bossActive = false;
+    public bool bgStop = false;
     private Vector3 startPosition;
     private Vector3 stalagtiteSpawnStart;
     private Vector3 stalagmiteSpawnStart;
@@ -86,6 +89,24 @@ public class Lvl1_Manager : MonoBehaviour
         stalag.stalagtite.GetComponent<Mover>().speed = stalag.stalagSpeed;
         stalag.stalagmite.GetComponent<Mover>().speed = stalag.stalagSpeed;
         StartCoroutine(PlayerStart());
+    }
+
+    private void Update()
+    {
+        if (bossActive)
+        {
+            if (playerStart.backgrounds[0].transform.position.x < -17.95f || playerStart.backgrounds[0].transform.position.x > 0.05f)
+            {
+                bgStop = true;
+            }
+            if (bgStop)
+            {
+                for (int i = 0; i < playerStart.backgrounds.Length; i++)
+                {
+                    playerStart.backgrounds[i].GetComponent<BGScrollerX>().enabled = false;
+                }
+            }
+        }
     }
 
     IEnumerator PlayerStart()
@@ -249,7 +270,21 @@ public class Lvl1_Manager : MonoBehaviour
         StopCoroutine("PipeSpawn");
         StopCoroutine("Enemy03Spawn");
         yield return new WaitForSeconds(10);
+        bossActive = true;
         stoneFloor.GetComponent<Animation>().Play("Stone_Floor_Exit");
+        StartCoroutine("Boss");
+    }
+
+    IEnumerator Boss()
+    {
+        yield return new WaitForSeconds(3);
+        boss.SetActive(true);
+        Vector2 move = new Vector2(-1.5f, 0);
+        boss.GetComponent<Rigidbody2D>().velocity = move;
+        yield return new WaitForSeconds(3);
+        Vector2 stop = new Vector2(0, 0);
+        boss.GetComponent<Rigidbody2D>().velocity = stop;
+        boss.GetComponent<WardenBoss>().enabled = true;
     }
 
     IEnumerator StalagSpawn()

@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         healthMax = GetComponent<Health>().health;
         voltageCurrent = voltageMax;
+        DestroyByBoundary.playerLeft = false;
+        BossHurt.bossActive = false;
     }
 
     private void Update()

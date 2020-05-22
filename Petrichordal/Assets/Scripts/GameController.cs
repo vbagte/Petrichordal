@@ -15,9 +15,15 @@ public class GameController : MonoBehaviour
     public GameObject[] stalags;
     public GameObject[] pipes;
     public GameObject levelManager;
+    public GameObject boss;
 
     private GameObject player;
+    private GameObject playerExit;
+    private GameObject[] explosionSpots;
     private Health playerHealth;
+    private bool bossDead;
+    private bool exitActive = false;
+    private Vector3 exitSpot;
 
     //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
     private BeatSystem bS;
@@ -45,6 +51,8 @@ public class GameController : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
             playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         }
+        playerExit = GameObject.Find("PlayerExitSpot");
+        exitSpot = (playerExit.transform.position - player.transform.position);
     }
 
     private void Update()
@@ -83,6 +91,17 @@ public class GameController : MonoBehaviour
                 GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<WeaponController>().enabled = false;
             }
             levelManager.GetComponent<Lvl1_Manager>().lava.fireballActive = false;
+            boss.GetComponent<WardenBoss>().enabled = false;
+        }
+        if (exitActive)
+        {
+            player.transform.position += exitSpot * 0.25f * Time.deltaTime;
+        }
+        //if player leaves screen after defeating boss
+        if (DestroyByBoundary.playerLeft == true)
+        {
+            bossDead = false;
+            exitActive = false;            
         }
     }
 
@@ -121,6 +140,49 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2);
         player.GetComponent<PlayerController>().enabled = true;
         player.GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public IEnumerator BossDefeat()
+    {
+        Vector2 stop = new Vector2(0, 0);
+        player.GetComponent<Rigidbody2D>().velocity = stop;
+        Vector2 bossDown = new Vector2(0, -1.5f);
+        boss.GetComponent<Rigidbody2D>().velocity = bossDown;
+        //disable objects that hurt player
+        GameObject[] shots = GameObject.FindGameObjectsWithTag("EnemyShot");
+        for (int i = 0; i < shots.Length; i++)
+        {
+            shots[i].tag = "Untagged";
+        }
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].tag = "Untagged";
+        }
+        GameObject[] bossParts = GameObject.FindGameObjectsWithTag("BossPart");
+        for (int i = 0; i < bossParts.Length; i++)
+        {
+            bossParts[i].tag = "Untagged";
+        }
+        GameObject lava = GameObject.Find("Lava");
+        lava.GetComponent<Collider2D>().enabled = false;
+        player.GetComponent<PlayerController>().enabled = false;
+        yield return new WaitForSeconds(1);
+        exitActive = true;
+        yield return new WaitForSeconds(8);
+        Vector2 stop2 = new Vector2(0, 0);
+        boss.GetComponent<Rigidbody2D>().velocity = stop2;
+    }
+
+    public IEnumerator BossExplode()
+    {
+        bossDead = true;
+        explosionSpots = GameObject.FindGameObjectsWithTag("ExplosionSpot");
+        do
+        {
+            Instantiate(explosion, explosionSpots[Random.Range(0, 8)].transform.position, explosion.transform.rotation);
+            yield return new WaitForSeconds(0.5f);
+        } while (bossDead);
     }
 
 }

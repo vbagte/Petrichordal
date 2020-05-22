@@ -10,7 +10,7 @@ public class BGScrollerX : MonoBehaviour
     public GameObject lvl1Manager;
     public GameObject player;
 
-    private float timeDelay, restartDelay;
+    private float timeDelay;
     private Vector3 startPosition;
 
     private void Start()
