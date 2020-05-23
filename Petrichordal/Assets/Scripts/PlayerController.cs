@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(BeatSystem.bar);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
 
-        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0)
+        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0 && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
         {
 
             //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
@@ -104,6 +104,10 @@ public class PlayerController : MonoBehaviour
         {
             voltageCurrent = voltageMax;
         }
+        if (voltageCurrent < 0)
+        {
+            voltageCurrent = 0;
+        }
         if (GetComponent<Health>().health < 0)
         {
             GetComponent<Health>().health = 0;
@@ -116,7 +120,7 @@ public class PlayerController : MonoBehaviour
         float moveX = 0;
         float moveY = 0;
 
-        if (evadeActive == false)
+        if (evadeActive == false && GameController.playerEnable == true)
         {
             if (Input.GetKey(KeyCode.D))
             {

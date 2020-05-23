@@ -8,14 +8,20 @@ public class GameController : MonoBehaviour
 {
 
     public static bool gameStart = false;
+    public static bool playerEnable = false;
 
-    public float timeDelay;
     public GameObject explosion;
     public GameObject[] bg;
     public GameObject[] stalags;
     public GameObject[] pipes;
     public GameObject levelManager;
     public GameObject boss;
+    public GameObject pausePanel;
+    public GameObject pauseMenu;
+    public GameObject settingsMenu;
+    public GameObject gameOverPanel;
+    public GameObject blockPanel;
+    public bool paused = false;
 
     private GameObject player;
     private GameObject playerExit;
@@ -53,15 +59,25 @@ public class GameController : MonoBehaviour
         }
         playerExit = GameObject.Find("PlayerExitSpot");
         exitSpot = (playerExit.transform.position - player.transform.position);
+        playerEnable = false;
     }
 
     private void Update()
     {
         //restart level
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
         {
-            SceneManager.LoadScene("Level_01");
-            timeDelay = Time.time;
+            pauseMenu.SetActive(true);
+            settingsMenu.SetActive(false);
+            pausePanel.SetActive(true);
+            paused = true;
+            Time.timeScale = 0;
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && paused == true)
+        {
+            pausePanel.SetActive(false);
+            paused = false;
+            Time.timeScale = 1;
         }
         //stop objects after player dies
         if (player.GetComponent<PlayerController>().lives <= 0 || player == null)
@@ -133,13 +149,7 @@ public class GameController : MonoBehaviour
         player.GetComponent<SpriteRenderer>().enabled = false;
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<BoxCollider2D>().enabled = false;
-    }
-
-    IEnumerator PlayerRespawn()
-    {
-        yield return new WaitForSeconds(2);
-        player.GetComponent<PlayerController>().enabled = true;
-        player.GetComponent<BoxCollider2D>().enabled = true;
+        StartCoroutine(GameOver());
     }
 
     public IEnumerator BossDefeat()
@@ -183,6 +193,21 @@ public class GameController : MonoBehaviour
             Instantiate(explosion, explosionSpots[Random.Range(0, 8)].transform.position, explosion.transform.rotation);
             yield return new WaitForSeconds(0.5f);
         } while (bossDead);
+    }
+
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(2);
+        gameOverPanel.SetActive(true);
+        yield return new WaitForSeconds(1);
+        blockPanel.SetActive(false);
+    }
+
+    IEnumerator PlayerRespawn()
+    {
+        yield return new WaitForSeconds(2);
+        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<BoxCollider2D>().enabled = true;
     }
 
 }

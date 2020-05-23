@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\BGScrollerX.cs" />
     <Compile Include="Assets\Scripts\Bosses\BossHurt.cs" />
     <Compile Include="Assets\Scripts\Bosses\Level_01\WardenBoss.cs" />
+    <Compile Include="Assets\Scripts\ButtonScripts.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />

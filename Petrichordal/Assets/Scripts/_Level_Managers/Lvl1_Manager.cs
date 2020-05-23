@@ -83,7 +83,6 @@ public class Lvl1_Manager : MonoBehaviour
 
     private void Start()
     {
-        player.GetComponent<PlayerController>().enabled = false;
         stalagtiteSpawnStart = new Vector3(10, stalag.stalagtiteYSpawn, 0);
         stalagmiteSpawnStart = new Vector3(10, stalag.stalagmiteYSpawn, 0);
         stalag.stalagtite.GetComponent<Mover>().speed = stalag.stalagSpeed;
@@ -127,6 +126,7 @@ public class Lvl1_Manager : MonoBehaviour
         stalag.stalagSpawn = true;
         StartCoroutine(StalagSpawn());
         StartCoroutine(Wave01());
+        GameController.playerEnable = true;
     }
 
     IEnumerator Wave01()
