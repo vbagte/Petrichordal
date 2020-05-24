@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 699949489236583829}
   - component: {fileID: 114816671668097596}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: Explosion_Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4742,7 +4742,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1860280791
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 7
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

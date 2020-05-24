@@ -1,0 +1,331 @@
+fileFormatVersion: 2
+guid: 3fc7653713aa1eb47bc7cc0a4cc402fd
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: wardenAllPiecesTransparent
+    21300002: wardenUpperLegLeft
+    21300004: wardenHelmet
+    21300006: wardenGunArmR
+    21300008: wardenHead
+    21300010: wardenGunArmL
+    21300012: wardenBody
+    21300014: wardenUpperLegRight
+    21300016: wardenUpperArmRight
+    21300018: wardenUpperArmLeft
+    21300020: wardenlowerLegL
+    21300022: wardenLowerLegR
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wardenUpperLegLeft
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 338
+        width: 26
+        height: 46
+      alignment: 9
+      pivot: {x: 0.526339, y: 0.8275193}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876a215343b674c469434685aa516bb9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenHelmet
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 322
+        width: 47
+        height: 24
+      alignment: 9
+      pivot: {x: 0.90797424, y: 0.12905884}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2aa53649d00ff747a3258fec39cf790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenGunArmR
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 267
+        width: 37
+        height: 17
+      alignment: 9
+      pivot: {x: 0.81464446, y: 0.5402832}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bc4c4744eb894439377cbfd9011975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenHead
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 268
+        width: 25
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1839318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876ab4cf0b236c642be7f17c6f3e0b53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenGunArmL
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 215
+        width: 37
+        height: 17
+      alignment: 9
+      pivot: {x: 0.79613566, y: 0.4194327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6e3310d22b3bc46a36f5830ef8f7c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenBody
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 191
+        width: 56
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6155fd23bb47afb438b45aa4aa75d5ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenUpperLegRight
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 113
+        width: 26
+        height: 46
+      alignment: 9
+      pivot: {x: 0.55267805, y: 0.8424072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b400e73788b79434ba37c0725d3761c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenUpperArmRight
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 115
+        width: 17
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5402823, y: 0.8222656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620a4cfd7a5b1dd4daa93f315ef7e384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenUpperArmLeft
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 115
+        width: 17
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5402814, y: 0.802124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b914313f90e604ab533bdb635811ef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenlowerLegL
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 60
+        width: 36
+        height: 43
+      alignment: 9
+      pivot: {x: 0.63315815, y: 0.8662961}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21737e55d34217144a352084205fab8a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wardenLowerLegR
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 60
+        width: 36
+        height: 43
+      alignment: 9
+      pivot: {x: 0.61413574, y: 0.882222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c49c68de7569ac4eb123ece70a0551c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5b863af52150451489e3bdc0c7d524a0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

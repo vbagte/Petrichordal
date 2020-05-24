@@ -82,19 +82,26 @@
     <Compile Include="Assets\Addons\Tilemap\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
     <Compile Include="Assets\RenderQueue.cs" />
     <Compile Include="Assets\Scripts\_Level_Managers\Lvl1_Manager.cs" />
+    <Compile Include="Assets\Scripts\Audio Scripts\BeatSystem.cs" />
     <Compile Include="Assets\Scripts\BGScrollerX.cs" />
+    <Compile Include="Assets\Scripts\Bosses\BossHurt.cs" />
+    <Compile Include="Assets\Scripts\Bosses\Level_01\WardenBoss.cs" />
+    <Compile Include="Assets\Scripts\ButtonScripts.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\DestroyByTime.cs" />
     <Compile Include="Assets\Scripts\Enemy_Movement\Enemy_Movement_01.cs" />
     <Compile Include="Assets\Scripts\Enemy_Movement\Enemy_Movement_02.cs" />
+    <Compile Include="Assets\Scripts\Enemy_Shots\Boss_Shot.cs" />
+    <Compile Include="Assets\Scripts\Enemy_Shots\Boss_Shot02.cs" />
     <Compile Include="Assets\Scripts\Enemy_Shots\Enemy_Shot_02.cs" />
     <Compile Include="Assets\Scripts\EvasiveManuever.cs" />
     <Compile Include="Assets\Scripts\FireballMover.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
+    <Compile Include="Assets\Scripts\PipeSmoke.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
     <None Include="Assets\Addons\Tilemap\Tiles\Rule Tile\ScriptTemplates\NewCustomRuleTile.cs.txt" />
@@ -688,6 +695,12 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{07E8B25F-98E8-6C99-E6F3-5CFD876C0371}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

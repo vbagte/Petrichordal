@@ -31,30 +31,40 @@ public class PlayerController : MonoBehaviour
     public Voltage v;
     public int voltageMax;
     public int voltageRechargeAmount;
+    public int lives;
     public float voltageRechargeSpeed;
     public float speed;
     public float evadeSpeed;
     public float evadeTime;
     public float evadeCooldownTime;
     public float fireRate;
+    public GameObject[] livesIcon;
     public GameObject shotSawtooth;
     public Transform shotSpawn;
 
     private int weaponType = 0;
     private float nextFire;
-    private int healthMax;
+    public int healthMax;
     private int voltageCurrent;
     private bool voltageRechargeActive = false;
     public bool evadeActive = false;
     public bool evadeCooldownActive = false;
     private bool stopped = false;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
+
+    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+    private FMOD.Studio.EventInstance sawInstance;
+    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
 
     private void Start()
-    {
+    {       
+        livesIcon = GameObject.FindGameObjectsWithTag("Life");
+        lives = livesIcon.Length;
         rb = GetComponent<Rigidbody2D>();
         healthMax = GetComponent<Health>().health;
         voltageCurrent = voltageMax;
+        DestroyByBoundary.playerLeft = false;
+        BossHurt.bossActive = false;
     }
 
     private void Update()
@@ -64,8 +74,18 @@ public class PlayerController : MonoBehaviour
         hv.healthBar.UpdateBar(GetComponent<Health>().health, healthMax);
         hv.voltageBar.UpdateBar(voltageCurrent, voltageMax);
 
-        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0)
+        //Debug.Log(BeatSystem.bar);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
+
+        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0 && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
         {
+
+            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+            sawInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Game/lv01/waveform abilities/main/saw");
+            sawInstance.start();
+            sawInstance.release();
+            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+
             nextFire = Time.time + fireRate;
             Instantiate(shotSawtooth, shotSpawn.position, shotSawtooth.GetComponent<Transform>().rotation);
             voltageCurrent -= v.voltageSawtooth;
@@ -84,6 +104,10 @@ public class PlayerController : MonoBehaviour
         {
             voltageCurrent = voltageMax;
         }
+        if (voltageCurrent < 0)
+        {
+            voltageCurrent = 0;
+        }
         if (GetComponent<Health>().health < 0)
         {
             GetComponent<Health>().health = 0;
@@ -96,7 +120,7 @@ public class PlayerController : MonoBehaviour
         float moveX = 0;
         float moveY = 0;
 
-        if (evadeActive == false)
+        if (evadeActive == false && GameController.playerEnable == true)
         {
             if (Input.GetKey(KeyCode.D))
             {
@@ -180,6 +204,16 @@ public class PlayerController : MonoBehaviour
             Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax)
         );
 
+    }
+
+    public void LifeLost()
+    {
+        livesIcon[lives - 1].SetActive(false);
+        lives -= 1;
+        if (lives <= 0)
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().PlayerDeath();
+        }
     }
 
     public void HealthUpdate()

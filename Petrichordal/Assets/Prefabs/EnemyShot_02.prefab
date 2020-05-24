@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1860280791
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: af8f3bc8346c92e4ab88c8f77a3374b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,8 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e12f1cf8b07724aaa4b8dd4ff822a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 5
+  speed: 4
 --- !u!114 &360299234191970458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +125,6 @@ MonoBehaviour:
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
   otherExplosion: {fileID: 0}
-  playerIFramesTime: 0
 --- !u!50 &8651240422536377936
 Rigidbody2D:
   serializedVersion: 4

@@ -7,12 +7,11 @@ public class DestroyByContact : MonoBehaviour
 
     public GameObject explosion;
     public GameObject otherExplosion;   
-    public float playerIFramesTime;
 
     private GameObject player;
     private Health playerHealth;
-    private bool playerIFramesActive;
     private bool lavaActive;
+    private bool smokeActive;
 
     private void Start()
     {
@@ -32,8 +31,7 @@ public class DestroyByContact : MonoBehaviour
             Destroy(this.gameObject);
             if (playerHealth.health <= 0)
             {
-                Instantiate(explosion, other.transform.position, other.transform.rotation);
-                PlayerDeath();
+                LifeLost();
             }
         }
         if (this.CompareTag("Enemy") && other.CompareTag("PlayerShot"))
@@ -53,8 +51,7 @@ public class DestroyByContact : MonoBehaviour
             playerHealth.health -= this.GetComponent<Damage>().damage;
             if (playerHealth.health <= 0)
             {
-                Instantiate(explosion, other.transform.position, other.transform.rotation);
-                PlayerDeath();
+                LifeLost();
             }
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
@@ -83,9 +80,13 @@ public class DestroyByContact : MonoBehaviour
             Destroy(gameObject);
             if (playerHealth.health <= 0)
             {
-                Instantiate(otherExplosion, other.gameObject.GetComponent<Transform>().transform.position, other.gameObject.GetComponent<Transform>().transform.rotation);
-                PlayerDeath();
+                LifeLost();
             }
+        }
+        if (this.name == "Smoke_Trigger" && other.CompareTag("Player"))
+        {
+            smokeActive = true;
+            StartCoroutine("SmokeHurt");
         }
     }
 
@@ -96,38 +97,38 @@ public class DestroyByContact : MonoBehaviour
             lavaActive = false;
             StopCoroutine("LavaHurt");
         }
+        if (this.name == "Smoke_Trigger" && other.CompareTag("Player"))
+        {
+            smokeActive = false;
+            StopCoroutine("SmokeHurt");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (this.transform.CompareTag("Stalag") && other.transform.CompareTag("Player"))
         {
-            if (playerIFramesActive == false)
+            playerHealth.health -= this.gameObject.GetComponent<Damage>().damage;
+            other.gameObject.GetComponent<Animation>().Play("Player_Hurt");
+            if (playerHealth.health <= 0)
             {
-                playerHealth.health -= this.gameObject.GetComponent<Damage>().damage;
-                other.gameObject.GetComponent<Animation>().Play("Player_Hurt");
-                playerIFramesActive = true;
-                StartCoroutine(PlayerIFrames());
-                if (playerHealth.health <= 0)
-                {
-                    Instantiate(otherExplosion, other.gameObject.GetComponent<Transform>().transform.position, other.gameObject.GetComponent<Transform>().transform.rotation);
-                    PlayerDeath();
-                }
+                LifeLost();
+            }
+        }
+        if (this.transform.name == "Pipe" && other.transform.CompareTag("Player"))
+        {
+            playerHealth.health -= this.gameObject.GetComponent<Damage>().damage;
+            other.gameObject.GetComponent<Animation>().Play("Player_Hurt");
+            if (playerHealth.health <= 0)
+            {
+                LifeLost();
             }
         }
     }
 
-    void PlayerDeath()
+    void LifeLost()
     {
-        playerHealth.health = 0;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().HealthUpdate();
-        GameObject.Find("GameController").GetComponent<GameController>().PlayerDeath();
-    }
-
-    IEnumerator PlayerIFrames()
-    {
-        yield return new WaitForSeconds(playerIFramesTime);
-        playerIFramesActive = false;
+        GameObject.Find("GameController").GetComponent<GameController>().LifeLost();
     }
 
     IEnumerator LavaHurt()
@@ -138,9 +139,23 @@ public class DestroyByContact : MonoBehaviour
             playerHealth.health -= GameObject.Find("Lava").GetComponent<Damage>().damage;
             if (playerHealth.health <= 0)
             {
-                Instantiate(explosion, player.GetComponent<Transform>().transform.position, player.GetComponent<Transform>().transform.rotation);
-                PlayerDeath();
+                LifeLost();
                 lavaActive = false;
+            }
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    IEnumerator SmokeHurt()
+    {
+        while (smokeActive)
+        {
+            player.GetComponent<Animation>().Play("Player_Hurt");
+            playerHealth.health -= GameObject.Find("Smoke_Trigger").GetComponent<Damage>().damage;
+            if (playerHealth.health <= 0)
+            {
+                LifeLost();
+                smokeActive = false;
             }
             yield return new WaitForSeconds(0.5f);
         }

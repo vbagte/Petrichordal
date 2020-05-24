@@ -106,10 +106,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1860280791
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 321f0db604d111949b7bff4cf5eee651, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.64, y: 0.64}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8c12d5496b62f489587ce2bce4bfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 80
+  health: 40
 --- !u!114 &7283623910788568876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +160,6 @@ MonoBehaviour:
     type: 3}
   otherExplosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
-  playerIFramesTime: 0
 --- !u!114 &114894664859814140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xMove: -5
   moveInTime: 1
-  fireTime: 0.5
+  fireTime: 3
   moveOutTime: 1
 --- !u!114 &8643860877979968140
 MonoBehaviour:
@@ -192,7 +191,7 @@ MonoBehaviour:
   shot: {fileID: 710932778825749343, guid: ddeeede10b3860a4b90d162da9739d76, type: 3}
   shotSpawn: {fileID: 7159202763584363698}
   fireDelay: 0
-  fireRate: 1
+  fireRate: 10
 --- !u!61 &6447464015592178653
 BoxCollider2D:
   m_ObjectHideFlags: 0
