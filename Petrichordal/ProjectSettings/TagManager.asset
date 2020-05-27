@@ -8,6 +8,12 @@ TagManager:
   - Enemy
   - EnemyShot
   - PlayerShot
+  - Stalag
+  - Fireball
+  - Life
+  - Pipe
+  - ExplosionSpot
+  - BossPart
   layers:
   - Default
   - TransparentFX

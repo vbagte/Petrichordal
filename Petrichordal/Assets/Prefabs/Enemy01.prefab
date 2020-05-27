@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 3656315884151599281}
   - component: {fileID: 5814539141068101287}
   - component: {fileID: 2244687637244066862}
+  - component: {fileID: 114177222701073736}
   - component: {fileID: 4245224997936981360}
   - component: {fileID: 1401793096130605288}
   - component: {fileID: 4465596741645603257}
@@ -105,7 +106,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1860280791
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 04b442f5be633fa4bbe2adb0f2354410, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,10 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement:
-    xSpeed: -4
-    ySpeed: 6
-    yMax: 4.5
-    yMin: -4.5
+    xSpeed: -3
+    ySpeed: 3
+    yMax: 3.5
+    yMin: -3.5
 --- !u!114 &2244687637244066862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +147,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8c12d5496b62f489587ce2bce4bfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 30
+--- !u!114 &114177222701073736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899821220166410984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9fcf4a5b0cc13e479a3c0edc22b5da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!114 &4245224997936981360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
-  playerExplosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
+  otherExplosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
 --- !u!114 &1401793096130605288
 MonoBehaviour:
@@ -170,16 +184,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5899821220166410984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29fcacb4cc728a146be8fe72cbc775dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 710932778825749343, guid: 00809f22e34d56746a7838b3ad03078c, type: 3}
   shotSpawn: {fileID: 566215728288566998}
+  fireDelay: 0
   fireRate: 1
-  delay: 0.5
-  damage: 0
 --- !u!61 &4465596741645603257
 BoxCollider2D:
   m_ObjectHideFlags: 0

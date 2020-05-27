@@ -9,82 +9,240 @@ public class Boundary
     public float xMin, xMax, yMin, yMax;
 }
 
+[System.Serializable]
+public class Voltage
+{
+    public int voltageSawtooth;
+}
+
+[System.Serializable]
+public class HealthVoltage
+{
+    public Text healthText;
+    public SimpleHealthBar healthBar;
+    public Text voltageText;
+    public SimpleHealthBar voltageBar;
+}
 public class PlayerController : MonoBehaviour
 {
 
-    public int health;
-    public int iTimer;
-    public float speed;
-    public float fireRate;
     public Boundary boundary;
-    public GameObject shot;
+    public HealthVoltage hv;
+    public Voltage v;
+    public int voltageMax;
+    public int voltageRechargeAmount;
+    public int lives;
+    public float voltageRechargeSpeed;
+    public float speed;
+    public float evadeSpeed;
+    public float evadeTime;
+    public float evadeCooldownTime;
+    public float fireRate;
+    public GameObject[] livesIcon;
+    public GameObject shotSawtooth;
     public Transform shotSpawn;
-    public Text healthText;
 
+    private int weaponType = 0;
     private float nextFire;
-    private Rigidbody2D rigidbody;
+    public int healthMax;
+    private int voltageCurrent;
+    private bool voltageRechargeActive = false;
+    public bool evadeActive = false;
+    public bool evadeCooldownActive = false;
+    private bool stopped = false;
+    public Rigidbody2D rb;
+
+    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+    private FMOD.Studio.EventInstance sawInstance;
+    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
 
     private void Start()
-    {
-        rigidbody = GetComponent<Rigidbody2D>();
+    {       
+        livesIcon = GameObject.FindGameObjectsWithTag("Life");
+        lives = livesIcon.Length;
+        rb = GetComponent<Rigidbody2D>();
+        healthMax = GetComponent<Health>().health;
+        voltageCurrent = voltageMax;
+        DestroyByBoundary.playerLeft = false;
+        BossHurt.bossActive = false;
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire)
+        hv.healthText.text = GetComponent<Health>().health + "/" + healthMax;
+        hv.voltageText.text = voltageCurrent + "/" + voltageMax;
+        hv.healthBar.UpdateBar(GetComponent<Health>().health, healthMax);
+        hv.voltageBar.UpdateBar(voltageCurrent, voltageMax);
+
+        //Debug.Log(BeatSystem.bar);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
+
+        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0 && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
         {
+
+            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+            sawInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Game/lv01/waveform abilities/main/saw");
+            sawInstance.start();
+            sawInstance.release();
+            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+
             nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shot.GetComponent<Transform>().rotation);
-            //GetComponent<AudioSource>().Play();
+            Instantiate(shotSawtooth, shotSpawn.position, shotSawtooth.GetComponent<Transform>().rotation);
+            voltageCurrent -= v.voltageSawtooth;
+            StopCoroutine("VoltageRecharge");
+            StartCoroutine("VoltageRecharge");
         }
-    }
-
-    private void FixedUpdate()
-    {
-        int moveX = 0;
-        int moveY = 0;
-
-        if (Input.GetKey(KeyCode.D))
+        if (voltageCurrent < voltageMax)
         {
-            moveX = 1;
+            voltageRechargeActive = true;
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (voltageCurrent >= voltageMax)
         {
-            moveX = -1;
+            voltageRechargeActive = false;
         }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        if (voltageCurrent > voltageMax)
         {
-            moveX = 0;
+            voltageCurrent = voltageMax;
         }
-        if (Input.GetKey(KeyCode.W))
+        if (voltageCurrent < 0)
         {
-            moveY = 1;
+            voltageCurrent = 0;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (GetComponent<Health>().health < 0)
         {
-            moveY = -1;
+            GetComponent<Health>().health = 0;
         }
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+        if (GetComponent<Health>().health > healthMax)
         {
-            moveY = 0;
+            GetComponent<Health>().health = healthMax;
         }
 
-        Vector2 movement = new Vector2(moveX, moveY);
-        rigidbody.velocity = movement * speed;
+        float moveX = 0;
+        float moveY = 0;
 
-        rigidbody.position = new Vector2
+        if (evadeActive == false && GameController.playerEnable == true)
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                moveX = 1;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                moveX = -1;
+            }
+            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            {
+                moveX = 0;
+                stopped = false;
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                moveY = 1;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                moveY = -1;
+            }
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+            {
+                moveY = 0;
+                stopped = false;
+            }
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+            {
+                moveY = 0;
+                stopped = true;
+            }
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+            {
+                moveX = 0;
+                stopped = true;
+            }
+            if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.D) && Input.GetKey(KeyCode.Space))
+            {
+                if (evadeCooldownActive == false && stopped == false)
+                {
+                    moveX = evadeSpeed;
+                    StartCoroutine(Evade());
+                    StartCoroutine(EvadeCooldown());
+                }
+            }
+            if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.Space))
+            {
+                if (evadeCooldownActive == false && stopped == false)
+                {
+                    moveX = -evadeSpeed;
+                    StartCoroutine(Evade());
+                    StartCoroutine(EvadeCooldown());
+                }
+            }
+            if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.Space))
+            {
+                if (evadeCooldownActive == false && stopped == false)
+                {
+                    moveY = evadeSpeed;
+                    StartCoroutine(Evade());
+                    StartCoroutine(EvadeCooldown());
+                }
+            }
+            if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) && Input.GetKey(KeyCode.Space))
+            {
+                if (evadeCooldownActive == false && stopped == false)
+                {
+                    moveY = -evadeSpeed;
+                    StartCoroutine(Evade());
+                    StartCoroutine(EvadeCooldown());
+                }
+            }
+            Vector2 movement = new Vector2(moveX, moveY);
+            rb.velocity = movement * speed;
+        }
+
+        rb.position = new Vector2
         (
-            Mathf.Clamp(rigidbody.position.x, boundary.xMin, boundary.xMax),
-            Mathf.Clamp(rigidbody.position.y, boundary.yMin, boundary.yMax)
+            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+            Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax)
         );
+
     }
 
-    IEnumerator PlayerITimer()
+    public void LifeLost()
     {
-        healthText.text = "X " + health;
-        GetComponent<BoxCollider2D>().enabled = false;
-        yield return new WaitForSeconds(iTimer);
-        GetComponent<BoxCollider2D>().enabled = true;
+        livesIcon[lives - 1].SetActive(false);
+        lives -= 1;
+        if (lives <= 0)
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().PlayerDeath();
+        }
+    }
+
+    public void HealthUpdate()
+    {
+        hv.healthText.text = GetComponent<Health>().health + "/" + healthMax;
+        hv.healthBar.UpdateBar(GetComponent<Health>().health, healthMax);
+    }
+
+    IEnumerator Evade()
+    {
+        evadeActive = true;
+        yield return new WaitForSeconds(evadeTime);
+        evadeActive = false;
+    }
+
+    IEnumerator EvadeCooldown()
+    {
+        evadeCooldownActive = true;
+        yield return new WaitForSeconds(evadeCooldownTime);
+        evadeCooldownActive = false;
+    }
+
+    IEnumerator VoltageRecharge()
+    {
+        while (voltageRechargeActive)
+        {
+            yield return new WaitForSeconds(voltageRechargeSpeed);
+            voltageCurrent += voltageRechargeAmount;
+        }
     }
 
 }

@@ -8,8 +8,9 @@ public class BGScrollerX : MonoBehaviour
     public float scrollSpeed;
     public float tileSizeX;
     public GameObject lvl1Manager;
+    public GameObject player;
 
-    private float timeDelay, restartDelay;
+    private float timeDelay;
     private Vector3 startPosition;
 
     private void Start()
@@ -20,7 +21,7 @@ public class BGScrollerX : MonoBehaviour
 
     private void Update()
     {
-        float newPosition = Mathf.Repeat((Time.time - timeDelay) * scrollSpeed, tileSizeX);
+        float newPosition = Mathf.Repeat((Time.timeSinceLevelLoad - timeDelay) * scrollSpeed, tileSizeX);
         transform.position = startPosition + Vector3.left * newPosition;
     }
 
