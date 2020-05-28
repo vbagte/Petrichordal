@@ -57,7 +57,8 @@ public class PlayerController : MonoBehaviour
     //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
 
     private void Start()
-    {       
+    {
+    
         livesIcon = GameObject.FindGameObjectsWithTag("Life");
         lives = livesIcon.Length;
         rb = GetComponent<Rigidbody2D>();
@@ -69,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        GameController.playerEnable = true;
         hv.healthText.text = GetComponent<Health>().health + "/" + healthMax;
         hv.voltageText.text = voltageCurrent + "/" + voltageMax;
         hv.healthBar.UpdateBar(GetComponent<Health>().health, healthMax);
@@ -108,9 +110,10 @@ public class PlayerController : MonoBehaviour
         {
             voltageCurrent = 0;
         }
-        if (GetComponent<Health>().health < 0)
+        if (GetComponent<Health>().health <= 0)
         {
-            GetComponent<Health>().health = 0;
+            LifeLost();
+          //  GetComponent<Health>().health = 0;
         }
         if (GetComponent<Health>().health > healthMax)
         {
@@ -120,7 +123,7 @@ public class PlayerController : MonoBehaviour
         float moveX = 0;
         float moveY = 0;
 
-        if (evadeActive == false && GameController.playerEnable == true)
+        if (evadeActive == false)
         {
             if (Input.GetKey(KeyCode.D))
             {
