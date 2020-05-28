@@ -52,9 +52,6 @@
     <UnityVersion>2018.4.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -87,25 +84,25 @@
     <Compile Include="Assets\Plugins\FMOD\src\Runtime\wrapper\fmod_errors.cs" />
     <Compile Include="Assets\Plugins\FMOD\src\Runtime\wrapper\fmod_studio.cs" />
     <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>C:/Users/CodyLarkin/Documents/Github_Reed/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+      <HintPath>C:/Users/cerab/OneDrive/Documents/GitHub/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/CodyLarkin/Documents/Github_Reed/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/cerab/OneDrive/Documents/GitHub/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/CodyLarkin/Documents/Github_Reed/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/cerab/OneDrive/Documents/GitHub/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/CodyLarkin/Documents/Github_Reed/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/cerab/OneDrive/Documents/GitHub/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect">
-      <HintPath>C:/Users/CodyLarkin/Documents/Github_Reed/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+      <HintPath>C:/Users/cerab/OneDrive/Documents/GitHub/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/CodyLarkin/Documents/Github_Reed/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/cerab/OneDrive/Documents/GitHub/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/CodyLarkin/Documents/Github_Reed/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/cerab/OneDrive/Documents/GitHub/Petrichordal/Petrichordal/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -309,7 +306,7 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/CodyLarkin/Documents/Github_Reed/Petrichordal/Petrichordal/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/cerab/OneDrive/Documents/GitHub/Petrichordal/Petrichordal/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
