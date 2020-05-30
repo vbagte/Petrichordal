@@ -80,35 +80,35 @@ public class GameController : MonoBehaviour
             Time.timeScale = 1;
         }
         //stop objects after player dies
-        if (player.GetComponent<PlayerController>().lives <= 0 || player == null)
-        {
-            for (int i = 0; i < bg.Length; i++)
-            {
-                bg[i].GetComponent<BGScrollerX>().enabled = false;
-            }
-            levelManager.GetComponent<Lvl1_Manager>().stalag.stalagSpeed = 0;
-            levelManager.SetActive(false);
-            stalags = GameObject.FindGameObjectsWithTag("Stalag");
-            foreach (GameObject stalag in stalags)
-            {
-                Vector2 movement = new Vector2(0, 0);
-                stalag.GetComponent<Rigidbody2D>().velocity = movement;
-                stalag.GetComponent<Mover>().speed = 0;
-            }
-            pipes = GameObject.FindGameObjectsWithTag("Pipe");
-            foreach (GameObject pipe in pipes)
-            {
-                Vector2 movement = new Vector2(0, 0);
-                pipe.GetComponent<Rigidbody2D>().velocity = movement;
-                pipe.GetComponent<Mover>().speed = 0;
-            }
-            for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++)
-            {
-                GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<WeaponController>().enabled = false;
-            }
-            levelManager.GetComponent<Lvl1_Manager>().lava.fireballActive = false;
-            boss.GetComponent<WardenBoss>().enabled = false;
-        }
+        //if (player.GetComponent<PlayerController>().lives <= 0 || player == null)
+        //{
+        //    for (int i = 0; i < bg.Length; i++)
+        //    {
+        //        bg[i].GetComponent<BGScrollerX>().enabled = false;
+        //    }
+        //    //levelManager.GetComponent<Lvl1_Manager>().stalag.stalagSpeed = 0;
+        //    levelManager.SetActive(false);
+        //    stalags = GameObject.FindGameObjectsWithTag("Stalag");
+        //    foreach (GameObject stalag in stalags)
+        //    {
+        //        Vector2 movement = new Vector2(0, 0);
+        //        stalag.GetComponent<Rigidbody2D>().velocity = movement;
+        //        stalag.GetComponent<Mover>().speed = 0;
+        //    }
+        //    pipes = GameObject.FindGameObjectsWithTag("Pipe");
+        //    foreach (GameObject pipe in pipes)
+        //    {
+        //        Vector2 movement = new Vector2(0, 0);
+        //        pipe.GetComponent<Rigidbody2D>().velocity = movement;
+        //        pipe.GetComponent<Mover>().speed = 0;
+        //    }
+        //    for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++)
+        //    {
+        //        GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<WeaponController>().enabled = false;
+        //    }
+        //    levelManager.GetComponent<Lvl1_Manager>().lava.fireballActive = false;
+        //    boss.GetComponent<WardenBoss>().enabled = false;
+        //}
         if (exitActive)
         {
             player.transform.position += exitSpot * 0.25f * Time.deltaTime;
