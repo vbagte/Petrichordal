@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Boundary
@@ -13,6 +14,7 @@ public class Boundary
 public class Voltage
 {
     public int voltageSawtooth;
+    public int voltageTri;
 }
 
 [System.Serializable]
@@ -23,14 +25,29 @@ public class HealthVoltage
     public Text voltageText;
     public SimpleHealthBar voltageBar;
 }
+
+[System.Serializable]
+public class WeaponCharge
+{
+    public SimpleHealthBar triBar;
+}
+
 public class PlayerController : MonoBehaviour
 {
+    //variables
+    #region
+    public static bool triEnabled = false;
 
     public Boundary boundary;
     public HealthVoltage hv;
     public Voltage v;
+    public WeaponCharge wc;
     public int voltageMax;
     public int voltageRechargeAmount;
+    private int triChargeCurrent;
+    public int triChargeMax;
+    public int triRechargeSpeed;
+    public int triRechargeAmount;
     public int lives;
     public float voltageRechargeSpeed;
     public float speed;
@@ -40,17 +57,21 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
     public GameObject[] livesIcon;
     public GameObject shotSawtooth;
+    public GameObject shotTriAOE;
+    public GameObject shotTri;
+    public GameObject triPanel;
     public Transform shotSpawn;
+    public Transform triSpawn;
 
-    private int weaponType = 0;
     private float nextFire;
     public int healthMax;
-    private int voltageCurrent;
+    private int voltageCurrent;    
     private bool voltageRechargeActive = false;
     public bool evadeActive = false;
     public bool evadeCooldownActive = false;
     private bool stopped = false;
     public Rigidbody2D rb;
+    #endregion
 
     //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
     private FMOD.Studio.EventInstance sawInstance;
@@ -64,8 +85,13 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         healthMax = GetComponent<Health>().health;
         voltageCurrent = voltageMax;
+        triChargeCurrent = triChargeMax;
         DestroyByBoundary.playerLeft = false;
         BossHurt.bossActive = false;
+        if (triEnabled)
+        {
+            triPanel.SetActive(true);
+        }
     }
 
     private void Update()
@@ -75,11 +101,13 @@ public class PlayerController : MonoBehaviour
         hv.voltageText.text = voltageCurrent + "/" + voltageMax;
         hv.healthBar.UpdateBar(GetComponent<Health>().health, healthMax);
         hv.voltageBar.UpdateBar(voltageCurrent, voltageMax);
+        wc.triBar.UpdateBar(triChargeCurrent, triChargeMax);
 
         //Debug.Log(BeatSystem.bar);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
 
-        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0 && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
+        //sawtooth attack
+        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
         {
 
             //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
@@ -94,6 +122,31 @@ public class PlayerController : MonoBehaviour
             StopCoroutine("VoltageRecharge");
             StartCoroutine("VoltageRecharge");
         }
+        //tri attack
+        if (Input.GetKeyDown(KeyCode.DownArrow) && triEnabled == true && v.voltageTri <= voltageCurrent && triChargeCurrent == triChargeMax && GameController.playerEnable == true)
+        {
+
+            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+            //sawInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Game/lv01/waveform abilities/main/saw");
+            //sawInstance.start();
+            //sawInstance.release();
+            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+
+            Instantiate(shotTriAOE, triSpawn.position, shotTriAOE.GetComponent<Transform>().rotation);
+            Vector3 start = new Vector3(0, 0, 0);
+            GameObject.Find("TriAOE(Clone)").transform.localScale = start;
+            StartCoroutine(TriAOE(2, 2));
+            voltageCurrent -= v.voltageTri;
+            voltageRechargeActive = true;
+            triChargeCurrent = 0;
+            StopCoroutine("VoltageRecharge");
+            StartCoroutine("VoltageRecharge");
+            StopCoroutine("TriRecharge");
+            StartCoroutine("TriRecharge");
+        }
+
+        //health/voltage logic
+        #region
         if (voltageCurrent < voltageMax)
         {
             voltageRechargeActive = true;
@@ -113,17 +166,18 @@ public class PlayerController : MonoBehaviour
         if (GetComponent<Health>().health <= 0)
         {
             LifeLost();
-          //  GetComponent<Health>().health = 0;
         }
         if (GetComponent<Health>().health > healthMax)
         {
             GetComponent<Health>().health = healthMax;
         }
+        #endregion
 
         float moveX = 0;
         float moveY = 0;
 
-        if (evadeActive == false)
+        // movement
+        if (evadeActive == false && GameController.playerEnable == true)
         {
             if (Input.GetKey(KeyCode.D))
             {
@@ -209,6 +263,35 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    IEnumerator TriAOE(float size, float time)
+    {
+        float startTime = 0;
+        while(startTime < time)
+        {
+            Vector3 sizeChange = new Vector3(size, size, 0);
+            GameObject.Find("TriAOE(Clone)").transform.position = transform.position;
+            GameObject.Find("TriAOE(Clone)").transform.localScale += sizeChange * Time.deltaTime;
+            startTime += 1 * Time.deltaTime;
+            yield return null;
+        }
+        Destroy(GameObject.Find("TriAOE(Clone)"));
+        shotTri.GetComponent<Mover>().speed = -15;
+        Instantiate(shotTri, transform.position, shotTri.GetComponent<Transform>().rotation);
+        shotTri.GetComponent<Mover>().speed = 15;
+        Instantiate(shotTri, transform.position, shotTri.GetComponent<Transform>().rotation);
+    }
+
+    IEnumerator TriRecharge()
+    {
+        while (triChargeCurrent < triChargeMax)
+        {
+            yield return new WaitForSeconds(triRechargeSpeed);
+            triChargeCurrent += triRechargeAmount;
+        }
+    }
+
+    //health/movement logic
+    #region
     public void LifeLost()
     {
         livesIcon[lives - 1].SetActive(false);
@@ -247,5 +330,7 @@ public class PlayerController : MonoBehaviour
             voltageCurrent += voltageRechargeAmount;
         }
     }
+    #endregion
+
 
 }
