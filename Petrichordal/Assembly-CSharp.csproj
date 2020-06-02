@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Bosses\Level_01\WardenBoss.cs" />
     <Compile Include="Assets\Scripts\ButtonScripts.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\destructibletile.cs" />
+    <Compile Include="Assets\Scripts\CerasBranch\Enemy.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\EnemyAir1.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\EnemyBullet.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\EnemyGround1Script.cs" />

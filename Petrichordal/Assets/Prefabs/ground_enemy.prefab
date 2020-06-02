@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6218072883800537374}
   - component: {fileID: 6040387581598683603}
-  - component: {fileID: 114273303781296094}
   - component: {fileID: 2396212770519247424}
+  - component: {fileID: 114000205796123794}
   m_Layer: 0
   m_Name: ground_enemy
   m_TagString: Untagged
@@ -70,36 +70,17 @@ SpriteRenderer:
   m_SortingLayerID: -1860280791
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bd8c99a9f092b954c90b4ebe34f98e3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 915920a0398f8ba488359696e2a4283f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114273303781296094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8795379220773587826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5db24d1e4b8d16488bf9ed24600f8a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shottype: 0
-  projectile: {fileID: 6592826748695064272, guid: 31260884f1cf2ef46ba1c17c7fdfcb96,
-    type: 3}
-  gravdir: -1
-  movedir: 0
-  speed: 0
-  fireinterval: 2
 --- !u!60 &2396212770519247424
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -118,7 +99,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -141,3 +122,28 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.5}
       - {x: 0.5, y: -0.390625}
       - {x: 0.359375, y: -0.28125}
+--- !u!114 &114000205796123794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8795379220773587826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 999
+  collisiondamage: 50
+  speed: 0
+  flypattern: 0
+  projectile: {fileID: 6592826748695064272, guid: 31260884f1cf2ef46ba1c17c7fdfcb96,
+    type: 3}
+  explosion: {fileID: 0}
+  projectilespeed: 3
+  fireinterval_sec: 0.05
+  burstcooldown_sec: 3
+  projectiles_per_burst: 3
+  shottype: 1
+  projectiledirection: 2
