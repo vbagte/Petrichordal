@@ -19,13 +19,17 @@ public class EnemyGround1Script : MonoBehaviour
     private float elapsedseconds;
     public float fireinterval;
     float suminterval;
+    private Health playerHealth;
     // Start is called before the first frame update
     void Start()
     {
 
         suminterval = fireinterval;
         // transform.localPosition = gridLayout.CellToLocal(cellPosition);
-
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        }
     }
 
     // Update is called once per frame
@@ -68,17 +72,21 @@ public class EnemyGround1Script : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.tag == "PlayerShot")
+        if (other.gameObject.tag == "PlayerShot")
         {
-            Destroy(collision.gameObject);
-
+            Destroy(other.gameObject);
+            //this.GetComponent<Animation>().Play("Enemy_Hurt");
         }
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
- 
-            collision.gameObject.GetComponent<Health>().health -= collisiondamage;
+            other.gameObject.GetComponent<Health>().health -= collisiondamage;
+            if (playerHealth.health <= 0)
+            {
+                LifeLost();
+            }
+            other.gameObject.GetComponent<Animation>().Play("Player_Hurt");
         }
     }
 
@@ -139,6 +147,12 @@ public class EnemyGround1Script : MonoBehaviour
         }
 
     }
+
+    public void LifeLost()
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().LifeLost();
+    }
+
 }
 
 
