@@ -9,13 +9,6 @@ public class ButtonScripts : MonoBehaviour
     public GameObject pausePanel;
     public GameObject pauseMenu;
     public GameObject settingsMenu;
-    public GameObject fade;
-
-    public void StartGameButton()
-    {
-        fade.SetActive(true);
-        StartCoroutine(StartGame());
-    }
 
     public void Resume()
     {
@@ -45,12 +38,6 @@ public class ButtonScripts : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-    }
-
-    IEnumerator StartGame()
-    {
-        yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }

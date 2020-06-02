@@ -14,7 +14,6 @@ TagManager:
   - Pipe
   - ExplosionSpot
   - BossPart
-  - TriShot
   layers:
   - Default
   - TransparentFX

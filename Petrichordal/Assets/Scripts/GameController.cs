@@ -21,8 +21,6 @@ public class GameController : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject gameOverPanel;
     public GameObject blockPanel;
-    public GameObject nextLevelPanel;
-    public GameObject fadePanel;
     public bool paused = false;
 
     private GameObject player;
@@ -66,7 +64,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        //pause menu toggle
+        //restart level
         if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
         {
             pauseMenu.SetActive(true);
@@ -82,38 +80,35 @@ public class GameController : MonoBehaviour
             Time.timeScale = 1;
         }
         //stop objects after player dies
-        if (player.GetComponent<PlayerController>().lives <= 0 || player == null)
-        {
-            for (int i = 0; i < bg.Length; i++)
-            {
-                bg[i].GetComponent<BGScrollerX>().enabled = false;
-            }
-            //levelManager.GetComponent<Lvl1_Manager>().stalag.stalagSpeed = 0;
-            levelManager.SetActive(false);
-            stalags = GameObject.FindGameObjectsWithTag("Stalag");
-            foreach (GameObject stalag in stalags)
-            {
-                Vector2 movement = new Vector2(0, 0);
-                stalag.GetComponent<Rigidbody2D>().velocity = movement;
-                stalag.GetComponent<Mover>().speed = 0;
-            }
-            pipes = GameObject.FindGameObjectsWithTag("Pipe");
-            foreach (GameObject pipe in pipes)
-            {
-                Vector2 movement = new Vector2(0, 0);
-                pipe.GetComponent<Rigidbody2D>().velocity = movement;
-                pipe.GetComponent<Mover>().speed = 0;
-            }
-            if (SceneManager.GetActiveScene().name == "Level_01")
-            {
-                for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++)
-                {
-                    GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<WeaponController>().enabled = false;
-                }
-                levelManager.GetComponent<Lvl1_Manager>().lava.fireballActive = false;
-                boss.GetComponent<WardenBoss>().enabled = false;
-            }
-        }
+        //if (player.GetComponent<PlayerController>().lives <= 0 || player == null)
+        //{
+        //    for (int i = 0; i < bg.Length; i++)
+        //    {
+        //        bg[i].GetComponent<BGScrollerX>().enabled = false;
+        //    }
+        //    //levelManager.GetComponent<Lvl1_Manager>().stalag.stalagSpeed = 0;
+        //    levelManager.SetActive(false);
+        //    stalags = GameObject.FindGameObjectsWithTag("Stalag");
+        //    foreach (GameObject stalag in stalags)
+        //    {
+        //        Vector2 movement = new Vector2(0, 0);
+        //        stalag.GetComponent<Rigidbody2D>().velocity = movement;
+        //        stalag.GetComponent<Mover>().speed = 0;
+        //    }
+        //    pipes = GameObject.FindGameObjectsWithTag("Pipe");
+        //    foreach (GameObject pipe in pipes)
+        //    {
+        //        Vector2 movement = new Vector2(0, 0);
+        //        pipe.GetComponent<Rigidbody2D>().velocity = movement;
+        //        pipe.GetComponent<Mover>().speed = 0;
+        //    }
+        //    for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++)
+        //    {
+        //        GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<WeaponController>().enabled = false;
+        //    }
+        //    levelManager.GetComponent<Lvl1_Manager>().lava.fireballActive = false;
+        //    boss.GetComponent<WardenBoss>().enabled = false;
+        //}
         if (exitActive)
         {
             player.transform.position += exitSpot * 0.25f * Time.deltaTime;
@@ -156,27 +151,6 @@ public class GameController : MonoBehaviour
         player.GetComponent<BoxCollider2D>().enabled = false;
         StartCoroutine(GameOver());
     }
-
-    public void NextLevelPanel()
-    {
-        if (bossDead)
-        {
-            nextLevelPanel.GetComponent<Animation>().Play();
-        }
-    }
-
-    public void NextLevelButton()
-    {
-        fadePanel.SetActive(true);
-        StartCoroutine(LevelChange(2));
-    }
-
-    public IEnumerator LevelChange(float time)
-    {
-        yield return new WaitForSeconds(time);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
 
     public IEnumerator BossDefeat()
     {
