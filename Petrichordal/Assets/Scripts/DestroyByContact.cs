@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DestroyByContact : MonoBehaviour
 {
@@ -41,7 +42,17 @@ public class DestroyByContact : MonoBehaviour
             Destroy(other.gameObject);
             if (this.GetComponent<Health>().health <= 0)
             {
-                Instantiate(explosion, this.transform.position, this.transform.rotation);               
+                Instantiate(explosion, this.transform.position, this.transform.rotation);
+                Destroy(this.gameObject);
+            }
+        }
+        if (this.CompareTag("Enemy") && other.CompareTag("TriShot"))
+        {
+            this.GetComponent<Animation>().Play("Enemy_Hurt");
+            this.GetComponent<Health>().health -= other.GetComponent<Damage>().damage;
+            if (this.GetComponent<Health>().health <= 0)
+            {
+                Instantiate(explosion, this.transform.position, this.transform.rotation);
                 Destroy(this.gameObject);
             }
         }

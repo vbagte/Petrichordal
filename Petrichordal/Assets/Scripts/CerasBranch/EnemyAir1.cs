@@ -21,10 +21,16 @@ public class EnemyAir1 : MonoBehaviour
     public enum Eflypattern { none=0,oneway=1,hover=2,stopngo=3,loop=4,squareexit=5 };
     public Eflypattern flypattern;
     private bool firing = true;
+    private bool inBoundary = false;
+    private Health playerHealth;
     // Start is called before the first frame update
     void Start()
     {   
         suminterval = fireinterval;
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        }
     }
 
     // Update is called once per frame
@@ -41,6 +47,7 @@ public class EnemyAir1 : MonoBehaviour
             }
            movement();
             //  transform.localPosition += new Vector3((int)movedir * Time.deltaTime * speed / 10f, 0);
+            inBoundary = true;
         }
         if (transform.position.x < -10.5) Destroy(gameObject);
     }
@@ -117,24 +124,43 @@ public class EnemyAir1 : MonoBehaviour
 
     
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "PlayerShot")
+        if (inBoundary)
         {
-            Destroy(collision.gameObject);
-            health -= 1;
-            if (health < 1)
+            if (other.gameObject.tag == "PlayerShot")
             {
-                Instantiate(explosion,transform.position, explosion.transform.rotation);
+                Destroy(other.gameObject);
+                health -= 1;
+                if (health < 1)
+                {
+                    Instantiate(explosion, transform.position, explosion.transform.rotation);
+                    Destroy(gameObject);
+                }
+                this.GetComponent<Animation>().Play("Enemy_Hurt");
+            }
+            if (other.gameObject.tag == "TriShot")
+            {
+                health -= 5;
+                if (health < 1)
+                {
+                    Instantiate(explosion, transform.position, explosion.transform.rotation);
+                    Destroy(gameObject);
+                }
+                this.GetComponent<Animation>().Play("Enemy_Hurt");
+            }
+            if (other.gameObject.tag == "Player")
+            {
                 Destroy(gameObject);
+                Instantiate(explosion, transform.position, explosion.transform.rotation);
+                other.gameObject.GetComponent<Health>().health -= collisiondamage;
+                if (playerHealth.health <= 0)
+                {
+                    LifeLost();
+                }
+                other.gameObject.GetComponent<Animation>().Play("Player_Hurt");
             }
         }
-        if (collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-            collision.gameObject.GetComponent<Health>().health -= collisiondamage;
-        }
-
     }
 
     public void firelaser()
@@ -194,5 +220,9 @@ public class EnemyAir1 : MonoBehaviour
                 break;
         }
 
+    }
+    public void LifeLost()
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().LifeLost();
     }
 }
