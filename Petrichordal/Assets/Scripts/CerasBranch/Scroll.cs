@@ -6,9 +6,6 @@ public class Scroll : MonoBehaviour
 {
 
     public float layerspeed;
-    public enum Edirection { horizontal=1,vertical=2 };
-    public Edirection direction;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,19 +20,8 @@ public class Scroll : MonoBehaviour
     }
     void Update()
     {
-
-
-        switch ((int)direction)
-        {
-            case 1:
-                transform.Translate(-layerspeed / 1000, 0, 0);
-               // transform.Rotate(0, 0, transform.eulerAngles.z);
-                break;
-            case 2:
-                transform.Translate(0, -layerspeed / 1000, 0);
-                //transform.Rotate(0, 0, transform.eulerAngles.z);
-                break;
-        }
+        
+        transform.Translate(-layerspeed / 1000, 0, 0);
 
     }
 }
