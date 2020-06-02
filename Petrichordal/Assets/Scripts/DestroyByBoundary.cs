@@ -11,7 +11,6 @@ public class DestroyByBoundary : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerLeft = true;
-            GameObject.Find("GameController").GetComponent<GameController>().NextLevelPanel();
         }
         else
         {
