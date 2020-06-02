@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 563986629237848096}
   - component: {fileID: 9050401039410344103}
   - component: {fileID: 5647225332376617943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SawToothShot
   m_TagString: PlayerShot
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5799754892176674005}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.000000014901, z: 0}
+  m_LocalPosition: {x: 0.005, y: 0.274, z: 0}
   m_LocalScale: {x: 0.6528182, y: 0.6528182, z: 0.6528182}
   m_Children: []
   m_Father: {fileID: 0}
@@ -140,10 +140,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.02}
+  m_Offset: {x: 0, y: 0.09353923}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -154,5 +154,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.36}
+  m_Size: {x: 1, y: 0.3800853}
   m_EdgeRadius: 0
