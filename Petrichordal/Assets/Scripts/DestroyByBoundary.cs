@@ -6,11 +6,18 @@ public class DestroyByBoundary : MonoBehaviour
 {
     public static bool playerLeft = false;
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+      
+        Destroy(collision.gameObject);
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
+        //Destroy(other.gameObject);
+      
         if (other.CompareTag("Player"))
         {
-            playerLeft = true;
+           // playerLeft = true;
         }
         else
         {

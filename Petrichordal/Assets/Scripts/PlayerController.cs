@@ -79,7 +79,9 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(BeatSystem.bar);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
 
-        if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0 && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
+        // if (Input.GetKey(KeyCode.UpArrow) && Time.time > nextFire && weaponType == 0 && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
+        if (Input.GetButton("Fire1") && Time.time > nextFire && weaponType == 0 && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
+
         {
 
             //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
@@ -89,7 +91,8 @@ public class PlayerController : MonoBehaviour
             //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
 
             nextFire = Time.time + fireRate;
-            Instantiate(shotSawtooth, shotSpawn.position, shotSawtooth.GetComponent<Transform>().rotation);
+            // Instantiate(shotSawtooth, shotSpawn.position, shotSawtooth.GetComponent<Transform>().rotation);
+            Instantiate(shotSawtooth, shotSpawn.position, transform.rotation);
             voltageCurrent -= v.voltageSawtooth;
             StopCoroutine("VoltageRecharge");
             StartCoroutine("VoltageRecharge");
@@ -125,42 +128,51 @@ public class PlayerController : MonoBehaviour
 
         if (evadeActive == false)
         {
-            if (Input.GetKey(KeyCode.D))
+
+            float translationY = Input.GetAxis("Vertical") * speed;
+            float translationX = Input.GetAxis("Horizontal") * speed;
+            translationY *= Time.deltaTime;
+            translationX *= Time.deltaTime;
+            if (transform.eulerAngles.z == 90)
             {
-                moveX = 1;
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                moveX = -1;
-            }
-            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
-            {
-                moveX = 0;
-                stopped = false;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                moveY = 1;
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                moveY = -1;
-            }
-            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
-            {
-                moveY = 0;
-                stopped = false;
-            }
-            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
-            {
-                moveY = 0;
-                stopped = true;
-            }
-            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
-            {
-                moveX = 0;
-                stopped = true;
-            }
+                 transform.Translate(-translationY, -translationX, 0);
+            } else  transform.Translate(translationX, -translationY, 0);
+            //if (Input.GetKey(KeyCode.D))
+            //{
+            //    moveX = 1;
+            //}
+            //else if (Input.GetKey(KeyCode.A))
+            //{
+            //    moveX = -1;
+            //}
+            //if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            //{
+            //    moveX = 0;
+            //    stopped = false;
+            //}
+            //if (Input.GetKey(KeyCode.W))
+            //{
+            //    moveY = 1;
+            //}
+            //else if (Input.GetKey(KeyCode.S))
+            //{
+            //    moveY = -1;
+            //}
+            //if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S))
+            //{
+            //    moveY = 0;
+            //    stopped = false;
+            //}
+            //if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+            //{
+            //    moveY = 0;
+            //    stopped = true;
+            //}
+            //if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+            //{
+            //    moveX = 0;
+            //    stopped = true;
+            //}
             if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.D) && Input.GetKey(KeyCode.Space))
             {
                 if (evadeCooldownActive == false && stopped == false)
@@ -197,16 +209,16 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(EvadeCooldown());
                 }
             }
-            Vector2 movement = new Vector2(moveX, moveY);
-            rb.velocity = movement * speed;
+            rb.velocity = new Vector2(moveX * speed, moveY * speed);
         }
-
-        rb.position = new Vector2
-        (
-            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
-            Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax)
-        );
-
+        if (transform.position.x < boundary.xMin)
+            transform.position = new Vector2(boundary.xMin, transform.position.y);
+        if (transform.position.x > boundary.xMax)
+            transform.position = new Vector2(boundary.xMax, transform.position.y);
+        if (transform.position.y > boundary.yMax)
+            transform.position = new Vector2(transform.position.x, boundary.yMax);
+        if (transform.position.y < boundary.yMin)
+            transform.position = new Vector2(transform.position.x, boundary.yMin);
     }
 
     public void LifeLost()
