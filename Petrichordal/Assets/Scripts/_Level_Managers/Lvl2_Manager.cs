@@ -13,9 +13,8 @@ public class Lvl2_Manager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Killme());
-  
-
-            
+        GameController.playerEnable = true;
+        PlayerController.triEnabled = true;
     }
 
     IEnumerator Killme()
