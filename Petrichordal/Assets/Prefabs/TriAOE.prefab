@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6181918887317184176}
   - component: {fileID: 6985562383783184020}
   - component: {fileID: 7534883086420325934}
+  - component: {fileID: 50332097560603592}
   m_Layer: 8
   m_Name: TriAOE
   m_TagString: TriShot
@@ -93,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fcf4a5b0cc13e479a3c0edc22b5da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 50
 --- !u!58 &7534883086420325934
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -110,3 +111,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &50332097560603592
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035245819000217371}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

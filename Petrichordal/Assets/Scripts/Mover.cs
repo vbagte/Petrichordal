@@ -9,7 +9,7 @@ public class Mover : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
 
-    private void Awake()
+    private void Update()
     {
         rb = GetComponent<Rigidbody2D>();
         switch ((int)direction)
@@ -23,5 +23,7 @@ public class Mover : MonoBehaviour
         }
      
     }
+
+
 
 }
