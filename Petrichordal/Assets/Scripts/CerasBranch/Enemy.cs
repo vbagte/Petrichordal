@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public int health = 1;
     public int collisiondamage = 50;
     public float speed;
-    public enum Eflypattern { none = 0, oneway = 1, hover = 2, stopngo = 3, loop = 4, squareexit = 5,rotating=6 };
+    public enum Eflypattern { none = 0, oneway = 1, hover = 2, stopngo = 3, loop = 4, squareexit = 5, rotating = 6 };
     public Eflypattern flypattern;
     public GameObject projectile;
     public GameObject explosion;
@@ -16,58 +16,64 @@ public class Enemy : MonoBehaviour
     public float fireinterval_sec;
     public float burstcooldown_sec;
     public int projectiles_per_burst;
-    public enum shottypes { none = 0, single = 1, dual = 2, triad = 3, spreader = 4, burst = 5}
+    public enum shottypes { none = 0, single = 1, dual = 2, triad = 3, spreader = 4, burst = 5 }
     public shottypes shottype;
-    public enum projectiledirections { forward=1,toward_player=2}
+    public enum projectiledirections { forward = 1, toward_player = 2 }
     public projectiledirections projectiledirection;
 
     private bool cooldown = false;
     private bool firing = true;
-    private int counter;
+    private int counter_burst;
     private int counter2 = 0;
-    private int counter_cooldown=0;
+    private int counter_cooldown = 0;
     private float elapsedseconds;
     private int counter_projectile = 0;
-    private float start=0;
+    private float start = 0;
     private bool clone = true;
+    private float frames_per_projectile;
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //elapsedseconds = framecounter / 60;
- 
+
         //Only update the object if it is within 1 tile of the camera field
-        if (transform.position.x <= 10 && transform.position.x >= -10 && transform.position.y >-4.5 && transform.position.y<=5)
+        if (transform.position.x <= 10 && transform.position.x >= -10 && transform.position.y > -4.5 && transform.position.y <= 5)
         {
-            if (start == 0)  start = Time.time;
+            if (start == 0) start = Time.time;
             elapsedseconds = Time.time - start;
             movement();
             if (firing == true) //if the gun is turned on
             {
-                
+
                 // if the weapon is cooling down,
                 if (cooldown == true)
                 {
                     //Debug.Log((float)(counter_cooldown)/60);
                     //and the cooldown timer is up, flip the cooldown flag reset the counter
-                    if ((float)counter_cooldown / 60 >= burstcooldown_sec)
+                    counter_cooldown++;
+                    if ((float)counter_cooldown / 60.0 >= burstcooldown_sec)
                     {
                         cooldown = false;
                         counter_cooldown -= (int)(burstcooldown_sec * 60);
                     }
-                        counter_cooldown++;
+
                 }
                 //if the weapon is warm and has not fired its max yet
-                else if (cooldown == false && counter_projectile < projectiles_per_burst)
+                // else if (cooldown == false && counter_projectile < projectiles_per_burst)
+                else if (cooldown == false)
                 {
-                    counter++;
-                    if (counter / 60 >= fireinterval_sec)
+
+                    counter_burst++;
+                    frames_per_projectile = fireinterval_sec / projectiles_per_burst * 60f;
+                    if (counter_burst >= (int)frames_per_projectile)
                     {
+                        counter_burst -= (int)frames_per_projectile;
                         firelaser(); //fire
                         counter_projectile++; //we fired so add one to the counter
                         if (counter_projectile == projectiles_per_burst) //if this was the final in the burst
@@ -75,11 +81,11 @@ public class Enemy : MonoBehaviour
                             counter_projectile = 0;
                             cooldown = true;
                         }
-                        counter -= (int)(fireinterval_sec * 60);
+                        //counter_burst -= (int)(fireinterval_sec * 60);
                     }
                 }
             }
-           
+
         }
         if (transform.position.x < -10.5) Destroy(gameObject);
     }
@@ -116,30 +122,30 @@ public class Enemy : MonoBehaviour
                     firing = true;
                     hover();
                 }
-                else 
+                else
                 {
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
-                   // transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
+                    // transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
                     firing = false;
                 }
                 break;
             case 4://loop
-      
+
                 if (elapsedseconds <= 1.5)
                 {
                     firing = false;
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
                     //transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
                 }
-                else if (counter2 <= 120)
+                else if (counter2 <= 60)
                 {
                     firing = true;
                     counter2++;
-                    transform.Translate(Time.deltaTime * speed / 10f,0, 0);
+                    transform.Translate(Time.deltaTime * speed / 10f, 0, 0);
                     hover();
                     //transform.localPosition += new Vector3(0, Time.deltaTime * speed / 10f);
                 }
-                else if (counter2 >= 240)
+                else if (counter2 >= 120)
                 {
                     counter2 = 0;
                 }
@@ -153,13 +159,13 @@ public class Enemy : MonoBehaviour
                 }
 
                 break;
-            case 5://squareexist
+            case 5://squareexit
                 if (elapsedseconds <= 1.5)
                 {
                     //transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
                 }
-                else if (elapsedseconds <= 4)
+                else if (elapsedseconds <= 2.5)
                 {
                     // transform.localPosition -= new Vector3(0, Time.deltaTime * speed / 10f);
                     transform.Translate(Time.deltaTime * speed / 10f, 0, 0);
@@ -174,7 +180,7 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case 6://rotating turret
-                transform.Rotate(0, 0, speed*Time.deltaTime);
+                transform.Rotate(0, 0, speed * Time.deltaTime);
                 break;
         }
 
@@ -188,14 +194,19 @@ public class Enemy : MonoBehaviour
             health -= 1;
             if (health < 1)
             {
-              
-                if( (int)flypattern==1)
-                {
-                    health = 1;
-                    GameObject CloneGO = Instantiate(gameObject, transform.parent);
-                    CloneGO.GetComponent<Transform>().Translate(0,-6f, 0);
-                    CloneGO.GetComponent<Enemy>().clone = false;
-                }
+                //// if its a straight line flyer, this is some bonus code that makes a clone of it one time behind it to add more stuff to kill
+                //if( (int)flypattern==1)
+                //{
+                //    health = 1; //reset the health to 1 so the copy will have health 1
+                //    GameObject CloneGO = Instantiate(gameObject, transform.parent); //make a clone
+                //    Debug.Log(collision.gameObject.GetComponent<Mover>().direction);
+                //    if ((int)collision.gameObject.GetComponent<Mover>().direction==2) // check if we are in a vert or horiz level
+                //    {
+                //        CloneGO.GetComponent<Transform>().Translate(0, -10f, 0); // 
+                //    } else CloneGO.GetComponent<Transform>().Translate(0, -6f, 0);
+
+                //    CloneGO.GetComponent<Enemy>().clone = false;
+                //}
                 Instantiate(explosion, transform.position, explosion.transform.rotation);
                 Destroy(gameObject);
             }
@@ -214,14 +225,14 @@ public class Enemy : MonoBehaviour
         transform.Rotate(0, 0, 180 - transform.eulerAngles.z);
         if ((int)transform.parent.GetComponent<Scroll>().direction == 2)
         {
-            transform.Translate(0, -transform.parent.GetComponent<Scroll>().layerspeed / 1000, 0);
+            transform.Translate(0, transform.parent.GetComponent<Scroll>().speed, 0);
         }
         else if ((int)transform.parent.GetComponent<Scroll>().direction == 1)
         {
-            transform.Translate(-transform.parent.GetComponent<Scroll>().layerspeed / 1000, 0, 0);
+            transform.Translate(-transform.parent.GetComponent<Scroll>().speed*Time.deltaTime, 0, 0);
         }
 
-            transform.Rotate(0, 0, -(180 - temp));
+        transform.Rotate(0, 0, -(180 - temp));
     }
     public void firelaser()
     {
@@ -267,7 +278,6 @@ public class Enemy : MonoBehaviour
                 {
                     projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
                     projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
-                    //projectileGO.GetComponent<Transform>().Rotate(0, 0, transform.rotation.z + angle3);
                     projectileGO.GetComponent<Transform>().Rotate(0, 0, angle);
              
                    angle += 45;

@@ -135,8 +135,8 @@ public class PlayerController : MonoBehaviour
             translationX *= Time.deltaTime;
             if (transform.eulerAngles.z == 90)
             {
-                 transform.Translate(-translationY, -translationX, 0);
-            } else  transform.Translate(translationX, -translationY, 0);
+                 transform.Translate(translationY, -translationX, 0);
+            } else  transform.Translate(translationX, translationY, 0);
             //if (Input.GetKey(KeyCode.D))
             //{
             //    moveX = 1;
