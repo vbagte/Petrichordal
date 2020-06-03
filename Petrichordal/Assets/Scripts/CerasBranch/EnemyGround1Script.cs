@@ -35,7 +35,7 @@ public class EnemyGround1Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= 10 && transform.position.x >= -10 && transform.position.y >= -5 && transform.position.y <= 5)
+        if (transform.position.x <= 10 && transform.position.x >= -10 && transform.position.y >= -4 && transform.position.y <= 4)
         {
             float offset = 0;
             if (movedir == leftright.left) offset = 0.5f;
@@ -97,9 +97,7 @@ public class EnemyGround1Script : MonoBehaviour
         switch ((int)shottype)
         {
             //    public enum shottypes { none=0,single=1,dual=2,triad=3,spreader=4,burst=5,shootingstar=6,}
-            
-
-            case 0: //none
+             case 0: //none
                 break;
             case 1: //single
                 projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
@@ -109,8 +107,10 @@ public class EnemyGround1Script : MonoBehaviour
             case 2: //dual
                 projectileGO = Instantiate(projectile, new Vector2(transform.position.x , transform.position.y ), transform.rotation, transform.parent.transform);
                 projectileGO.GetComponent<Transform>().Translate(-.3f, .1f, 0);
+                projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                 projectileGO = Instantiate(projectile, new Vector2(transform.position.x , transform.position.y), transform.rotation, transform.parent.transform);
                 projectileGO.GetComponent<Transform>().Translate(.3f, .1f, 0);
+                projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                 break;
             case 3: //triad
                 int angle3 = -45;
@@ -128,6 +128,7 @@ public class EnemyGround1Script : MonoBehaviour
                 {     
                     projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
                     projectileGO.GetComponent<Transform>().Rotate(0, 0, transform.rotation.z + angle);
+                    projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                     angle += 20;
                 }   
                 break;

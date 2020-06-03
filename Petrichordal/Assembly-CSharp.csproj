@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Bosses\Level_01\WardenBoss.cs" />
     <Compile Include="Assets\Scripts\ButtonScripts.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\destructibletile.cs" />
+    <Compile Include="Assets\Scripts\CerasBranch\Enemy.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\EnemyAir1.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\EnemyBullet.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\EnemyGround1Script.cs" />
@@ -106,10 +107,12 @@
     <Compile Include="Assets\Scripts\FireballMover.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\Level3BossTrigger.cs" />
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\PipeSmoke.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\SpeedChange.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
     <None Include="Assets\Addons\Tilemap\Tiles\Rule Tile\ScriptTemplates\NewCustomRuleTile.cs.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

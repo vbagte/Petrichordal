@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4905614433774543880}
   - component: {fileID: 831953859003151756}
-  - component: {fileID: 114163704668777662}
   - component: {fileID: 60860578859733512}
-  - component: {fileID: 50410317738433142}
-  - component: {fileID: 111052520707506290}
+  - component: {fileID: 6457459803422372139}
+  - component: {fileID: 111186204023361188}
   m_Layer: 0
   m_Name: flyership2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,29 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114163704668777662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5520466426730834822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a990ddb45a6cd840870097766395901, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  collisiondamage: 200
-  speed: -10
-  fireinterval: 1
-  projectile: {fileID: 6592826748695064272, guid: 31260884f1cf2ef46ba1c17c7fdfcb96,
-    type: 3}
-  explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
-    type: 3}
-  projectilespeed: 1
-  shottype: 1
-  flypattern: 5
 --- !u!60 &60860578859733512
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -116,7 +92,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -143,28 +119,33 @@ PolygonCollider2D:
       - {x: 0.234375, y: -0.34375}
       - {x: 0.28125, y: -0.171875}
       - {x: 0.40625, y: -0.125}
---- !u!50 &50410317738433142
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &6457459803422372139
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5520466426730834822}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!111 &111052520707506290
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  collisiondamage: 50
+  speed: 20
+  flypattern: 5
+  projectile: {fileID: 1966037212092209811, guid: 0ba51e043f9e54f45980edc9e3d03df3,
+    type: 3}
+  explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
+    type: 3}
+  projectilespeed: 1
+  fireinterval_sec: 1
+  burstcooldown_sec: 0.2
+  projectiles_per_burst: 2
+  shottype: 3
+  projectiledirection: 1
+--- !u!111 &111186204023361188
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

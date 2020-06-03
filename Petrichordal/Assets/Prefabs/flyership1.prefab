@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 1921324758510049605}
   - component: {fileID: 7422004204925490276}
   - component: {fileID: 60901809805001316}
-  - component: {fileID: 1086794172242730233}
-  - component: {fileID: 111758821735525204}
-  - component: {fileID: 50706853495241518}
+  - component: {fileID: 3581657929543484264}
+  - component: {fileID: 111726471830117874}
   m_Layer: 0
   m_Name: flyership1
   m_TagString: Enemy
@@ -93,7 +92,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -124,7 +123,7 @@ PolygonCollider2D:
       - {x: 0.15625, y: -0.5}
       - {x: 0.203125, y: -0.40625}
       - {x: 0.203125, y: -0.296875}
---- !u!114 &1086794172242730233
+--- !u!114 &3581657929543484264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,21 +132,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 3174861602567846044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a990ddb45a6cd840870097766395901, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  collisiondamage: 200
-  speed: -20
-  fireinterval: 1
+  health: 3
+  collisiondamage: 50
+  speed: 10
+  flypattern: 3
   projectile: {fileID: 6592826748695064272, guid: 31260884f1cf2ef46ba1c17c7fdfcb96,
     type: 3}
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
-  projectilespeed: 20
+  projectilespeed: 2
+  fireinterval_sec: 0.15
+  burstcooldown_sec: 3
+  projectiles_per_burst: 2
   shottype: 3
-  flypattern: 1
---- !u!111 &111758821735525204
+  projectiledirection: 1
+--- !u!111 &111726471830117874
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,24 +165,3 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!50 &50706853495241518
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3174861602567846044}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4

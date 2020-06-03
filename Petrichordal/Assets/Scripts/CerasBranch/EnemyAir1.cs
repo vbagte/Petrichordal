@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
+[System.Serializable]
+public class tacos
+{
+    public int dogs;
+}
+
 
 public class EnemyAir1 : MonoBehaviour
 {
-
     public int health = 1;
     public int collisiondamage = 50;
     private int counter2 = 0;
@@ -16,7 +24,7 @@ public class EnemyAir1 : MonoBehaviour
     public GameObject projectile;
     public GameObject explosion;
     public float projectilespeed;
-    public enum shottypes { none = 0, single = 1, dual = 2, triad = 3, spreader = 4, burst = 5 }
+    public enum shottypes { none = 0, single = 1, dual = 2, triad = 3, spreader = 4, burst = 5,at_player=6 }
     public shottypes shottype;
     public enum Eflypattern { none=0,oneway=1,hover=2,stopngo=3,loop=4,squareexit=5 };
     public Eflypattern flypattern;
@@ -36,8 +44,9 @@ public class EnemyAir1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= 10.5 && transform.position.x >= -10.5 && transform.position.y >= -5 && transform.position.y <= 5)
+        if (transform.position.x <= 9 && transform.position.x >= -9 && transform.position.y >= -6.5 && transform.position.y <= 4.5)
         {
+         
             counter++;
             elapsedseconds = counter / 60;
             if (elapsedseconds >= suminterval && firing ==true)
@@ -174,35 +183,34 @@ public class EnemyAir1 : MonoBehaviour
             case 1: //single
                 projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
                 projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
+                projectileGO.GetComponent<Transform>().Translate(0, .1f, 0);
                 break;
             case 2: //dual
-                projectileGO = Instantiate(projectile, new Vector2(transform.position.x + .3f, transform.position.y + .5f), transform.rotation, transform.parent.transform);
+                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
+                projectileGO.GetComponent<Transform>().Translate(-.3f, .1f, 0);
                 projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
-                projectileGO = Instantiate(projectile, new Vector2(transform.position.x - .3f, transform.position.y + .5f), transform.rotation, transform.parent.transform);
+                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
+                projectileGO.GetComponent<Transform>().Translate(.3f, .1f, 0);
                 projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                 break;
             case 3: //triad
-                int angle3 = 135;
+                int angle3 = -45;
                 for (int i = 0; i < 3; i++)
                 {
-                    GameObject temp = new GameObject();
-                    temp.transform.Rotate(transform.rotation.x, transform.rotation.y, transform.rotation.z + angle3);
-                    projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), temp.transform.rotation, transform.parent.transform);
+                    projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
                     projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
-                    angle3 -= 45;
-                    Destroy(temp);
+                    projectileGO.GetComponent<Transform>().Rotate(0, 0, transform.rotation.z + angle3);
+                    angle3 += 45;
                 }
                 break;
             case 4: //spreader
-                int angle = 140;
+                int angle = -50;
                 for (int i = 0; i < 6; i++)
                 {
-                    GameObject temp = new GameObject();
-                    temp.transform.Rotate(transform.rotation.x, transform.rotation.y, transform.rotation.z + angle);
-                    projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y ), temp.transform.rotation, transform.parent.transform);
+                    projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
                     projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
-                    angle -= 20;
-                    Destroy(temp);
+                    projectileGO.GetComponent<Transform>().Rotate(0, 0, transform.rotation.z + angle);
+                    angle += 20;
                 }
                 break;
             case 5: //burst        
@@ -218,6 +226,20 @@ public class EnemyAir1 : MonoBehaviour
 
                 }
                 break;
+            case 6:
+                Transform target;
+                if (GameObject.FindGameObjectWithTag("Player") != null)
+                {
+                      
+                    target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+                    Vector3 targetDir = (transform.position - target.position) ;
+                    float angle5 = 90+Mathf.Atan2(targetDir.y,targetDir.x) * 180 / Mathf.PI;
+                    projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
+                    projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
+                    projectileGO.GetComponent<Transform>().Rotate(0, 0,  angle5-transform.eulerAngles.z);
+                }
+                break;
+
         }
 
     }

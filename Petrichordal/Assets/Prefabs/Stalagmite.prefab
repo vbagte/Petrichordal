@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c499f7668fe4145b39e4a74437d0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: 2
   speed: -3
 --- !u!114 &114940757445039090
 MonoBehaviour:
@@ -115,7 +116,6 @@ MonoBehaviour:
     type: 3}
   otherExplosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
-  playerIFramesTime: 0.5
 --- !u!114 &114489230161712990
 MonoBehaviour:
   m_ObjectHideFlags: 0
