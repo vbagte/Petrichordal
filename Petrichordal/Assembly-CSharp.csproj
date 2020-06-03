@@ -107,10 +107,12 @@
     <Compile Include="Assets\Scripts\FireballMover.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\Level3BossTrigger.cs" />
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\PipeSmoke.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\SpeedChange.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
     <None Include="Assets\Addons\Tilemap\Tiles\Rule Tile\ScriptTemplates\NewCustomRuleTile.cs.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

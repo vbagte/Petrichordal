@@ -100,12 +100,17 @@ PrefabInstance:
     - target: {fileID: 4163659538449280611, guid: 31260884f1cf2ef46ba1c17c7fdfcb96,
         type: 3}
       propertyPath: m_Radius
-      value: 0.25
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 6592826748695064272, guid: 31260884f1cf2ef46ba1c17c7fdfcb96,
         type: 3}
       propertyPath: m_Name
       value: PowPewGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203933767955947738, guid: 31260884f1cf2ef46ba1c17c7fdfcb96,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31260884f1cf2ef46ba1c17c7fdfcb96, type: 3}

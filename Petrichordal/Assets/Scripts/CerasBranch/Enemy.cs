@@ -30,10 +30,14 @@ public class Enemy : MonoBehaviour
     private int counter_projectile = 0;
     private float start=0;
     private bool clone = true;
+    private Health playerHealth;
     // Start is called before the first frame update
     void Start()
     {
-       
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        }
     }
 
     // Update is called once per frame
@@ -180,9 +184,9 @@ public class Enemy : MonoBehaviour
 
 
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerShot")
+        if (collision.tag == "PlayerShot")
         {
             Destroy(collision.gameObject);
             health -= 1;
@@ -199,15 +203,46 @@ public class Enemy : MonoBehaviour
                 Instantiate(explosion, transform.position, explosion.transform.rotation);
                 Destroy(gameObject);
             }
+            GetComponent<Animation>().Play();
         }
+        if (collision.tag == "TriShot")
+        {
+            if (transform.position.x <= 9.5f)
+            {
+                health -= 3;
+                if (health < 1)
+                {
+
+                    if ((int)flypattern == 1)
+                    {
+                        health = 1;
+                        GameObject CloneGO = Instantiate(gameObject, transform.parent);
+                        CloneGO.GetComponent<Transform>().Translate(0, -6f, 0);
+                        CloneGO.GetComponent<Enemy>().clone = false;
+                    }
+                    Instantiate(explosion, transform.position, explosion.transform.rotation);
+                    Destroy(gameObject);
+                }
+                GetComponent<Animation>().Play();
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         if (collision.gameObject.tag == "Player")
         {
             Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(gameObject);
             collision.gameObject.GetComponent<Health>().health -= collisiondamage;
+            if (playerHealth.health <= 0)
+            {
+                LifeLost();
+            }
+            collision.gameObject.GetComponent<Animation>().Play("Player_Hurt");
         }
-
     }
+
     public void hover()
     {
         float temp = transform.eulerAngles.z;
@@ -295,4 +330,9 @@ public class Enemy : MonoBehaviour
         }
 
     }
+    public void LifeLost()
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().LifeLost();
+    }
+
 }

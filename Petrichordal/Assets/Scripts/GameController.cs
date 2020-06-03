@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
     private GameObject[] explosionSpots;
     private Health playerHealth;
     private bool bossDead;
-    private bool exitActive = false;
+    public bool exitActive = false;
     private Vector3 exitSpot;
 
     //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
@@ -121,8 +121,8 @@ public class GameController : MonoBehaviour
         //if player leaves screen after defeating boss
         if (DestroyByBoundary.playerLeft == true)
         {
-            bossDead = false;
-            exitActive = false;            
+            bossDead = true;
+            //exitActive = true;            
         }
     }
 
@@ -167,8 +167,8 @@ public class GameController : MonoBehaviour
 
     public void NextLevelButton()
     {
-        fadePanel.SetActive(true);
-        StartCoroutine(LevelChange(2));
+        //fadePanel.SetActive(true);
+        StartCoroutine(LevelChange(0));
     }
 
     public IEnumerator LevelChange(float time)
