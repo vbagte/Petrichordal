@@ -13,8 +13,9 @@ public class ButtonScripts : MonoBehaviour
 
     public void StartGameButton()
     {
-        fade.SetActive(true);
-        StartCoroutine(StartGame());
+        //fade.SetActive(true);
+        //StartCoroutine(StartGame());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Resume()
