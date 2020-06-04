@@ -12321,6 +12321,8 @@ MonoBehaviour:
     readyText: {fileID: 1922196578}
     goText: {fileID: 568403580}
     backgrounds: []
+  foreground: {fileID: 0}
+  foregroundSpeed: 0
 --- !u!4 &272971958
 Transform:
   m_ObjectHideFlags: 0
