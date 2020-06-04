@@ -22,6 +22,7 @@ public class Scroll : MonoBehaviour
     {
         //transform.Translate(-layerspeed / 1000, 0, 0);
 
+
     }
     void Update()
     {
@@ -42,7 +43,7 @@ public class Scroll : MonoBehaviour
         switch ((int)direction)
         {
             case 1:
-                transform.Translate(-speed  * Time.deltaTime, 0, 0);
+                transform.Translate(-speed * Time.deltaTime, 0, 0);
                 // transform.Rotate(0, 0, transform.eulerAngles.z);
                 break;
             case 2:
@@ -50,6 +51,7 @@ public class Scroll : MonoBehaviour
                 //transform.Rotate(0, 0, transform.eulerAngles.z);
                 break;
         }
+
 
     }
 }

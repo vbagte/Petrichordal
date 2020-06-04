@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2396212770519247424}
   - component: {fileID: 114000205796123794}
   - component: {fileID: 50563803470155244}
+  - component: {fileID: 111051577806472176}
   m_Layer: 0
   m_Name: ground_enemy
   m_TagString: Untagged
@@ -107,22 +108,27 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.328125, y: -0.125}
-      - {x: 0.28125, y: 0.046875}
-      - {x: 0.1875, y: 0.09375}
-      - {x: 0.109375, y: -0.046875}
-      - {x: 0.0625, y: 0.09375}
-      - {x: 0.03125, y: 0.109375}
-      - {x: -0.03125, y: 0.109375}
-      - {x: -0.109375, y: -0.078125}
-      - {x: -0.140625, y: 0.046875}
-      - {x: -0.234375, y: 0.078125}
-      - {x: -0.375, y: -0.28125}
-      - {x: -0.5, y: -0.359375}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: -0.390625}
-      - {x: 0.359375, y: -0.28125}
+    - - {x: 0.5, y: -0.09375}
+      - {x: 0.46875, y: -0.0625}
+      - {x: 0.5, y: 0.0625}
+      - {x: 0.5, y: 0.25}
+      - {x: 0.375, y: 0.3125}
+      - {x: 0.265625, y: 0.484375}
+      - {x: 0.21875, y: 0.5}
+      - {x: 0.125, y: 0.5}
+      - {x: 0.09375, y: 0.46875}
+      - {x: -0.03125, y: 0.5}
+      - {x: -0.21875, y: 0.5}
+      - {x: -0.25, y: 0.46875}
+      - {x: -0.40625, y: 0.28125}
+      - {x: -0.5, y: 0.25}
+      - {x: -0.5, y: -0.28125}
+      - {x: -0.265625, y: -0.390625}
+      - {x: -0.234375, y: -0.5}
+      - {x: 0.234375, y: -0.5}
+      - {x: 0.25, y: -0.46875}
+      - {x: 0.390625, y: -0.296875}
+      - {x: 0.5, y: -0.25}
 --- !u!114 &114000205796123794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +175,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!111 &111051577806472176
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8795379220773587826}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

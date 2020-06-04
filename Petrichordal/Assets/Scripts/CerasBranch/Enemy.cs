@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
             }
 
         }
-        if (transform.position.x < -10.5) Destroy(gameObject);
+     //   if (transform.position.x < -10.5) Destroy(gameObject);
     }
     public void movement() //    public enum Eflypattern { none=0,oneway=1,hover=2,stopngo=3,loop=4,squareexit=5 };
     {
@@ -137,7 +137,7 @@ public class Enemy : MonoBehaviour
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
                     //transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
                 }
-                else if (counter2 <= 60)
+                else if (counter2 <= 90)
                 {
                     firing = true;
                     counter2++;
@@ -145,7 +145,7 @@ public class Enemy : MonoBehaviour
                     hover();
                     //transform.localPosition += new Vector3(0, Time.deltaTime * speed / 10f);
                 }
-                else if (counter2 >= 120)
+                else if (counter2 >=180)
                 {
                     counter2 = 0;
                 }
@@ -162,17 +162,20 @@ public class Enemy : MonoBehaviour
             case 5://squareexit
                 if (elapsedseconds <= 1.5)
                 {
+                    firing = false;
                     //transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
                 }
                 else if (elapsedseconds <= 2.5)
                 {
+                    firing = true;
                     // transform.localPosition -= new Vector3(0, Time.deltaTime * speed / 10f);
                     transform.Translate(Time.deltaTime * speed / 10f, 0, 0);
                     hover();
                 }
                 else
                 {
+                    firing = false;
                     Destroy(gameObject, 4);
                     transform.Translate(0, -Time.deltaTime * speed / 10f, 0);
                     hover();
@@ -255,19 +258,19 @@ public class Enemy : MonoBehaviour
             case 0: //none
                 break;
             case 1: //single
-                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
+                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
                 projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                 projectileGO.GetComponent<Transform>().Rotate(0, 0, angle);
                 projectileGO.GetComponent<Transform>().Translate(0, .3f, 0);
                 break;
             case 2: //dual
-                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
+                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
 
                 projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                 projectileGO.GetComponent<Transform>().Rotate(0, 0, angle);
                 projectileGO.GetComponent<Transform>().Translate(-.3f, .3f, 0);
 
-                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
+                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
                 projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                 projectileGO.GetComponent<Transform>().Rotate(0, 0, angle);
                 projectileGO.GetComponent<Transform>().Translate(.3f, .3f, 0);
@@ -276,18 +279,17 @@ public class Enemy : MonoBehaviour
                 angle -= 45;
                 for (int i = 0; i < 3; i++)
                 {
-                    projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
+                    projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
                     projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                     projectileGO.GetComponent<Transform>().Rotate(0, 0, angle);
-             
-                   angle += 45;
+                    angle += 45;
                 }
                 break;
             case 4: //spreader
                  angle-= 50;
                 for (int i = 0; i < 6; i++)
                 {
-                    projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
+                    projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
                     projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                     projectileGO.GetComponent<Transform>().Rotate(0, 0, angle);
                     angle += 20;
@@ -296,7 +298,7 @@ public class Enemy : MonoBehaviour
             case 5: //burst        
                 for (int i = 0; i < 12; i++)
                 {
-                     projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform.parent.transform);
+                     projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
                     projectileGO.GetComponent<EnemyBullet>().speed = projectilespeed;
                     projectileGO.GetComponent<Transform>().Rotate(0, 0, angle);
                     angle += 30;

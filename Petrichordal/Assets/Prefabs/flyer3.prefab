@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 60790853491892800}
   - component: {fileID: 7386362056095691503}
   - component: {fileID: 50284981469536502}
+  - component: {fileID: 111679437515927958}
   m_Layer: 0
   m_Name: flyer3
   m_TagString: Enemy
@@ -163,3 +164,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!111 &111679437515927958
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3666817188308502989}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

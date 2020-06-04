@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 60901809805001316}
   - component: {fileID: 3581657929543484264}
   - component: {fileID: 50254598833008320}
+  - component: {fileID: 111574789905764336}
   m_Layer: 0
   m_Name: flyership1
   m_TagString: Enemy
@@ -170,3 +171,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!111 &111574789905764336
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3174861602567846044}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
