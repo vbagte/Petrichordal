@@ -14,30 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114363960347869708}
-  - {fileID: 114071872959401210}
-  - {fileID: 114208608718063078}
-  - {fileID: 114732784804163634}
-  - {fileID: 114293954310757584}
-  - {fileID: 114669525174069730}
-  - {fileID: 114309483221328294}
-  - {fileID: 114496442605551548}
-  - {fileID: 114167528358645558}
-  - {fileID: 114099680498202958}
-  - {fileID: 114773249152634378}
-  - {fileID: 114322125030100900}
-  - {fileID: 114005416586547886}
-  - {fileID: 114593501111959268}
+  - {fileID: 114142682333805578}
+  - {fileID: 114492908873799084}
+  - {fileID: 114404801405874872}
+  - {fileID: 114568404331664718}
+  - {fileID: 114493894420835480}
+  - {fileID: 114104158208098866}
+  - {fileID: 114163407906547488}
+  - {fileID: 114266574735086006}
+  - {fileID: 114484214414747512}
+  - {fileID: 114551455265177308}
+  - {fileID: 114670208988318442}
+  - {fileID: 114219641574379096}
+  - {fileID: 114470921966335470}
   EditorEvents:
   - {fileID: 114390078777057734}
   - {fileID: 114715897748961910}
   EditorParameters:
-  - {fileID: 114809212313376564}
-  - {fileID: 114906207533431082}
+  - {fileID: 114075229838766620}
+  - {fileID: 114920793593630314}
   MasterBanks:
-  - {fileID: 114208608718063078}
+  - {fileID: 114492908873799084}
   StringsBanks:
   - {fileID: 114363960347869708}
-  stringsBankWriteTime: 637268188537891576
+  stringsBankWriteTime: 637267799540000000
   cacheVersion: 3
 --- !u!114 &114004168200369336
 MonoBehaviour:
@@ -75,60 +75,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114004928223343292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv01.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv01.bank
-  SubDir: 
-  lastModified: 637267100965900126
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &114005416586547886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv05.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv05.bank
-  SubDir: 
-  lastModified: 637268188545336332
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114008127307023826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv04.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv04.bank
-  SubDir: 
-  lastModified: 637261969315063218
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114013572046713332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,42 +93,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114015045780964762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv01.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv01.bank
-  SubDir: 
-  lastModified: 637267100966437447
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &114017990360637278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv01.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv01.bank
-  SubDir: 
-  lastModified: 637261969315021866
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114023837892089258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,23 +128,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114025053071415262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: fade out
-  m_EditorClassIdentifier: 
-  Name: fade out
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 0
 --- !u!114 &114027572287977992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +145,7 @@ MonoBehaviour:
   lastModified: 637267100965750236
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114030933160560648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,24 +291,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114056566881556758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Game.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Game.bank
-  SubDir: 
-  lastModified: 637261969314891849
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114060835704922674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +326,7 @@ MonoBehaviour:
   lastModified: 637267100966477415
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114071101044916872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,7 +345,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114071872959401210
+--- !u!114 &114075229838766620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,32 +354,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Game.bank
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: fade out
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Game.bank
-  SubDir: 
-  lastModified: 637268188537851593
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114072901981113572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv04.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv04.bank
-  SubDir: 
-  lastModified: 637261969315171864
-  LoadResult: 0
-  FileSizes: []
+  Name: fade out
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &114094195011172182
 MonoBehaviour:
@@ -524,24 +380,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114094688196581440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv05.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv05.bank
-  SubDir: 
-  lastModified: 637261969315071851
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114097510939504540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +416,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114099680498202958
+--- !u!114 &114104158208098866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -588,11 +426,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv02.bank
+  m_Name: bank:/music_lv04.bank
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv02.bank
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv04.bank
   SubDir: 
-  lastModified: 637268188545266373
+  lastModified: 637267799540000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -670,7 +508,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114144992541244216
+--- !u!114 &114142682333805578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -680,11 +518,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv05.bank
+  m_Name: bank:/Game.bank
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv05.bank
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/Game.bank
   SubDir: 
-  lastModified: 637261969315191844
+  lastModified: 637267799540000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -723,7 +561,7 @@ MonoBehaviour:
   lastModified: 637267100966387473
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114161628649376530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,6 +580,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114163407906547488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/music_lv05.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv05.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114163637311561132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,24 +616,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114164541837133096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv05.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv05.bank
-  SubDir: 
-  lastModified: 637261969315071851
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114165835484222254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,24 +634,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114167528358645558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv01.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv01.bank
-  SubDir: 
-  lastModified: 637268188544127173
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114181430035012488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,59 +691,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114184409915758260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv03.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv03.bank
-  SubDir: 
-  lastModified: 637267100966457428
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &114184564480708106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv03.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv03.bank
-  SubDir: 
-  lastModified: 637261969315051866
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114185258776770864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: MusicBarGlobal
-  m_EditorClassIdentifier: 
-  Name: MusicBarGlobal
-  Min: 1
-  Max: 17
-  Default: 1
-  Exists: 1
 --- !u!114 &114192182386655348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,24 +744,6 @@ MonoBehaviour:
   Max: 17
   Default: 1
   Exists: 0
---- !u!114 &114208608718063078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637268188537871575
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114217736048062818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1030,6 +779,24 @@ MonoBehaviour:
   lastModified: 637267100966437447
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &114219641574379096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sfx_lv05.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv05.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &114220126307357176
 MonoBehaviour:
@@ -1046,24 +813,6 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv02.bank
   SubDir: 
   lastModified: 637255045957630990
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114221314213878830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv01.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv01.bank
-  SubDir: 
-  lastModified: 637261969315021866
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1085,42 +834,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114235578193588146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv04.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv04.bank
-  SubDir: 
-  lastModified: 637261969315063218
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114247490725667786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv02.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv02.bank
-  SubDir: 
-  lastModified: 637261969315031856
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114249260360978974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1156,24 +869,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &114266068898423826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv01.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv01.bank
-  SubDir: 
-  lastModified: 637261969315141886
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114266570831980870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +887,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114266574735086006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sfx_lv01.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv01.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114272648435402974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,24 +962,6 @@ MonoBehaviour:
   - Name: 
     Value: 470
   Exists: 0
---- !u!114 &114293954310757584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv02.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv02.bank
-  SubDir: 
-  lastModified: 637268188542738153
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114297096049900138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,7 +978,7 @@ MonoBehaviour:
   Min: 1
   Max: 17
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &114298721117618354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,7 +1052,7 @@ MonoBehaviour:
   lastModified: 637267100965910125
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114306893313226014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,24 +1074,6 @@ MonoBehaviour:
   - Name: 
     Value: 1346
   Exists: 0
---- !u!114 &114309483221328294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv04.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv04.bank
-  SubDir: 
-  lastModified: 637268188542768131
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114317301263020898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,24 +1095,6 @@ MonoBehaviour:
   - Name: 
     Value: 470
   Exists: 0
---- !u!114 &114322125030100900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv04.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv04.bank
-  SubDir: 
-  lastModified: 637268188545306344
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114336611885803142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1578,7 +1237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637268188537891576
+  lastModified: 637267799540000000
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -1672,7 +1331,7 @@ MonoBehaviour:
   lastModified: 637267100966487405
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114390078777057734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1688,8 +1347,7 @@ MonoBehaviour:
   Path: event:/Music/lvl1/main
   guid: 405274464f40ea4fbde6bd674110e463
   Banks:
-  - {fileID: 114221314213878830}
-  - {fileID: 114732784804163634}
+  - {fileID: 114404801405874872}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1697,24 +1355,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 42048
---- !u!114 &114390448457609562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv04.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv04.bank
-  SubDir: 
-  lastModified: 637267100965930107
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
 --- !u!114 &114398876462342914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,24 +1373,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114399763618961546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv02.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv02.bank
-  SubDir: 
-  lastModified: 637261969315151875
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114402324529743406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,6 +1394,24 @@ MonoBehaviour:
   - Name: 
     Value: 470
   Exists: 0
+--- !u!114 &114404801405874872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/music_lv01.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv01.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114404944403755364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,24 +1469,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114430455629440982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv03.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv03.bank
-  SubDir: 
-  lastModified: 637261969315161864
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114445114131124976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1880,24 +1502,6 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv05.bank
   SubDir: 
   lastModified: 637254978991593787
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &114446919046831200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/UI.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/UI.bank
-  SubDir: 
-  lastModified: 637267100966497400
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -1937,6 +1541,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114470921966335470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/UI.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114472713101534246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,6 +1595,60 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114484214414747512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sfx_lv02.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv02.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &114492908873799084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &114493894420835480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/music_lv03.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv03.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114495607903629428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1991,24 +1667,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114496442605551548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv05.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv05.bank
-  SubDir: 
-  lastModified: 637268188542788116
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114502215592356502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2045,23 +1703,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114546714083933552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: fade out
-  m_EditorClassIdentifier: 
-  Name: fade out
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &114547032272823002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2098,6 +1739,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114551455265177308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sfx_lv03.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv03.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114554142000372378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,24 +1775,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114557390823899986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Game.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Game.bank
-  SubDir: 
-  lastModified: 637261969314891849
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114558466830668910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,6 +1831,24 @@ MonoBehaviour:
   - Name: 
     Value: 1436
   Exists: 1
+--- !u!114 &114568404331664718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/music_lv02.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv02.bank
+  SubDir: 
+  lastModified: 637267799540000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114576944904527256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2244,24 +1903,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114585863347772422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv05.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv05.bank
-  SubDir: 
-  lastModified: 637267100966387473
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
 --- !u!114 &114587392067158038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2298,24 +1939,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114593501111959268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/UI.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/UI.bank
-  SubDir: 
-  lastModified: 637268188537931532
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114595257709653508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2333,24 +1956,6 @@ MonoBehaviour:
   Max: 17
   Default: 1
   Exists: 0
---- !u!114 &114600414400885076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv05.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv05.bank
-  SubDir: 
-  lastModified: 637261969315191844
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114617773803671006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2386,42 +1991,6 @@ MonoBehaviour:
   Max: 17
   Default: 1
   Exists: 0
---- !u!114 &114626298018147720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv02.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv02.bank
-  SubDir: 
-  lastModified: 637261969315151875
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114647570806514372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv03.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv03.bank
-  SubDir: 
-  lastModified: 637261969315051866
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114649478159317888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,7 +2105,7 @@ MonoBehaviour:
   - Name: 
     Value: 470
   Exists: 0
---- !u!114 &114669525174069730
+--- !u!114 &114670208988318442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2546,11 +2115,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv03.bank
+  m_Name: bank:/sfx_lv04.bank
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv03.bank
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv04.bank
   SubDir: 
-  lastModified: 637268188542758138
+  lastModified: 637267799540000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -2574,96 +2143,6 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 580096
-  Exists: 0
---- !u!114 &114681732698452182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv04.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv04.bank
-  SubDir: 
-  lastModified: 637267100966477415
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &114682318662648492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637261969314911847
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114682793714858916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv02.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv02.bank
-  SubDir: 
-  lastModified: 637267100966447433
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &114690608483982794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv01.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv01.bank
-  SubDir: 
-  lastModified: 637261969315141886
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114693172113035184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Game.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Game.bank
-  SubDir: 
-  lastModified: 637267100965750236
-  LoadResult: 0
-  FileSizes: []
   Exists: 0
 --- !u!114 &114696060385343354
 MonoBehaviour:
@@ -2754,24 +2233,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114703469315733332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv03.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv03.bank
-  SubDir: 
-  lastModified: 637267100965920114
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
 --- !u!114 &114705815303379966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2857,8 +2318,7 @@ MonoBehaviour:
   Path: event:/Game/lv01/waveform abilities/main/saw
   guid: 0898aa32da78874fafd59b020f20a293
   Banks:
-  - {fileID: 114266068898423826}
-  - {fileID: 114167528358645558}
+  - {fileID: 114266574735086006}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2920,42 +2380,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114732784804163634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv01.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv01.bank
-  SubDir: 
-  lastModified: 637268188542718164
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114736967226727206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637267100965760224
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
 --- !u!114 &114737629063451322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2974,24 +2398,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114739613487578704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/UI.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/UI.bank
-  SubDir: 
-  lastModified: 637261969314941934
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114746634644810010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3007,24 +2413,6 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Soundbanks/Desktop/Game.bank
   SubDir: 
   lastModified: 637255045956741615
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114749786271065248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv02.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv02.bank
-  SubDir: 
-  lastModified: 637261969315031856
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -3100,41 +2488,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114773249152634378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv03.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv03.bank
-  SubDir: 
-  lastModified: 637268188545296353
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114780961734206852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: MusicBarGlobal
-  m_EditorClassIdentifier: 
-  Name: MusicBarGlobal
-  Min: 1
-  Max: 17
-  Default: 1
-  Exists: 0
 --- !u!114 &114784407914911996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3210,7 +2563,7 @@ MonoBehaviour:
   lastModified: 637267100965920114
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114802350374684948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3270,41 +2623,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114809212313376564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: fade out
-  m_EditorClassIdentifier: 
-  Name: fade out
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
---- !u!114 &114821169785420736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv04.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv04.bank
-  SubDir: 
-  lastModified: 637261969315171864
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114826732257719772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3340,7 +2658,7 @@ MonoBehaviour:
   lastModified: 637267100965760224
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114832614250099446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3375,42 +2693,6 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
---- !u!114 &114838631607719694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/music_lv02.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/music_lv02.bank
-  SubDir: 
-  lastModified: 637267100965910125
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &114842964237283822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv05.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv05.bank
-  SubDir: 
-  lastModified: 637267100966487405
-  LoadResult: 0
-  FileSizes: []
   Exists: 0
 --- !u!114 &114852284974233394
 MonoBehaviour:
@@ -3501,7 +2783,7 @@ MonoBehaviour:
   lastModified: 637267100965900126
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114865791501987202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3538,24 +2820,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114870910913926390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/UI.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/UI.bank
-  SubDir: 
-  lastModified: 637261969314941934
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114871918640750358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3590,7 +2854,7 @@ MonoBehaviour:
   lastModified: 637267100966497400
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114875688142576846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3680,8 +2944,8 @@ MonoBehaviour:
   lastModified: 637267100965930107
   LoadResult: 0
   FileSizes: []
-  Exists: 1
---- !u!114 &114906207533431082
+  Exists: 0
+--- !u!114 &114920793593630314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3697,24 +2961,6 @@ MonoBehaviour:
   Min: 1
   Max: 17
   Default: 1
-  Exists: 1
---- !u!114 &114921401627344062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfx_lv03.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/sfx_lv03.bank
-  SubDir: 
-  lastModified: 637261969315161864
-  LoadResult: 0
-  FileSizes: []
   Exists: 1
 --- !u!114 &114925320077184570
 MonoBehaviour:
@@ -3734,41 +2980,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114930146859773308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637261969314911847
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114931118446085610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: fade out
-  m_EditorClassIdentifier: 
-  Name: fade out
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &114934752766022390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3786,7 +2997,7 @@ MonoBehaviour:
   lastModified: 637267100966447433
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114940493528902968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3822,7 +3033,7 @@ MonoBehaviour:
   lastModified: 637267100966457428
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114971154545818002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3880,23 +3091,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114986486075267252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: MusicBarGlobal
-  m_EditorClassIdentifier: 
-  Name: MusicBarGlobal
-  Min: 1
-  Max: 17
-  Default: 1
-  Exists: 1
 --- !u!114 &114988936294830296
 MonoBehaviour:
   m_ObjectHideFlags: 0
