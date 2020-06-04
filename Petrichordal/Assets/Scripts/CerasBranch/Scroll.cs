@@ -28,11 +28,11 @@ public class Scroll : MonoBehaviour
         switch ((int)direction)
         {
             case 1:
-                transform.Translate(-layerspeed / 1000, 0, 0);
+                transform.Translate(-layerspeed * Time.deltaTime, 0, 0);
                // transform.Rotate(0, 0, transform.eulerAngles.z);
                 break;
             case 2:
-                transform.Translate(0, -layerspeed / 1000, 0);
+                transform.Translate(0, -layerspeed * Time.deltaTime, 0);
                 //transform.Rotate(0, 0, transform.eulerAngles.z);
                 break;
         }

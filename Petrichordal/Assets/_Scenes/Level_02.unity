@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8592c43e8e8f9c4ca3c0fb6601a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerspeed: 1
+  layerspeed: 0.1
   direction: 1
 --- !u!1001 &39851798
 PrefabInstance:
@@ -11821,7 +11821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8592c43e8e8f9c4ca3c0fb6601a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerspeed: 2
+  layerspeed: 0.2
   direction: 1
 --- !u!1001 &207353994
 PrefabInstance:
@@ -12321,7 +12321,7 @@ MonoBehaviour:
     readyText: {fileID: 1922196578}
     goText: {fileID: 568403580}
     backgrounds: []
-  foreground: {fileID: 0}
+  foreground: {fileID: 2028642984}
   foregroundSpeed: 0
 --- !u!4 &272971958
 Transform:
@@ -35870,12 +35870,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028642984}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8592c43e8e8f9c4ca3c0fb6601a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerspeed: 16
+  layerspeed: 1
   direction: 1
 --- !u!114 &2028642989
 MonoBehaviour:
@@ -35884,7 +35884,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028642984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42c499f7668fe4145b39e4a74437d0c0, type: 3}
   m_Name: 
