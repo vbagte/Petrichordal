@@ -80,9 +80,7 @@
     <Compile Include="Assets\Addons\Tilemap\Tiles\Rule Tile\Scripts\RuleTile.cs" />
     <Compile Include="Assets\Addons\Tilemap\Tiles\Terrain Tile\Scripts\TerrainTile.cs" />
     <Compile Include="Assets\Addons\Tilemap\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
-    <Compile Include="Assets\EventSandWorm.cs" />
     <Compile Include="Assets\RenderQueue.cs" />
-    <Compile Include="Assets\SandWormHazard.cs" />
     <Compile Include="Assets\Scripts\_Level_Managers\Lvl1_Manager.cs" />
     <Compile Include="Assets\Scripts\_Level_Managers\Lvl2_Manager.cs" />
     <Compile Include="Assets\Scripts\Audio Scripts\BeatSystem.cs" />
@@ -122,7 +120,6 @@
     <Compile Include="Assets\Scripts\SpeedChange.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
     <Compile Include="Assets\SnakeBoss.cs" />
-    <Compile Include="Assets\wiggler.cs" />
     <None Include="Assets\Addons\Tilemap\Tiles\Rule Tile\ScriptTemplates\NewCustomRuleTile.cs.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

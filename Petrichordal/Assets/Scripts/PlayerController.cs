@@ -329,9 +329,12 @@ public class PlayerController : MonoBehaviour
 
     public void LifeLost()
     {
-        livesIcon[lives - 1].SetActive(false);
-        lives -= 1;
-        if (lives <= 0)
+        if (lives > 0)
+        {
+            livesIcon[lives - 1].SetActive(false);
+            lives -= 1;
+        }
+        else
         {
             GameObject.Find("GameController").GetComponent<GameController>().PlayerDeath();
         }

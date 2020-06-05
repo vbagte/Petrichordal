@@ -31,10 +31,15 @@ public class Enemy : MonoBehaviour
     private float start = 0;
     private bool clone = true;
     private float frames_per_projectile;
+    private bool inBoundary = false;
+    private Health playerHealth;
     // Start is called before the first frame update
     void Start()
     {
-
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        }
     }
 
     // Update is called once per frame
@@ -48,6 +53,7 @@ public class Enemy : MonoBehaviour
             if (start == 0) start = Time.time;
             elapsedseconds = Time.time - start;
             movement();
+            inBoundary = true;
             if (firing == true) //if the gun is turned on
             {
 
@@ -189,39 +195,45 @@ public class Enemy : MonoBehaviour
 
 
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "PlayerShot")
+        if (inBoundary)
         {
-            Destroy(collision.gameObject);
-            health -= 1;
-            if (health < 1)
+            if (other.gameObject.tag == "PlayerShot")
             {
-                //// if its a straight line flyer, this is some bonus code that makes a clone of it one time behind it to add more stuff to kill
-                //if( (int)flypattern==1)
-                //{
-                //    health = 1; //reset the health to 1 so the copy will have health 1
-                //    GameObject CloneGO = Instantiate(gameObject, transform.parent); //make a clone
-                //    Debug.Log(collision.gameObject.GetComponent<Mover>().direction);
-                //    if ((int)collision.gameObject.GetComponent<Mover>().direction==2) // check if we are in a vert or horiz level
-                //    {
-                //        CloneGO.GetComponent<Transform>().Translate(0, -10f, 0); // 
-                //    } else CloneGO.GetComponent<Transform>().Translate(0, -6f, 0);
-
-                //    CloneGO.GetComponent<Enemy>().clone = false;
-                //}
-                Instantiate(explosion, transform.position, explosion.transform.rotation);
+                Destroy(other.gameObject);
+                health -= 1;
+                if (health < 1)
+                {
+                    Instantiate(explosion, transform.position, explosion.transform.rotation);
+                    Destroy(gameObject);
+                }
+                this.GetComponent<Animation>().Play("Enemy_Hurt");
+            }
+            if (other.gameObject.tag == "TriShot")
+            {
+                health -= 5;
+                if (health < 1)
+                {
+                    Instantiate(explosion, transform.position, explosion.transform.rotation);
+                    Destroy(gameObject);
+                }
+                this.GetComponent<Animation>().Play("Enemy_Hurt");
+            }
+            if (other.gameObject.tag == "Player")
+            {
                 Destroy(gameObject);
+                Instantiate(explosion, transform.position, explosion.transform.rotation);
+                other.gameObject.GetComponent<Health>().health -= collisiondamage;
+                if (playerHealth.health <= 0)
+                {
+                    LifeLost();
+                }
+                other.gameObject.GetComponent<Animation>().Play("Player_Hurt");
             }
         }
-        if (collision.gameObject.tag == "Player")
-        {
-            Instantiate(explosion, transform.position, explosion.transform.rotation);
-            Destroy(gameObject);
-            collision.gameObject.GetComponent<Health>().health -= collisiondamage;
-        }
-
     }
+
     public void hover()
     {
         float temp = transform.eulerAngles.z;
@@ -307,4 +319,9 @@ public class Enemy : MonoBehaviour
         }
 
     }
+    public void LifeLost()
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().LifeLost();
+    }
+
 }

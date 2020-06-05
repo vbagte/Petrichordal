@@ -5,7 +5,7 @@ using UnityEngine;
 public class Snake_Cannons : MonoBehaviour
 {
 
-    Vector3 difference = 
+    //Vector3 difference = 
     // Start is called before the first frame update
     void Start()
     {

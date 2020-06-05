@@ -50,6 +50,10 @@ public class DestroyByContact : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        if (this.CompareTag("Land") && other.CompareTag("PlayerShot"))
+        {
+            Destroy(other.gameObject);
+        }
         if (this.CompareTag("Enemy") && other.CompareTag("TriShot"))
         {
             this.GetComponent<Animation>().Play("Enemy_Hurt");
