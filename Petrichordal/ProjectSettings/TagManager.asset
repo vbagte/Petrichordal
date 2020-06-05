@@ -16,6 +16,8 @@ TagManager:
   - BossPart
   - TriShot
   - Foreground
+  - Shield
+  - Land
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     public GameObject blockPanel;
     public GameObject nextLevelPanel;
     public GameObject fadePanel;
+    public GameObject foreground;
     public bool paused = false;
 
     private GameObject player;
@@ -30,7 +31,7 @@ public class GameController : MonoBehaviour
     private GameObject[] explosionSpots;
     private Health playerHealth;
     private bool bossDead;
-    private bool exitActive = false;
+    public bool exitActive = false;
     private Vector3 exitSpot;
 
     //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
@@ -121,8 +122,8 @@ public class GameController : MonoBehaviour
         //if player leaves screen after defeating boss
         if (DestroyByBoundary.playerLeft == true)
         {
-            bossDead = false;
-            exitActive = false;            
+            bossDead = true;
+            //exitActive = true;            
         }
     }
 
@@ -134,7 +135,7 @@ public class GameController : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().HealthUpdate();
             player.GetComponent<PlayerController>().enabled = false;
-            player.GetComponent<BoxCollider2D>().enabled = false;
+            player.GetComponent<Collider2D>().enabled = false;
             player.GetComponent<Animation>().Stop();
             player.GetComponent<SpriteRenderer>().color = Color.white;
             Vector2 respawn = new Vector2(-6, 0);
@@ -153,7 +154,11 @@ public class GameController : MonoBehaviour
         player.GetComponent<PlayerController>().HealthUpdate();
         player.GetComponent<SpriteRenderer>().enabled = false;
         player.GetComponent<PlayerController>().enabled = false;
-        player.GetComponent<BoxCollider2D>().enabled = false;
+        player.GetComponent<Collider2D>().enabled = false;
+        if (SceneManager.GetActiveScene().name != "Level_01")
+        {
+            foreground.GetComponent<Scroll>().speed = 0;
+        }
         StartCoroutine(GameOver());
     }
 
@@ -167,8 +172,8 @@ public class GameController : MonoBehaviour
 
     public void NextLevelButton()
     {
-        fadePanel.SetActive(true);
-        StartCoroutine(LevelChange(2));
+        //fadePanel.SetActive(true);
+        StartCoroutine(LevelChange(0));
     }
 
     public IEnumerator LevelChange(float time)
@@ -233,7 +238,7 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         player.GetComponent<PlayerController>().enabled = true;
-        player.GetComponent<BoxCollider2D>().enabled = true;
+        player.GetComponent<Collider2D>().enabled = true;
     }
 
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 public class Lvl2_Manager : MonoBehaviour
 {
     public PlayerStart playerStart;
+    public GameObject foreground;
+    //public float foregroundSpeed;
     //public GameObject player;
 
 
@@ -14,17 +16,17 @@ public class Lvl2_Manager : MonoBehaviour
     {
         StartCoroutine(Killme());
         GameController.playerEnable = true;
-       // PlayerController.triEnabled = true;
     }
 
     IEnumerator Killme()
     {
  
     yield return new WaitForSeconds(playerStart.playerTakeOffDelay);
-   playerStart.readyText.GetComponent<Animation>().Play();
+    playerStart.readyText.GetComponent<Animation>().Play();
     //Vector2 movement = new Vector2(0, playerStart.takeOffSpeed);
-      yield return new WaitForSeconds(playerStart.playerEnable);
+    yield return new WaitForSeconds(playerStart.playerEnable);
     playerStart.goText.GetComponent<Animation>().Play();
+        //foreground.GetComponent<Mover>().speed = foregroundSpeed;
     //   // Vector2 movement2 = new Vector2(0, 0);
     //   // player.GetComponent<Rigidbody2D>().velocity = movement2;
     //   // player.GetComponent<PlayerController>().enabled = true;

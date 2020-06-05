@@ -35,6 +35,10 @@ public class DestroyByContact : MonoBehaviour
                 LifeLost();
             }
         }
+        if (this.CompareTag("EnemyShot") && other.CompareTag("Shield"))
+        {
+            Destroy(this.gameObject);
+        }
         if (this.CompareTag("Enemy") && other.CompareTag("PlayerShot"))
         {
             this.GetComponent<Animation>().Play("Enemy_Hurt");
@@ -45,6 +49,10 @@ public class DestroyByContact : MonoBehaviour
                 Instantiate(explosion, this.transform.position, this.transform.rotation);
                 Destroy(this.gameObject);
             }
+        }
+        if (this.CompareTag("Land") && other.CompareTag("PlayerShot"))
+        {
+            Destroy(other.gameObject);
         }
         if (this.CompareTag("Enemy") && other.CompareTag("TriShot"))
         {
@@ -67,7 +75,7 @@ public class DestroyByContact : MonoBehaviour
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
         }
-        if (this.CompareTag("Stalag") && other.CompareTag("PlayerShot"))
+        if (this.CompareTag("Stalag") && other.CompareTag("PlayerShot") || this.CompareTag("Stalag") && other.CompareTag("TriShot"))
         {
             this.GetComponent<Health>().health -= other.GetComponent<Damage>().damage;
             this.GetComponent<Animation>().Play();
