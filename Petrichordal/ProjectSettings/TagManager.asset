@@ -15,7 +15,7 @@ TagManager:
   - ExplosionSpot
   - BossPart
   - TriShot
-  - Foreground
+  - Shield
   layers:
   - Default
   - TransparentFX

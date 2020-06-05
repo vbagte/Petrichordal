@@ -89,12 +89,11 @@
     <Compile Include="Assets\Scripts\ButtonScripts.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\destructibletile.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\Enemy.cs" />
+    <Compile Include="Assets\Scripts\CerasBranch\EnemyAir1.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\EnemyBullet.cs" />
-    <Compile Include="Assets\Scripts\CerasBranch\EventSandWorm.cs" />
+    <Compile Include="Assets\Scripts\CerasBranch\EnemyGround1Script.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\eventtrigger.cs" />
-    <Compile Include="Assets\Scripts\CerasBranch\SandWormHazard.cs" />
     <Compile Include="Assets\Scripts\CerasBranch\Scroll.cs" />
-    <Compile Include="Assets\Scripts\CerasBranch\wiggler.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />

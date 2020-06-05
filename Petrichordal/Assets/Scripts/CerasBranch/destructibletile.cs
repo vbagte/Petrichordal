@@ -18,20 +18,16 @@ public class destructibletile : MonoBehaviour
               Tilemap tilemap = GetComponent<Tilemap>();
         if (collision.gameObject.tag == "PlayerShot")
         {
-        //Vector3 hitPosition = new Vector3();
-        //    foreach (ContactPoint2D hit in collision.contacts)
-        //    {
-        //    hitPosition.x = hit.point.x;
-        //    hitPosition.y = hit.point.y;
-        //        tilemap.SetTile(tilemap.WorldToCell(hitPosition), null);
-        //    }
+        Vector3 hitPosition = new Vector3();
+            foreach (ContactPoint2D hit in collision.contacts)
+            {
+            hitPosition.x = hit.point.x;
+            hitPosition.y = hit.point.y;
+                tilemap.SetTile(tilemap.WorldToCell(hitPosition), null);
+            }
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Player")
-        {
-       
-            collision.gameObject.GetComponent<Health>().health -= 20;
-        }
+    
 
     }
 }
