@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!111 &111517133469952282
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684559580780033020}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1200909639214446734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,14 +90,39 @@ PrefabInstance:
     - target: {fileID: 2396212770519247424, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396212770519247424, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396212770519247424, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6040387581598683603, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bd8c99a9f092b954c90b4ebe34f98e3b,
+      objectReference: {fileID: 21300000, guid: 1639c9279f5e7a740bec9eac3e5c00a5,
         type: 3}
+    - target: {fileID: 6040387581598683603, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040387581598683603, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040387581598683603, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -149,3 +190,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c638e2d6d8a0574cbd7494225347fba, type: 3}
+--- !u!1 &7684559580780033020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8795379220773587826, guid: 8c638e2d6d8a0574cbd7494225347fba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1200909639214446734}
+  m_PrefabAsset: {fileID: 0}
