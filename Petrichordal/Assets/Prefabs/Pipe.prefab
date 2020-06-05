@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2574666309744049178}
   - component: {fileID: 5961082743619338190}
   - component: {fileID: 7570006892842448254}
+  - component: {fileID: 5886214966710212324}
   m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
@@ -4716,6 +4717,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5886214966710212324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5386860860849792715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde089bd2c31c9540bec40c1bb0eb8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8132831503469543518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4814,7 +4827,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c499f7668fe4145b39e4a74437d0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
   speed: -1.5
 --- !u!114 &114520410523313676
 MonoBehaviour:
@@ -4843,6 +4855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 0}
   otherExplosion: {fileID: 0}
+  playerIFramesTime: 0.5
 --- !u!61 &6730025768241648862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4976,3 +4989,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 0}
   otherExplosion: {fileID: 0}
+  playerIFramesTime: 0
