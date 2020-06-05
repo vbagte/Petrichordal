@@ -17,7 +17,7 @@ public class BossHurt : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("PlayerShot") || other.CompareTag("TriShot"))
+        if (other.CompareTag("PlayerShot"))
         {
             Destroy(other.gameObject);
             if (bossActive)
