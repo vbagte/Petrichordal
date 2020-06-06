@@ -8,7 +8,7 @@ public class Level3BossTrigger : MonoBehaviour
     {
         if (other.tag == "Boundary")
         {
-            GetComponentInParent<Mover>().speed = 0;
+            //GetComponentInParent<Scroll>().speed = 0;
         }
     }
 }

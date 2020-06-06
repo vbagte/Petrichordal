@@ -4628,7 +4628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8592c43e8e8f9c4ca3c0fb6601a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.4
   direction: 2
 --- !u!1001 &205467405
 PrefabInstance:
@@ -8979,6 +8979,11 @@ PrefabInstance:
       propertyPath: speed_on_exit_multiplier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 578459939802555558, guid: d013efed00a25c44fa8393e50842f3a7,
+        type: 3}
+      propertyPath: slow_player_divider
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4600942133158453077, guid: d013efed00a25c44fa8393e50842f3a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10262,7 +10267,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2028642985}
-  m_RootOrder: 445
+  m_RootOrder: 446
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &427883760
 MonoBehaviour:
@@ -10271,7 +10276,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427883758}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8592c43e8e8f9c4ca3c0fb6601a05d7, type: 3}
   m_Name: 
@@ -19161,7 +19166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2028642985}
-  m_RootOrder: 446
+  m_RootOrder: 445
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &781876117
 BoxCollider2D:
@@ -21201,6 +21206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speed_on_exit_multiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 578459939802555558, guid: d013efed00a25c44fa8393e50842f3a7,
+        type: 3}
+      propertyPath: slow_player_divider
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4600942133158453077, guid: d013efed00a25c44fa8393e50842f3a7,
         type: 3}
@@ -30126,7 +30136,7 @@ PrefabInstance:
     - target: {fileID: 3581657929543484264, guid: b50ca34314f753444a3be0103215312c,
         type: 3}
       propertyPath: flypattern
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3581657929543484264, guid: b50ca34314f753444a3be0103215312c,
         type: 3}
@@ -36036,6 +36046,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speed_on_exit_multiplier
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 578459939802555558, guid: d013efed00a25c44fa8393e50842f3a7,
+        type: 3}
+      propertyPath: slow_player_divider
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4600942133158453077, guid: d013efed00a25c44fa8393e50842f3a7,
         type: 3}
@@ -46488,12 +46503,17 @@ PrefabInstance:
     - target: {fileID: 578459939802555558, guid: d013efed00a25c44fa8393e50842f3a7,
         type: 3}
       propertyPath: seconds
-      value: 1
+      value: 99999
       objectReference: {fileID: 0}
     - target: {fileID: 578459939802555558, guid: d013efed00a25c44fa8393e50842f3a7,
         type: 3}
       propertyPath: speed_on_exit_multiplier
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 578459939802555558, guid: d013efed00a25c44fa8393e50842f3a7,
+        type: 3}
+      propertyPath: slow_player_divider
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4600942133158453077, guid: d013efed00a25c44fa8393e50842f3a7,
         type: 3}
@@ -48029,12 +48049,11 @@ GameObject:
   - component: {fileID: 2028642987}
   - component: {fileID: 2028642986}
   - component: {fileID: 2028642990}
-  - component: {fileID: 2028642991}
   - component: {fileID: 2028642988}
   - component: {fileID: 2028642989}
   m_Layer: 0
   m_Name: Foreground
-  m_TagString: Untagged
+  m_TagString: Foreground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48495,8 +48514,8 @@ Transform:
   - {fileID: 595706807}
   - {fileID: 1223544858}
   - {fileID: 370399392}
-  - {fileID: 427883759}
   - {fileID: 781876116}
+  - {fileID: 427883759}
   m_Father: {fileID: 421607728}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48641,12 +48660,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028642984}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8592c43e8e8f9c4ca3c0fb6601a05d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.6
   direction: 2
 --- !u!50 &2028642989
 Rigidbody2D:
@@ -48683,20 +48702,6 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
---- !u!114 &2028642991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028642984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c499f7668fe4145b39e4a74437d0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 1
-  speed: 0
 --- !u!1001 &2029060573
 PrefabInstance:
   m_ObjectHideFlags: 0
