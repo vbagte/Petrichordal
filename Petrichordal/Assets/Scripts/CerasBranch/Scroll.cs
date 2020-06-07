@@ -5,9 +5,11 @@ using UnityEngine;
 public class Scroll : MonoBehaviour
 {
 
-    public float layerspeed;
+    public float speed;
     public enum Edirection { horizontal=1,vertical=2 };
     public Edirection direction;
+    //public float speed;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -20,22 +22,36 @@ public class Scroll : MonoBehaviour
     {
         //transform.Translate(-layerspeed / 1000, 0, 0);
 
+
     }
     void Update()
     {
+        //rb = GetComponent<Rigidbody2D>();
+        //switch ((int)direction)
+        //{
+        //    case 1:
+        //        rb.velocity = new Vector3(-speed, 0, 0);
+
+        //        break;
+        //    case 2:
+        //        rb.velocity = new Vector3(0, -speed, 0);
+
+        //        break;
+        //}
 
 
         switch ((int)direction)
         {
             case 1:
-                transform.Translate(-layerspeed * Time.deltaTime, 0, 0);
-               // transform.Rotate(0, 0, transform.eulerAngles.z);
+                transform.Translate(-speed * Time.deltaTime, 0, 0);
+                // transform.Rotate(0, 0, transform.eulerAngles.z);
                 break;
             case 2:
-                transform.Translate(0, -layerspeed * Time.deltaTime, 0);
+                transform.Translate(0, -speed * Time.deltaTime, 0);
                 //transform.Rotate(0, 0, transform.eulerAngles.z);
                 break;
         }
+
 
     }
 }

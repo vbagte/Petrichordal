@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2384825749904366893}
   - component: {fileID: 60790853491892800}
   - component: {fileID: 7386362056095691503}
-  - component: {fileID: 111650379709119164}
+  - component: {fileID: 50284981469536502}
+  - component: {fileID: 111679437515927958}
   m_Layer: 0
   m_Name: flyer3
   m_TagString: Enemy
@@ -92,7 +93,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -142,7 +143,28 @@ MonoBehaviour:
   projectiles_per_burst: 0
   shottype: 0
   projectiledirection: 0
---- !u!111 &111650379709119164
+--- !u!50 &50284981469536502
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3666817188308502989}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!111 &111679437515927958
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,6 +177,6 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
