@@ -18,6 +18,7 @@ TagManager:
   - Foreground
   - Shield
   - Land
+  - Music
   layers:
   - Default
   - TransparentFX

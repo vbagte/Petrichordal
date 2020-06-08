@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 public class GameController : MonoBehaviour
 {
@@ -34,26 +35,57 @@ public class GameController : MonoBehaviour
     public bool exitActive = false;
     private Vector3 exitSpot;
 
-    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+    private string currentScene;
+    public static string currentSongName;
     private BeatSystem bS;
-    private FMOD.Studio.EventInstance songInstance;
-    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-
+    public static FMOD.Studio.EventInstance songInstance;
+    public static FMOD.Studio.Bus masterBus;
+    public static FMOD.Studio.Bus musicBus;
+    public static FMOD.Studio.Bus sfxBus;
+    public static FMOD.Studio.Bus uiBus;
+   
     private void Start()
     {
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
+        sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
+        uiBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/UI");
+
+        // gets current scene/level name, so that the correct level bgm is played
+        currentScene = SceneManager.GetActiveScene().name;
+        switch (currentScene)
+        {
+            case "Level_01":
+                currentSongName = "lv01";
+               break;
+            case "Level_02":
+                currentSongName = "lv02";
+                break;
+            case "Level_03":
+                currentSongName = "lv03";
+                break;
+            case "Level_04":
+                currentSongName = "lv04";
+                break;
+            default:
+                currentSongName = "lv01";
+                break;
+        }
+
         //Debug.Log(BeatSystem.bar);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
-        //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-        songInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/lvl1/main");
+        
+        songInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSongName + "bgm");
         bS = GetComponent<BeatSystem>();
         bS.AssignBeatEvent(songInstance);
         if (gameStart == false)
         {
-            songInstance.start();
-            songInstance.release();
+            //songInstance.start();
+            //songInstance.release();
             gameStart = true;
         }
-        //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+
+
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -75,12 +107,16 @@ public class GameController : MonoBehaviour
             pausePanel.SetActive(true);
             paused = true;
             Time.timeScale = 0;
+            musicBus.setPaused(true);
+            sfxBus.setPaused(true);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && paused == true)
         {
             pausePanel.SetActive(false);
             paused = false;
             Time.timeScale = 1;
+            musicBus.setPaused(false);
+            sfxBus.setPaused(false);
         }
         //stop objects after player dies
         if (player.GetComponent<PlayerController>().lives <= 0 || player == null)
@@ -150,6 +186,7 @@ public class GameController : MonoBehaviour
     public void PlayerDeath()
     {
         Instantiate(explosion, player.transform.position, explosion.transform.rotation);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdeath");
         player.GetComponent<Health>().health = 0;
         player.GetComponent<PlayerController>().HealthUpdate();
         player.GetComponent<SpriteRenderer>().enabled = false;
@@ -228,6 +265,9 @@ public class GameController : MonoBehaviour
 
     IEnumerator GameOver()
     {
+        musicBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        sfxBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/gameover");
         yield return new WaitForSeconds(2);
         gameOverPanel.SetActive(true);
         yield return new WaitForSeconds(1);
