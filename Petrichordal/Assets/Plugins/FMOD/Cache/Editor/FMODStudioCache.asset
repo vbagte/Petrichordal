@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114363960347869708}
-  - {fileID: 114039732548277510}
-  - {fileID: 114747567688856208}
-  - {fileID: 114098882913806916}
-  - {fileID: 114241811729517396}
-  - {fileID: 114893799983713494}
-  - {fileID: 114415300799928802}
-  - {fileID: 114754296331427504}
+  - {fileID: 114018987896292322}
+  - {fileID: 114163223158105572}
+  - {fileID: 114864307942317752}
+  - {fileID: 114588069268947880}
+  - {fileID: 114880403184648778}
+  - {fileID: 114788968439568444}
+  - {fileID: 114200893932288494}
   EditorEvents:
   - {fileID: 114483633264240214}
   - {fileID: 114994348008408174}
@@ -59,13 +59,13 @@ MonoBehaviour:
   - {fileID: 114510211458856992}
   - {fileID: 114412378088069246}
   EditorParameters:
-  - {fileID: 114872642352105106}
-  - {fileID: 114438338435560922}
+  - {fileID: 114896587919030070}
+  - {fileID: 114479800737603734}
   MasterBanks:
-  - {fileID: 114415300799928802}
+  - {fileID: 114788968439568444}
   StringsBanks:
   - {fileID: 114363960347869708}
-  stringsBankWriteTime: 637271470433647212
+  stringsBankWriteTime: 637272365177685437
   cacheVersion: 3
 --- !u!114 &114000570042228286
 MonoBehaviour:
@@ -82,12 +82,12 @@ MonoBehaviour:
   Path: event:/Game/playerdamaged
   guid: e6655e91bead3c4b958d3590aba1f46f
   Banks:
-  - {fileID: 114039732548277510}
+  - {fileID: 114018987896292322}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114018687037623554}
+  - {fileID: 114426453719283370}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114009831075576256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   Path: event:/UI/gameover
   guid: c93d01c917d9b84a970efe24f4cbfda4
   Banks:
-  - {fileID: 114039732548277510}
+  - {fileID: 114018987896292322}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -273,6 +273,24 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+  Exists: 0
+--- !u!114 &114018987896292322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Game.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/Game.bank
+  SubDir: 
+  lastModified: 637272365177645482
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &114021065209731662
 MonoBehaviour:
@@ -575,7 +593,7 @@ MonoBehaviour:
   lastModified: 637271470431210194
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114042305956647770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,7 +680,7 @@ MonoBehaviour:
   Path: event:/Game/enemydeath
   guid: 5311fa717562e34e8fa32a58e8c71789
   Banks:
-  - {fileID: 114039732548277510}
+  - {fileID: 114018987896292322}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1039,7 +1057,7 @@ MonoBehaviour:
   Path: event:/Game/playerignition
   guid: d2e08ac7efcc684b868635ea6ed78f54
   Banks:
-  - {fileID: 114039732548277510}
+  - {fileID: 114018987896292322}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1154,7 +1172,7 @@ MonoBehaviour:
   lastModified: 637271470432421197
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114099284625081000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,7 +1188,7 @@ MonoBehaviour:
   Path: event:/Game/lv02/saw
   guid: d6b9b8d8c0702f428dcacd301a46a378
   Banks:
-  - {fileID: 114098882913806916}
+  - {fileID: 114864307942317752}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1211,7 +1229,7 @@ MonoBehaviour:
   Path: event:/Game/lv04/sin
   guid: 11c4d2c7bf1cfe428491cb922e188802
   Banks:
-  - {fileID: 114893799983713494}
+  - {fileID: 114880403184648778}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1359,7 +1377,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114115273721572188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,7 +1500,7 @@ MonoBehaviour:
   Path: event:/Game/lv01/saw
   guid: 0898aa32da78874fafd59b020f20a293
   Banks:
-  - {fileID: 114747567688856208}
+  - {fileID: 114163223158105572}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1752,7 +1770,7 @@ MonoBehaviour:
   Path: event:/Game/enemydamaged
   guid: c5642520b77e9c41b9a6f2541ab15509
   Banks:
-  - {fileID: 114039732548277510}
+  - {fileID: 114018987896292322}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1883,6 +1901,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114163223158105572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/lv01.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv01.bank
+  SubDir: 
+  lastModified: 637272365178005206
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114163407906547488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2023,7 +2059,7 @@ MonoBehaviour:
   Path: event:/Game/lv01/sin
   guid: 0943167829a38e4389126b801699acc2
   Banks:
-  - {fileID: 114747567688856208}
+  - {fileID: 114163223158105572}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2266,6 +2302,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114200893932288494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/start.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/start.bank
+  SubDir: 
+  lastModified: 637272365180293616
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114202579385325446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2672,7 +2726,7 @@ MonoBehaviour:
   lastModified: 637271470433246884
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114242918388106706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3350,7 +3404,7 @@ MonoBehaviour:
   Path: event:/Game/lv02/sin
   guid: 60eb3e98194ed948901fadc8e5028ace
   Banks:
-  - {fileID: 114098882913806916}
+  - {fileID: 114864307942317752}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3390,7 +3444,7 @@ MonoBehaviour:
   Path: event:/Game/lv04/squ
   guid: 1b7939755d7701428e5f73629167afe5
   Banks:
-  - {fileID: 114893799983713494}
+  - {fileID: 114880403184648778}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3449,7 +3503,7 @@ MonoBehaviour:
   Path: event:/Game/lv03/squ
   guid: a4592b2d6e80c245b8b0a6516885916e
   Banks:
-  - {fileID: 114241811729517396}
+  - {fileID: 114588069268947880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3542,7 +3596,7 @@ MonoBehaviour:
   Path: event:/Game/bosslaser
   guid: 86c9326b81658e42af88a30ff3fb4114
   Banks:
-  - {fileID: 114039732548277510}
+  - {fileID: 114018987896292322}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -3709,7 +3763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637271470433647212
+  lastModified: 637272365177685437
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -3890,7 +3944,7 @@ MonoBehaviour:
   Path: event:/Game/lv04/tri
   guid: ae3c3d61ef3dfc42b7bffda75dd09e90
   Banks:
-  - {fileID: 114893799983713494}
+  - {fileID: 114880403184648778}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3983,7 +4037,7 @@ MonoBehaviour:
   Path: event:/Environment/lv02/bigsandworm
   guid: acf71a08a71a4a46bae2b16483434490
   Banks:
-  - {fileID: 114098882913806916}
+  - {fileID: 114864307942317752}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4247,7 +4301,7 @@ MonoBehaviour:
   Path: event:/Music/lv04bgm
   guid: 59a7d13521953547b8a9f95f770253d9
   Banks:
-  - {fileID: 114893799983713494}
+  - {fileID: 114880403184648778}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4307,7 +4361,7 @@ MonoBehaviour:
   lastModified: 637271470433622194
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114416314117073454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4378,6 +4432,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114426453719283370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/playerdamaged/enemy_damage_level
+  m_EditorClassIdentifier: 
+  Name: enemy_damage_level
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &114430732918143112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4428,7 +4499,7 @@ MonoBehaviour:
   Path: event:/Game/lv02/tri
   guid: 9a80dd21a81f794885396272497fc54a
   Banks:
-  - {fileID: 114098882913806916}
+  - {fileID: 114864307942317752}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4469,7 +4540,7 @@ MonoBehaviour:
   Min: 1
   Max: 91
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &114438600419321508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4503,7 +4574,7 @@ MonoBehaviour:
   Path: event:/Game/lv03/saw
   guid: d64a2925ee92264f9dc4ee303a0d5c8c
   Banks:
-  - {fileID: 114241811729517396}
+  - {fileID: 114588069268947880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4618,6 +4689,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114465474570759346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/lv03bgm/end
+  m_EditorClassIdentifier: 
+  Name: end
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &114465493650686738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4883,6 +4971,23 @@ MonoBehaviour:
   Max: 91
   Default: 1
   Exists: 0
+--- !u!114 &114479800737603734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: MusicBarGlobal
+  m_EditorClassIdentifier: 
+  Name: MusicBarGlobal
+  Min: 1
+  Max: 91
+  Default: 1
+  Exists: 1
 --- !u!114 &114483633264240214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4898,12 +5003,12 @@ MonoBehaviour:
   Path: event:/Music/bossbgm
   guid: 01452130a139944e9b69cf2259b4b5e4
   Banks:
-  - {fileID: 114039732548277510}
+  - {fileID: 114018987896292322}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114114518625622558}
+  - {fileID: 114486123754933896}
   MinDistance: 0
   MaxDistance: 0
   Length: 148000
@@ -4925,6 +5030,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114486123754933896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/bossbgm/BossWin
+  m_EditorClassIdentifier: 
+  Name: BossWin
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &114487529691374316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4993,7 +5115,7 @@ MonoBehaviour:
   Path: event:/Environment/lv01/fireball
   guid: debdec9037c63a49b370221ccffbf0a6
   Banks:
-  - {fileID: 114747567688856208}
+  - {fileID: 114163223158105572}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5174,13 +5296,13 @@ MonoBehaviour:
   Path: event:/Music/lv03bgm
   guid: 405274464f40ea4fbde6bd674110e463
   Banks:
-  - {fileID: 114241811729517396}
+  - {fileID: 114588069268947880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114920776360727180}
-  - {fileID: 114008316753853654}
+  - {fileID: 114465474570759346}
+  - {fileID: 114780722184848774}
   MinDistance: 0
   MaxDistance: 0
   Length: 150260
@@ -5235,7 +5357,7 @@ MonoBehaviour:
   Path: event:/Music/lv02bgm
   guid: 430e3d5a8afb1144b105797f7baa6972
   Banks:
-  - {fileID: 114098882913806916}
+  - {fileID: 114864307942317752}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5258,7 +5380,7 @@ MonoBehaviour:
   Path: event:/Game/lv04/saw
   guid: f641ca812e8da8468fad317b78c551b3
   Banks:
-  - {fileID: 114893799983713494}
+  - {fileID: 114880403184648778}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5299,7 +5421,7 @@ MonoBehaviour:
   Path: event:/Environment/lv01/lavaloop
   guid: 79da206c8f59a94e80f8360c0aa5b7de
   Banks:
-  - {fileID: 114747567688856208}
+  - {fileID: 114163223158105572}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -5823,6 +5945,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114588069268947880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/lv03.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv03.bank
+  SubDir: 
+  lastModified: 637272365179174407
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114588228406038804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6283,7 +6423,7 @@ MonoBehaviour:
   Path: event:/Game/lv01/squ
   guid: 88a4f26efce5df4c9555072bff3e4622
   Banks:
-  - {fileID: 114747567688856208}
+  - {fileID: 114163223158105572}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -6454,7 +6594,7 @@ MonoBehaviour:
   Path: event:/Game/lv03/tri
   guid: 146697a52029e142b2dcf0a75a32365d
   Banks:
-  - {fileID: 114241811729517396}
+  - {fileID: 114588069268947880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6586,7 +6726,7 @@ MonoBehaviour:
   Path: event:/Game/playerdeath
   guid: 8072a2f1ee823f4e9fb915aad2a9bec9
   Banks:
-  - {fileID: 114039732548277510}
+  - {fileID: 114018987896292322}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6910,7 +7050,7 @@ MonoBehaviour:
   Path: event:/Game/lv02/squ
   guid: e3320cc163f7194f83e24e6e915539dd
   Banks:
-  - {fileID: 114098882913806916}
+  - {fileID: 114864307942317752}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -7166,8 +7306,8 @@ MonoBehaviour:
   Path: event:/UI/buttonselect
   guid: 7a51ea75dacd2e4db6be90439f24f873
   Banks:
-  - {fileID: 114039732548277510}
-  - {fileID: 114754296331427504}
+  - {fileID: 114018987896292322}
+  - {fileID: 114200893932288494}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -7280,7 +7420,7 @@ MonoBehaviour:
   lastModified: 637271470431965825
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114748216010672568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7368,7 +7508,7 @@ MonoBehaviour:
   lastModified: 637271470434257728
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114758317322728416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7526,7 +7666,7 @@ MonoBehaviour:
   Path: event:/Music/startmenu
   guid: 1a8683bb1269134db97597f7e553b956
   Banks:
-  - {fileID: 114754296331427504}
+  - {fileID: 114200893932288494}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -7586,6 +7726,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114780722184848774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/lv03bgm/wave
+  m_EditorClassIdentifier: 
+  Name: wave
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &114782223198680666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7689,7 +7846,7 @@ MonoBehaviour:
   Path: event:/Music/lv01bgm
   guid: 6669aefd24a0424d908efc509fca8077
   Banks:
-  - {fileID: 114747567688856208}
+  - {fileID: 114163223158105572}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -7737,6 +7894,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 42048
+--- !u!114 &114788968439568444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637272365177675469
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114792157157030650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8312,6 +8487,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114864307942317752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/lv02.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv02.bank
+  SubDir: 
+  lastModified: 637272365178075158
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114865791501987202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8519,7 +8712,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114873322234388836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8694,7 +8887,7 @@ MonoBehaviour:
   Path: event:/Game/playerboost
   guid: c00bcda3cce9c74192ad1390055d306f
   Banks:
-  - {fileID: 114039732548277510}
+  - {fileID: 114018987896292322}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -8702,6 +8895,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1941
+--- !u!114 &114880403184648778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/lv04.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv04.bank
+  SubDir: 
+  lastModified: 637272365179224351
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114886636017286184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8864,7 +9075,7 @@ MonoBehaviour:
   lastModified: 637271470433537128
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &114894267027186664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8883,6 +9094,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114896587919030070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: fade out
+  m_EditorClassIdentifier: 
+  Name: fade out
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &114897522222050736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8898,7 +9126,7 @@ MonoBehaviour:
   Path: event:/Environment/lv01/lavaintro
   guid: 3bee3d0bf829fb46907c5b5ea3434db5
   Banks:
-  - {fileID: 114747567688856208}
+  - {fileID: 114163223158105572}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -9186,7 +9414,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &114920793593630314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9358,7 +9586,7 @@ MonoBehaviour:
   Path: event:/Game/lv03/sin
   guid: f9c3becb9cf6e345b6f4387d6807e63e
   Banks:
-  - {fileID: 114241811729517396}
+  - {fileID: 114588069268947880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -9451,7 +9679,7 @@ MonoBehaviour:
   Path: event:/Game/lv01/tri
   guid: 19851fb39e57894cbc9f0b6f847a6f74
   Banks:
-  - {fileID: 114747567688856208}
+  - {fileID: 114163223158105572}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -9750,8 +9978,8 @@ MonoBehaviour:
   Path: event:/UI/buttonover
   guid: 45e5b416bf428b4284c3a5fef026c672
   Banks:
-  - {fileID: 114039732548277510}
-  - {fileID: 114754296331427504}
+  - {fileID: 114018987896292322}
+  - {fileID: 114200893932288494}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

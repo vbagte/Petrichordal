@@ -6747,7 +6747,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SIN Charge
+  m_Text: SIN Heal
 --- !u!222 &777120223
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6824,7 +6824,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TRI Charge
+  m_Text: TRI Fire
 --- !u!222 &781034481
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8407,7 +8407,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SQU Charge
+  m_Text: SQU Shield
 --- !u!222 &1009282361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10909,6 +10909,7 @@ MonoBehaviour:
   fadePanel: {fileID: 1090159167}
   foreground: {fileID: 0}
   paused: 0
+  player: {fileID: 0}
   exitActive: 0
 --- !u!114 &1352139208
 MonoBehaviour:

@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     public GameObject foreground;
     public bool paused = false;
 
-    private GameObject player;
+    public GameObject player;
     private GameObject playerExit;
     private GameObject[] explosionSpots;
     private Health playerHealth;
