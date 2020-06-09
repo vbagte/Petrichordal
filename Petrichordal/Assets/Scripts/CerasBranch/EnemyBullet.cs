@@ -41,7 +41,6 @@ public class EnemyBullet : MonoBehaviour
         }
         if (collision.gameObject.tag == "Shield")
         {
-            print("test");
             Destroy(gameObject);
         }
     }
