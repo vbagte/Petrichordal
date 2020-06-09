@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public int health = 1;
     public int collisiondamage = 50;
     public float speed;
-    public enum Eflypattern { none = 0, oneway = 1, hover = 2, stopngo = 3, loop = 4, squareexit = 5, rotating = 6 };
+    public enum Eflypattern { none = 0, oneway = 1, hover = 2, stopngo = 3, loop = 4, squareexit = 5, rotating = 6, faceplayer=7 };
     public Eflypattern flypattern;
     public GameObject projectile;
     public GameObject explosion;
@@ -16,10 +16,11 @@ public class Enemy : MonoBehaviour
     public float fireinterval_sec;
     public float burstcooldown_sec;
     public int projectiles_per_burst;
-    public enum shottypes { none = 0, single = 1, dual = 2, triad = 3, spreader = 4, burst = 5 }
+    public enum shottypes { none = 0, single = 1, dual = 2, triad = 3, spreader = 4, burst = 5,lazar=6 }
     public shottypes shottype;
     public enum projectiledirections { forward = 1, toward_player = 2 }
     public projectiledirections projectiledirection;
+    public GameObject lazarglow;
 
     private bool cooldown = false;
     private bool firing = true;
@@ -33,6 +34,8 @@ public class Enemy : MonoBehaviour
     private float frames_per_projectile;
     private bool inBoundary = false;
     private Health playerHealth;
+    private bool firinmahlazar = false;
+    private long lazarcounter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,15 +57,15 @@ public class Enemy : MonoBehaviour
             elapsedseconds = Time.time - start;
             movement();
             inBoundary = true;
-            if (firing == true) //if the gun is turned on
+            if (firing == true) //if the gun is turned on (sometimes the movement patterns turn it off)
             {
 
                 // if the weapon is cooling down,
                 if (cooldown == true)
                 {
-                    //Debug.Log((float)(counter_cooldown)/60);
+              
+                    counter_cooldown++; //counts frames we are in cooldown mode
                     //and the cooldown timer is up, flip the cooldown flag reset the counter
-                    counter_cooldown++;
                     if ((float)counter_cooldown / 60.0 >= burstcooldown_sec)
                     {
                         cooldown = false;
@@ -70,12 +73,12 @@ public class Enemy : MonoBehaviour
                     }
 
                 }
-                //if the weapon is warm and has not fired its max yet
-                // else if (cooldown == false && counter_projectile < projectiles_per_burst)
+                // if the weapon is in its fire phase
                 else if (cooldown == false)
                 {
 
-                    counter_burst++;
+                    counter_burst++; //counts frames we are in fire mode
+                    //we have to divide the number of projectiles into the amount of time we are firing
                     frames_per_projectile = fireinterval_sec / projectiles_per_burst * 60f;
                     if (counter_burst >= (int)frames_per_projectile)
                     {
@@ -87,7 +90,7 @@ public class Enemy : MonoBehaviour
                             counter_projectile = 0;
                             cooldown = true;
                         }
-                        //counter_burst -= (int)(fireinterval_sec * 60);
+   
                     }
                 }
             }
@@ -109,7 +112,7 @@ public class Enemy : MonoBehaviour
                 {
                     firing = false;
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
-                    //  transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
+         
                 }
                 else {
                     firing = true;
@@ -121,7 +124,7 @@ public class Enemy : MonoBehaviour
                 {
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
                     firing = false;
-                    //  transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
+         
                 }
                 else if (elapsedseconds <= 6)
                 {
@@ -131,7 +134,7 @@ public class Enemy : MonoBehaviour
                 else
                 {
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
-                    // transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
+             
                     firing = false;
                 }
                 break;
@@ -141,7 +144,7 @@ public class Enemy : MonoBehaviour
                 {
                     firing = false;
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
-                    //transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
+             
                 }
                 else if (counter2 <= 90)
                 {
@@ -149,7 +152,7 @@ public class Enemy : MonoBehaviour
                     counter2++;
                     transform.Translate(Time.deltaTime * speed / 10f, 0, 0);
                     hover();
-                    //transform.localPosition += new Vector3(0, Time.deltaTime * speed / 10f);
+             
                 }
                 else if (counter2 >=180)
                 {
@@ -161,7 +164,7 @@ public class Enemy : MonoBehaviour
                     counter2++;
                     transform.Translate(-Time.deltaTime * speed / 10f, 0, 0);
                     hover();
-                    // transform.localPosition += new Vector3(0, -Time.deltaTime * speed / 10f);
+   
                 }
 
                 break;
@@ -169,13 +172,13 @@ public class Enemy : MonoBehaviour
                 if (elapsedseconds <= 1.5)
                 {
                     firing = false;
-                    //transform.localPosition += new Vector3(Time.deltaTime * speed / 10f, 0);
+              
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
                 }
                 else if (elapsedseconds <= 2.5)
                 {
                     firing = true;
-                    // transform.localPosition -= new Vector3(0, Time.deltaTime * speed / 10f);
+
                     transform.Translate(Time.deltaTime * speed / 10f, 0, 0);
                     hover();
                 }
@@ -185,12 +188,45 @@ public class Enemy : MonoBehaviour
                     Destroy(gameObject, 4);
                     transform.Translate(0, -Time.deltaTime * speed / 10f, 0);
                     hover();
-                    // transform.localPosition -= new Vector3(Time.deltaTime * speed / 10f, 0);
+  
                 }
                 break;
             case 6://rotating turret
                 transform.Rotate(0, 0, speed * Time.deltaTime);
                 break;
+            case 7: //faceplayer
+
+                if (firinmahlazar == false) //if we are firin mah lazar then stop updating facing rotation
+                {
+                    float angle = 0;
+
+                    if (GameObject.FindGameObjectWithTag("Player") != null)
+                    {
+                        Transform target;
+                        Vector3 lead;
+                        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+                        if ((int)GetComponentInParent<Scroll>().direction == 2) //vertical
+                        {
+                            lead = new Vector3(0f, -GetComponentInParent<Scroll>().speed, 0f);
+                        }
+                        else lead = new Vector3(-GetComponentInParent<Scroll>().speed, 0f, 0f);
+                        Vector3 targetDir = (transform.position - target.position + lead);
+                        angle = 90 + Mathf.Atan2(targetDir.y, targetDir.x) * 180 / Mathf.PI - transform.eulerAngles.z;
+                    }
+                    transform.Rotate(0, 0, angle);
+                }
+                else
+                {
+                    lazarcounter++;
+                    if (lazarcounter >= 60)
+                    {
+                        lazarcounter = 0;
+                        firinmahlazar = false;
+                    }
+                }
+
+                break;
+
         }
 
 
@@ -240,7 +276,7 @@ public class Enemy : MonoBehaviour
         transform.Rotate(0, 0, 180 - transform.eulerAngles.z);
         if ((int)transform.parent.GetComponent<Scroll>().direction == 2)
         {
-            transform.Translate(0, transform.parent.GetComponent<Scroll>().speed, 0);
+            transform.Translate(0,- transform.parent.GetComponent<Scroll>().speed * Time.deltaTime, 0);
         }
         else if ((int)transform.parent.GetComponent<Scroll>().direction == 1)
         {
@@ -258,8 +294,13 @@ public class Enemy : MonoBehaviour
             if (GameObject.FindGameObjectWithTag("Player") != null)
             {
                 Transform target;
+                Vector3 lead;
                 target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-                Vector3 targetDir = (transform.position - target.position);
+                if ((int)GetComponentInParent<Scroll>().direction==2) //vertical
+                {
+                    lead = new Vector3(0f, -GetComponentInParent<Scroll>().speed, 0f);
+                } else lead = new Vector3( -GetComponentInParent<Scroll>().speed,0f, 0f);
+                Vector3 targetDir = (transform.position - target.position+lead);
                 angle = 90 + Mathf.Atan2(targetDir.y, targetDir.x) * 180 / Mathf.PI- transform.eulerAngles.z;
             }
         }
@@ -315,6 +356,28 @@ public class Enemy : MonoBehaviour
                     projectileGO.GetComponent<Transform>().Rotate(0, 0, angle);
                     angle += 30;
                 }
+                break;
+            case 6: //lazar     
+                    //if (firinmahlazar==false)
+                    //{
+
+                //GameObject glow = GameObject.Find("lazarglow");
+                   Instantiate(lazarglow, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
+
+                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
+                    projectileGO.transform.localScale = new Vector3(0, 12, 1);
+                projectileGO.transform.Translate(0, 6.2f,0);
+                projectileGO.GetComponent<EnemyLazar>().maxXscale = 8;
+                    firinmahlazar = true;
+                //}
+                //else lazarcounter++;
+                //if (lazarcounter >= 5)
+                //{
+                //    lazarcounter = 0;
+                //    firinmahlazar = false;
+                //}
+
+
                 break;
         }
 
