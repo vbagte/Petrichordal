@@ -11,6 +11,13 @@ public class ButtonScripts : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject fade;
 
+    private FMOD.Studio.Bus masterBus;
+
+    private void Start()
+    {
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");   
+    }
+
     public void StartGameButton()
     {
         //fade.SetActive(true);
@@ -20,6 +27,8 @@ public class ButtonScripts : MonoBehaviour
 
     public void Resume()
     {
+        GameController.musicBus.setPaused(false);
+        GameController.sfxBus.setPaused(false);
         pausePanel.SetActive(false);
         GameObject.Find("GameController").GetComponent<GameController>().paused = false;
         Time.timeScale = 1;
@@ -27,8 +36,12 @@ public class ButtonScripts : MonoBehaviour
 
     public void Restart()
     {
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        GameController.musicBus.setPaused(false);
+        GameController.sfxBus.setPaused(false);
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+       
     }
 
     public void Settings()

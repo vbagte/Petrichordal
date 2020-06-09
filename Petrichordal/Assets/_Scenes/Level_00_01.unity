@@ -262,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 146326965}
   - component: {fileID: 146326964}
+  - component: {fileID: 146326966}
   - component: {fileID: 146326963}
   m_Layer: 0
   m_Name: Main Camera
@@ -270,14 +271,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &146326963
-AudioListener:
+--- !u!114 &146326963
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146326962}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent: 0
+  UnloadEvent: 2
+  Banks:
+  - start
+  CollisionTag: 
+  PreloadSamples: 0
 --- !u!20 &146326964
 Camera:
   m_ObjectHideFlags: 0
@@ -334,6 +345,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &146326966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146326962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!1 &200650229
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1600902988}
   - component: {fileID: 1600902987}
+  - component: {fileID: 1600902989}
   m_Layer: 0
   m_Name: Script
   m_TagString: Untagged
@@ -728,7 +753,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600902986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f9f70ca9ca6b014a94680427a7f3322, type: 3}
   m_Name: 
@@ -748,6 +773,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600902989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600902986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b8656c0e5d230409e0a51d94e46a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fade: {fileID: 2116864940}
 --- !u!1 &2116864940
 GameObject:
   m_ObjectHideFlags: 0

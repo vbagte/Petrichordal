@@ -99,6 +99,7 @@
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\DestroyByTime.cs" />
+    <Compile Include="Assets\Scripts\DontDestroy.cs" />
     <Compile Include="Assets\Scripts\Enemy_Movement\Enemy_Movement_01.cs" />
     <Compile Include="Assets\Scripts\Enemy_Movement\Enemy_Movement_02.cs" />
     <Compile Include="Assets\Scripts\Enemy_Shots\Boss_Shot.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Level3BossTrigger.cs" />
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
+    <Compile Include="Assets\Scripts\LevelTransitionMusicStop.cs" />
     <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\PipeSmoke.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
