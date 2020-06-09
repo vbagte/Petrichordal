@@ -18,6 +18,7 @@ TagManager:
   - Foreground
   - Shield
   - Land
+  - Boss
   layers:
   - Default
   - TransparentFX

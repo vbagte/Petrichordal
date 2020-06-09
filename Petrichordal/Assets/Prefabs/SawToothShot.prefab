@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 563986629237848096}
   - component: {fileID: 9050401039410344103}
   - component: {fileID: 5647225332376617943}
+  - component: {fileID: 114133323041098650}
   m_Layer: 8
   m_Name: SawToothShot
   m_TagString: PlayerShot
@@ -157,3 +158,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.3800853}
   m_EdgeRadius: 0
+--- !u!114 &114133323041098650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799754892176674005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9280b86f086cefd4ca663811006a99d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
