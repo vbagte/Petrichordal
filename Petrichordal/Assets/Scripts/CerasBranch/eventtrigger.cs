@@ -48,8 +48,7 @@ public class eventtrigger : MonoBehaviour
              //enemylayer.GetComponent<Scroll>().layerspeed = elOS * speed_on_exit_multiplier;
              Destroy(gameObject);
             }
-
-            GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerController>().speed= slow_player_divider; 
+            GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerController>().speed = slow_player_divider;
 
         }
     }

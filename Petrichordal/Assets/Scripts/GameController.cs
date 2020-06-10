@@ -25,12 +25,15 @@ public class GameController : MonoBehaviour
     public GameObject nextLevelPanel;
     public GameObject fadePanel;
     public GameObject foreground;
+    public GameObject midground;
+    public GameObject background;
+    public GameObject lvl2Boss;
     public bool paused = false;
 
     public GameObject player;
-    private GameObject playerExit;
+    public GameObject playerExit;
     private GameObject[] explosionSpots;
-    private Health playerHealth;
+    public Health playerHealth;
     private bool bossDead;
     public bool exitActive = false;
     private Vector3 exitSpot;
@@ -125,7 +128,6 @@ public class GameController : MonoBehaviour
             {
                 bg[i].GetComponent<BGScrollerX>().enabled = false;
             }
-            //levelManager.GetComponent<Lvl1_Manager>().stalag.stalagSpeed = 0;
             levelManager.SetActive(false);
             stalags = GameObject.FindGameObjectsWithTag("Stalag");
             foreach (GameObject stalag in stalags)
@@ -147,6 +149,7 @@ public class GameController : MonoBehaviour
                 {
                     GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<WeaponController>().enabled = false;
                 }
+                levelManager.GetComponent<Lvl1_Manager>().stalag.stalagSpeed = 0;
                 levelManager.GetComponent<Lvl1_Manager>().lava.fireballActive = false;
                 boss.GetComponent<WardenBoss>().enabled = false;
             }
@@ -169,13 +172,22 @@ public class GameController : MonoBehaviour
         playerHealth.health = player.GetComponent<PlayerController>().healthMax;
         if (player != null && player.GetComponent<PlayerController>().lives > 0)
         {
+            print("test");
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().HealthUpdate();
             player.GetComponent<PlayerController>().enabled = false;
             player.GetComponent<Collider2D>().enabled = false;
             player.GetComponent<Animation>().Stop();
             player.GetComponent<SpriteRenderer>().color = Color.white;
-            Vector2 respawn = new Vector2(-6, 0);
-            player.transform.position = respawn;
+            if (SceneManager.GetActiveScene().name != "Level_03")
+            {
+                Vector2 respawn = new Vector2(-6, 0);
+                player.transform.position = respawn;
+            }
+            else
+            {
+                Vector2 respawn = new Vector2(0, -3);
+                player.transform.position = respawn;
+            }
             Vector2 stay = new Vector2(0, 0);
             player.GetComponent<Rigidbody2D>().velocity = stay;
             player.GetComponent<Animation>().Play("Player_Respawning");
@@ -192,24 +204,39 @@ public class GameController : MonoBehaviour
         player.GetComponent<SpriteRenderer>().enabled = false;
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<Collider2D>().enabled = false;
-        if (SceneManager.GetActiveScene().name != "Level_01")
+        if (SceneManager.GetActiveScene().name == "Level_02")
         {
             foreground.GetComponent<Scroll>().speed = 0;
+            foreach (Enemy script in foreground.GetComponentsInChildren<Enemy>())
+            {
+                script.enabled = false;
+            }
+            foreach (Enemy script in lvl2Boss.GetComponentsInChildren<Enemy>())
+            {
+                script.enabled = false;
+            }
+            midground.GetComponent<Scroll>().speed = 0;
+            background.GetComponent<Scroll>().speed = 0;
+        }
+        if (SceneManager.GetActiveScene().name == "Level_03")
+        {
+            foreground.GetComponent<Scroll>().speed = 0;
+            foreach (Enemy script in foreground.GetComponentsInChildren<Enemy>())
+            {
+                script.enabled = false;
+            }
+            background.GetComponent<Scroll>().speed = 0;
         }
         StartCoroutine(GameOver());
     }
 
     public void NextLevelPanel()
     {
-        if (bossDead)
-        {
-            nextLevelPanel.GetComponent<Animation>().Play();
-        }
+        nextLevelPanel.GetComponent<Animation>().Play();
     }
 
     public void NextLevelButton()
     {
-        //fadePanel.SetActive(true);
         StartCoroutine(LevelChange(0));
     }
 
@@ -242,11 +269,15 @@ public class GameController : MonoBehaviour
         {
             bossParts[i].tag = "Untagged";
         }
-        GameObject lava = GameObject.Find("Lava");
-        lava.GetComponent<Collider2D>().enabled = false;
+        if (SceneManager.GetActiveScene().name == "Level_01")
+        {
+            GameObject lava = GameObject.Find("Lava");
+            lava.GetComponent<Collider2D>().enabled = false;
+        }
         player.GetComponent<PlayerController>().enabled = false;
         yield return new WaitForSeconds(1);
         exitActive = true;
+        print(exitSpot);
         yield return new WaitForSeconds(8);
         Vector2 stop2 = new Vector2(0, 0);
         boss.GetComponent<Rigidbody2D>().velocity = stop2;

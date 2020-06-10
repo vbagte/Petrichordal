@@ -10910,6 +10910,7 @@ MonoBehaviour:
   foreground: {fileID: 0}
   paused: 0
   player: {fileID: 0}
+  playerExit: {fileID: 0}
   exitActive: 0
 --- !u!114 &1352139208
 MonoBehaviour:

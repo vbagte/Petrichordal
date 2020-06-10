@@ -13,6 +13,6 @@ public class DestroyOnExit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          if (transform.position.y >= 5 || transform.position.x <=-9.5 || transform.position.y<=-5 || transform.position.x >=9.5) Destroy(gameObject);
+          if (transform.position.y >= 3.5 || transform.position.x <=-9.5 || transform.position.y<=-4.5 || transform.position.x >=9.5) Destroy(gameObject);
     }
 }

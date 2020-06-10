@@ -8290,6 +8290,7 @@ MonoBehaviour:
   projectiles_per_burst: 0
   shottype: 0
   projectiledirection: 0
+  lazarglow: {fileID: 0}
 --- !u!19719996 &846878182
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -10356,6 +10357,7 @@ MonoBehaviour:
   projectiles_per_burst: 0
   shottype: 0
   projectiledirection: 0
+  lazarglow: {fileID: 0}
 --- !u!60 &1009498338
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10809,6 +10811,7 @@ MonoBehaviour:
   projectiles_per_burst: 0
   shottype: 0
   projectiledirection: 0
+  lazarglow: {fileID: 0}
 --- !u!60 &1045542267
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -28854,7 +28857,13 @@ MonoBehaviour:
   nextLevelPanel: {fileID: 0}
   fadePanel: {fileID: 0}
   foreground: {fileID: 0}
+  midground: {fileID: 0}
+  background: {fileID: 0}
+  lvl2Boss: {fileID: 0}
   paused: 0
+  player: {fileID: 784671940}
+  playerExit: {fileID: 1353222878}
+  playerHealth: {fileID: 784671947}
   exitActive: 0
 --- !u!1001 &1812098016
 PrefabInstance:
