@@ -258,8 +258,10 @@ public class Enemy : MonoBehaviour
             }
             if (other.gameObject.tag == "Player")
             {
+                if(gameObject.tag != "Boss"){
                 Destroy(gameObject);
                 Instantiate(explosion, transform.position, explosion.transform.rotation);
+                }
                 other.gameObject.GetComponent<Health>().health -= collisiondamage;
                 if (playerHealth.health <= 0)
                 {

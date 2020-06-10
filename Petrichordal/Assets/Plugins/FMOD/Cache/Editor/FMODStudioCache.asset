@@ -14,58 +14,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114363960347869708}
-  - {fileID: 114504444317927148}
-  - {fileID: 114288633421024604}
-  - {fileID: 114296429076065528}
-  - {fileID: 114647946247973842}
-  - {fileID: 114790197941324696}
-  - {fileID: 114890283877929366}
-  - {fileID: 114496801855343810}
+  - {fileID: 114066627748432526}
+  - {fileID: 114442297523120736}
+  - {fileID: 114986898987941952}
+  - {fileID: 114257624017166768}
+  - {fileID: 114485110208603976}
+  - {fileID: 114854067174649920}
+  - {fileID: 114466517133316702}
   EditorEvents:
-  - {fileID: 114224183444519886}
-  - {fileID: 114799361688325704}
-  - {fileID: 114461928941775510}
-  - {fileID: 114583759665838276}
-  - {fileID: 114735058029829962}
-  - {fileID: 114614524823851038}
-  - {fileID: 114680832531328114}
-  - {fileID: 114641854527264306}
-  - {fileID: 114626545428578308}
-  - {fileID: 114057253418847240}
-  - {fileID: 114992057930640074}
-  - {fileID: 114081552031778078}
-  - {fileID: 114639261093672280}
-  - {fileID: 114713098663566974}
-  - {fileID: 114288111928132752}
-  - {fileID: 114095336923559018}
-  - {fileID: 114985811075175096}
-  - {fileID: 114471708615179088}
-  - {fileID: 114119707019985240}
-  - {fileID: 114525776953438556}
-  - {fileID: 114745139516349048}
-  - {fileID: 114013087752154862}
-  - {fileID: 114308681833912190}
-  - {fileID: 114689172340783800}
-  - {fileID: 114202658932136536}
-  - {fileID: 114770545041420166}
-  - {fileID: 114239604107205862}
-  - {fileID: 114166392356972458}
-  - {fileID: 114883236110004906}
-  - {fileID: 114509647404857546}
-  - {fileID: 114116959035455020}
-  - {fileID: 114943620483247110}
-  - {fileID: 114821944777733148}
-  - {fileID: 114990814400861798}
-  - {fileID: 114939295149259704}
-  - {fileID: 114038236834601428}
+  - {fileID: 114186260468794470}
+  - {fileID: 114133876566487914}
+  - {fileID: 114730010502255886}
+  - {fileID: 114696973003997900}
+  - {fileID: 114518438562709468}
+  - {fileID: 114751537138973056}
+  - {fileID: 114450381422208188}
+  - {fileID: 114923421960569952}
+  - {fileID: 114266976712403942}
+  - {fileID: 114693819302364370}
+  - {fileID: 114775734649894672}
+  - {fileID: 114496650053033846}
+  - {fileID: 114351326349177070}
+  - {fileID: 114635397519632544}
+  - {fileID: 114812073961176772}
+  - {fileID: 114395372074184164}
+  - {fileID: 114121732912642476}
+  - {fileID: 114567289069858762}
+  - {fileID: 114242718846940310}
+  - {fileID: 114520758464408716}
+  - {fileID: 114369310706372392}
+  - {fileID: 114397500305820008}
+  - {fileID: 114590284026296888}
+  - {fileID: 114276815103520228}
+  - {fileID: 114706937568875962}
+  - {fileID: 114911347160745774}
+  - {fileID: 114597552564612682}
+  - {fileID: 114992369373665360}
+  - {fileID: 114840231454830238}
+  - {fileID: 114814244480444252}
+  - {fileID: 114214399281030324}
+  - {fileID: 114021604134301980}
+  - {fileID: 114508201198800336}
+  - {fileID: 114218997552428206}
+  - {fileID: 114885206384764902}
+  - {fileID: 114372765821834072}
   EditorParameters:
-  - {fileID: 114250817443237600}
-  - {fileID: 114990895530682338}
+  - {fileID: 114913509761189282}
+  - {fileID: 114480920070538492}
   MasterBanks:
-  - {fileID: 114890283877929366}
+  - {fileID: 114854067174649920}
   StringsBanks:
   - {fileID: 114363960347869708}
-  stringsBankWriteTime: 637273201619553827
+  stringsBankWriteTime: 637273403152598490
   cacheVersion: 3
 --- !u!114 &114001829460214466
 MonoBehaviour:
@@ -121,29 +121,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114013087752154862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv02/tri
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv02/tri
-  guid: 9a80dd21a81f794885396272497fc54a
-  Banks:
-  - {fileID: 114296429076065528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &114013572046713332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +139,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114021604134301980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv04/squ
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv04/squ
+  guid: 1b7939755d7701428e5f73629167afe5
+  Banks:
+  - {fileID: 114485110208603976}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114023837892089258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,29 +271,6 @@ MonoBehaviour:
   - Name: 
     Value: 470
   Exists: 0
---- !u!114 &114038236834601428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/startmenu
-  m_EditorClassIdentifier: 
-  Path: event:/Music/startmenu
-  guid: 1a8683bb1269134db97597f7e553b956
-  Banks:
-  - {fileID: 114496801855343810}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 296000
 --- !u!114 &114039202656601422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,29 +360,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114057253418847240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/playerignition
-  m_EditorClassIdentifier: 
-  Path: event:/Game/playerignition
-  guid: d2e08ac7efcc684b868635ea6ed78f54
-  Banks:
-  - {fileID: 114504444317927148}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 4000
 --- !u!114 &114060835704922674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +413,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114066627748432526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Game.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/Game.bank
+  SubDir: 
+  lastModified: 637273403152568574
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114071101044916872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,29 +466,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &114081552031778078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv01/saw
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv01/saw
-  guid: 0898aa32da78874fafd59b020f20a293
-  Banks:
-  - {fileID: 114288633421024604}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 280
 --- !u!114 &114087217253478594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,29 +502,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114095336923559018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/lv01bgm
-  m_EditorClassIdentifier: 
-  Path: event:/Music/lv01bgm
-  guid: 6669aefd24a0424d908efc509fca8077
-  Banks:
-  - {fileID: 114288633421024604}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 42048
 --- !u!114 &114097510939504540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,29 +573,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &114116959035455020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv04/sin
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv04/sin
-  guid: 11c4d2c7bf1cfe428491cb922e188802
-  Banks:
-  - {fileID: 114790197941324696}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &114117023553053220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +594,7 @@ MonoBehaviour:
   - Name: 
     Value: 470
   Exists: 0
---- !u!114 &114119707019985240
+--- !u!114 &114121732912642476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -701,19 +604,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment/lv01/fireball
+  m_Name: event:/Environment/lv01/lavaloop
   m_EditorClassIdentifier: 
-  Path: event:/Environment/lv01/fireball
-  guid: debdec9037c63a49b370221ccffbf0a6
+  Path: event:/Environment/lv01/lavaloop
+  guid: 79da206c8f59a94e80f8360c0aa5b7de
   Banks:
-  - {fileID: 114288633421024604}
+  - {fileID: 114442297523120736}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1125
+  Length: 29875
 --- !u!114 &114126712861004004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,6 +653,30 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &114133876566487914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/buttonover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/buttonover
+  guid: 45e5b416bf428b4284c3a5fef026c672
+  Banks:
+  - {fileID: 114066627748432526}
+  - {fileID: 114466517133316702}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 189
 --- !u!114 &114139097108377540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,29 +821,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114166392356972458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv03/squ
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv03/squ
-  guid: a4592b2d6e80c245b8b0a6516885916e
-  Banks:
-  - {fileID: 114647946247973842}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &114181430035012488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,6 +878,30 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &114186260468794470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/bossbgm
+  m_EditorClassIdentifier: 
+  Path: event:/Music/bossbgm
+  guid: 01452130a139944e9b69cf2259b4b5e4
+  Banks:
+  - {fileID: 114066627748432526}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114649500436226862}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 148000
 --- !u!114 &114192182386655348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,29 +938,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114202658932136536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv02/squ
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv02/squ
-  guid: e3320cc163f7194f83e24e6e915539dd
-  Banks:
-  - {fileID: 114296429076065528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &114205679108960386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1050,6 +955,29 @@ MonoBehaviour:
   Max: 17
   Default: 1
   Exists: 0
+--- !u!114 &114214399281030324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv04/sin
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv04/sin
+  guid: 11c4d2c7bf1cfe428491cb922e188802
+  Banks:
+  - {fileID: 114485110208603976}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114217736048062818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,6 +996,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114218997552428206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv04/tri
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv04/tri
+  guid: ae3c3d61ef3dfc42b7bffda75dd09e90
+  Banks:
+  - {fileID: 114485110208603976}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114219003342321678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1122,30 +1073,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114224183444519886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/bossbgm
-  m_EditorClassIdentifier: 
-  Path: event:/Music/bossbgm
-  guid: 01452130a139944e9b69cf2259b4b5e4
-  Banks:
-  - {fileID: 114504444317927148}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114846900504124022}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 148000
 --- !u!114 &114234279604166806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1164,7 +1091,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114239604107205862
+--- !u!114 &114242718846940310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1174,21 +1101,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/lv03bgm
+  m_Name: event:/Environment/lv01/fireball
   m_EditorClassIdentifier: 
-  Path: event:/Music/lv03bgm
-  guid: 405274464f40ea4fbde6bd674110e463
+  Path: event:/Environment/lv01/fireball
+  guid: debdec9037c63a49b370221ccffbf0a6
   Banks:
-  - {fileID: 114647946247973842}
+  - {fileID: 114442297523120736}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114495395577088928}
-  - {fileID: 114585072948026894}
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 150260
+  Length: 1125
 --- !u!114 &114249260360978974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1207,7 +1132,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114250817443237600
+--- !u!114 &114257624017166768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1216,13 +1141,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: fade out
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/lv03.bank
   m_EditorClassIdentifier: 
-  Name: fade out
-  Min: 0
-  Max: 1
-  Default: 0
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv03.bank
+  SubDir: 
+  lastModified: 637273403153555933
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &114257957107562824
 MonoBehaviour:
@@ -1313,6 +1239,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114266976712403942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/gameover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/gameover
+  guid: c93d01c917d9b84a970efe24f4cbfda4
+  Banks:
+  - {fileID: 114066627748432526}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 40117
 --- !u!114 &114272648435402974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1331,6 +1280,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114276815103520228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv02/saw
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv02/saw
+  guid: d6b9b8d8c0702f428dcacd301a46a378
+  Banks:
+  - {fileID: 114986898987941952}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 280
 --- !u!114 &114280227056929220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,65 +1342,6 @@ MonoBehaviour:
   - Name: 
     Value: 470
   Exists: 0
---- !u!114 &114288111928132752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment/lv01/lavaintro
-  m_EditorClassIdentifier: 
-  Path: event:/Environment/lv01/lavaintro
-  guid: 3bee3d0bf829fb46907c5b5ea3434db5
-  Banks:
-  - {fileID: 114288633421024604}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 6229
---- !u!114 &114288633421024604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/lv01.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv01.bank
-  SubDir: 
-  lastModified: 637273201619943555
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114296429076065528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/lv02.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv02.bank
-  SubDir: 
-  lastModified: 637273201620033485
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114297096049900138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,29 +1454,6 @@ MonoBehaviour:
   - Name: 
     Value: 1346
   Exists: 0
---- !u!114 &114308681833912190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment/lv02/bigsandworm
-  m_EditorClassIdentifier: 
-  Path: event:/Environment/lv02/bigsandworm
-  guid: acf71a08a71a4a46bae2b16483434490
-  Banks:
-  - {fileID: 114296429076065528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 4375
 --- !u!114 &114317301263020898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1674,6 +1564,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114351326349177070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv01/sin
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv01/sin
+  guid: 0943167829a38e4389126b801699acc2
+  Banks:
+  - {fileID: 114442297523120736}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114353466074056474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1745,12 +1658,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637273201619553827
+  lastModified: 637273403152598490
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 3048
   Exists: 1
+--- !u!114 &114369310706372392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv02/sin
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv02/sin
+  guid: 60eb3e98194ed948901fadc8e5028ace
+  Banks:
+  - {fileID: 114986898987941952}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &114372765821834072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/startmenu
+  m_EditorClassIdentifier: 
+  Path: event:/Music/startmenu
+  guid: 1a8683bb1269134db97597f7e553b956
+  Banks:
+  - {fileID: 114466517133316702}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 296000
 --- !u!114 &114373340850674734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,6 +1821,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 42048
+--- !u!114 &114395372074184164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/lv01bgm
+  m_EditorClassIdentifier: 
+  Path: event:/Music/lv01bgm
+  guid: 6669aefd24a0424d908efc509fca8077
+  Banks:
+  - {fileID: 114442297523120736}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 42048
+--- !u!114 &114397500305820008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv02/tri
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv02/tri
+  guid: 9a80dd21a81f794885396272497fc54a
+  Banks:
+  - {fileID: 114986898987941952}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114398876462342914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,6 +1981,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114442297523120736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/lv01.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv01.bank
+  SubDir: 
+  lastModified: 637273403152797961
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114445114131124976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,7 +2053,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114461928941775510
+--- !u!114 &114450381422208188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2040,19 +2063,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/enemydeath
+  m_Name: event:/Game/playerboost
   m_EditorClassIdentifier: 
-  Path: event:/Game/enemydeath
-  guid: 5311fa717562e34e8fa32a58e8c71789
+  Path: event:/Game/playerboost
+  guid: c00bcda3cce9c74192ad1390055d306f
   Banks:
-  - {fileID: 114504444317927148}
+  - {fileID: 114066627748432526}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1760
+  Length: 1941
+--- !u!114 &114466517133316702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/start.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/start.bank
+  SubDir: 
+  lastModified: 637273403154274018
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114469209018711456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2107,29 +2148,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114471708615179088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv01/squ
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv01/squ
-  guid: 88a4f26efce5df4c9555072bff3e4622
-  Banks:
-  - {fileID: 114288633421024604}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 6125
 --- !u!114 &114472713101534246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2166,6 +2184,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114480920070538492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: MusicBarGlobal
+  m_EditorClassIdentifier: 
+  Name: MusicBarGlobal
+  Min: 1
+  Max: 91
+  Default: 1
+  Exists: 1
 --- !u!114 &114484214414747512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2184,6 +2219,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114485110208603976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/lv04.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv04.bank
+  SubDir: 
+  lastModified: 637273403153585854
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114489116788736916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2273,23 +2326,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114495395577088928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/lv03bgm/end
-  m_EditorClassIdentifier: 
-  Name: end
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
 --- !u!114 &114495607903629428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2308,7 +2344,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114496801855343810
+--- !u!114 &114496650053033846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2317,15 +2353,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/start.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv01/saw
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/start.bank
-  SubDir: 
-  lastModified: 637273201622291903
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
+  Path: event:/Game/lv01/saw
+  guid: 0898aa32da78874fafd59b020f20a293
+  Banks:
+  - {fileID: 114442297523120736}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 280
 --- !u!114 &114502215592356502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2344,25 +2385,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114504444317927148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Game.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Game.bank
-  SubDir: 
-  lastModified: 637273201619483883
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &114509647404857546
+--- !u!114 &114508201198800336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2372,12 +2395,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv03/sin
+  m_Name: event:/Music/lv04bgm
   m_EditorClassIdentifier: 
-  Path: event:/Game/lv03/sin
-  guid: f9c3becb9cf6e345b6f4387d6807e63e
+  Path: event:/Music/lv04bgm
+  guid: 59a7d13521953547b8a9f95f770253d9
   Banks:
-  - {fileID: 114647946247973842}
+  - {fileID: 114485110208603976}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2403,7 +2426,30 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114525776953438556
+--- !u!114 &114518438562709468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/playerdeath
+  m_EditorClassIdentifier: 
+  Path: event:/Game/playerdeath
+  guid: 8072a2f1ee823f4e9fb915aad2a9bec9
+  Banks:
+  - {fileID: 114066627748432526}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5194
+--- !u!114 &114520758464408716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2418,7 +2464,7 @@ MonoBehaviour:
   Path: event:/Music/lv02bgm
   guid: 430e3d5a8afb1144b105797f7baa6972
   Banks:
-  - {fileID: 114296429076065528}
+  - {fileID: 114986898987941952}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2571,6 +2617,29 @@ MonoBehaviour:
   - Name: 
     Value: 1436
   Exists: 1
+--- !u!114 &114567289069858762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv01/squ
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv01/squ
+  guid: 88a4f26efce5df4c9555072bff3e4622
+  Banks:
+  - {fileID: 114442297523120736}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6125
 --- !u!114 &114568404331664718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2661,47 +2730,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114583759665838276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/buttonselect
-  m_EditorClassIdentifier: 
-  Path: event:/UI/buttonselect
-  guid: 7a51ea75dacd2e4db6be90439f24f873
-  Banks:
-  - {fileID: 114504444317927148}
-  - {fileID: 114496801855343810}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1453
---- !u!114 &114585072948026894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/lv03bgm/wave
-  m_EditorClassIdentifier: 
-  Name: wave
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
 --- !u!114 &114587392067158038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2738,6 +2766,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114590284026296888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/lv02/bigsandworm
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/lv02/bigsandworm
+  guid: acf71a08a71a4a46bae2b16483434490
+  Banks:
+  - {fileID: 114986898987941952}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4375
 --- !u!114 &114593049075475774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2791,6 +2842,31 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114597552564612682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/lv03bgm
+  m_EditorClassIdentifier: 
+  Path: event:/Music/lv03bgm
+  guid: 405274464f40ea4fbde6bd674110e463
+  Banks:
+  - {fileID: 114257624017166768}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114756063799889718}
+  - {fileID: 114688814817112072}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 150260
 --- !u!114 &114607337327869116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2809,46 +2885,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114614524823851038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/bosslaser
-  m_EditorClassIdentifier: 
-  Path: event:/Game/bosslaser
-  guid: 86c9326b81658e42af88a30ff3fb4114
-  Banks:
-  - {fileID: 114504444317927148}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 8803
---- !u!114 &114614803982633706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/playerdamaged/enemy_damage_level
-  m_EditorClassIdentifier: 
-  Name: enemy_damage_level
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 1
 --- !u!114 &114615632307540662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2902,7 +2938,7 @@ MonoBehaviour:
   Max: 17
   Default: 1
   Exists: 0
---- !u!114 &114626545428578308
+--- !u!114 &114635397519632544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2912,42 +2948,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/gameover
+  m_Name: event:/Game/lv01/tri
   m_EditorClassIdentifier: 
-  Path: event:/UI/gameover
-  guid: c93d01c917d9b84a970efe24f4cbfda4
+  Path: event:/Game/lv01/tri
+  guid: 19851fb39e57894cbc9f0b6f847a6f74
   Banks:
-  - {fileID: 114504444317927148}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 40117
---- !u!114 &114639261093672280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv01/sin
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv01/sin
-  guid: 0943167829a38e4389126b801699acc2
-  Banks:
-  - {fileID: 114288633421024604}
+  - {fileID: 114442297523120736}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 4450
 --- !u!114 &114639510282852824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2966,29 +2979,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114641854527264306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/enemydamaged
-  m_EditorClassIdentifier: 
-  Path: event:/Game/enemydamaged
-  guid: c5642520b77e9c41b9a6f2541ab15509
-  Banks:
-  - {fileID: 114504444317927148}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1088
 --- !u!114 &114645525395931288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3007,24 +2997,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114647946247973842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/lv03.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv03.bank
-  SubDir: 
-  lastModified: 637273201621422515
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114649478159317888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3042,6 +3014,23 @@ MonoBehaviour:
   lastModified: 637261969315031856
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &114649500436226862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/bossbgm/BossWin
+  m_EditorClassIdentifier: 
+  Name: BossWin
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 1
 --- !u!114 &114651322473318844
 MonoBehaviour:
@@ -3214,7 +3203,24 @@ MonoBehaviour:
   - Name: 
     Value: 580096
   Exists: 0
---- !u!114 &114680832531328114
+--- !u!114 &114688814817112072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/lv03bgm/wave
+  m_EditorClassIdentifier: 
+  Name: wave
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &114693819302364370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3224,42 +3230,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/playerboost
+  m_Name: event:/Game/playerignition
   m_EditorClassIdentifier: 
-  Path: event:/Game/playerboost
-  guid: c00bcda3cce9c74192ad1390055d306f
+  Path: event:/Game/playerignition
+  guid: d2e08ac7efcc684b868635ea6ed78f54
   Banks:
-  - {fileID: 114504444317927148}
+  - {fileID: 114066627748432526}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1941
---- !u!114 &114689172340783800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv02/saw
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv02/saw
-  guid: d6b9b8d8c0702f428dcacd301a46a378
-  Banks:
-  - {fileID: 114296429076065528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 280
+  Length: 4000
 --- !u!114 &114696060385343354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3278,6 +3261,30 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114696973003997900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/buttonselect
+  m_EditorClassIdentifier: 
+  Path: event:/UI/buttonselect
+  guid: 7a51ea75dacd2e4db6be90439f24f873
+  Banks:
+  - {fileID: 114066627748432526}
+  - {fileID: 114466517133316702}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1453
 --- !u!114 &114698107907721480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3366,6 +3373,29 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &114706937568875962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv02/squ
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv02/squ
+  guid: e3320cc163f7194f83e24e6e915539dd
+  Banks:
+  - {fileID: 114986898987941952}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114710344712790828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3420,29 +3450,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114713098663566974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv01/tri
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv01/tri
-  guid: 19851fb39e57894cbc9f0b6f847a6f74
-  Banks:
-  - {fileID: 114288633421024604}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 4450
 --- !u!114 &114713810070996012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3536,7 +3543,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &114735058029829962
+--- !u!114 &114730010502255886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3546,19 +3553,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/playerdeath
+  m_Name: event:/Game/enemydeath
   m_EditorClassIdentifier: 
-  Path: event:/Game/playerdeath
-  guid: 8072a2f1ee823f4e9fb915aad2a9bec9
+  Path: event:/Game/enemydeath
+  guid: 5311fa717562e34e8fa32a58e8c71789
   Banks:
-  - {fileID: 114504444317927148}
+  - {fileID: 114066627748432526}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 5194
+  Length: 1760
 --- !u!114 &114737629063451322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3577,29 +3584,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114745139516349048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv02/sin
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv02/sin
-  guid: 60eb3e98194ed948901fadc8e5028ace
-  Banks:
-  - {fileID: 114296429076065528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &114746634644810010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3636,6 +3620,46 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114751537138973056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/bosslaser
+  m_EditorClassIdentifier: 
+  Path: event:/Game/bosslaser
+  guid: 86c9326b81658e42af88a30ff3fb4114
+  Banks:
+  - {fileID: 114066627748432526}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 8803
+--- !u!114 &114756063799889718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/lv03bgm/end
+  m_EditorClassIdentifier: 
+  Name: end
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &114766519909820776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3672,29 +3696,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114770545041420166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv03/tri
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv03/tri
-  guid: 146697a52029e142b2dcf0a75a32365d
-  Banks:
-  - {fileID: 114647946247973842}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &114771571986957372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3713,6 +3714,30 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &114775734649894672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/playerdamaged
+  m_EditorClassIdentifier: 
+  Path: event:/Game/playerdamaged
+  guid: e6655e91bead3c4b958d3590aba1f46f
+  Banks:
+  - {fileID: 114066627748432526}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114995979855238718}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114784407914911996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3771,24 +3796,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 42048
---- !u!114 &114790197941324696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/lv04.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv04.bank
-  SubDir: 
-  lastModified: 637273201621452489
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114793420693144152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3807,30 +3814,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114799361688325704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/buttonover
-  m_EditorClassIdentifier: 
-  Path: event:/UI/buttonover
-  guid: 45e5b416bf428b4284c3a5fef026c672
-  Banks:
-  - {fileID: 114504444317927148}
-  - {fileID: 114496801855343810}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 189
 --- !u!114 &114802350374684948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3890,7 +3873,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114821944777733148
+--- !u!114 &114812073961176772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3900,12 +3883,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/lv04bgm
+  m_Name: event:/Environment/lv01/lavaintro
   m_EditorClassIdentifier: 
-  Path: event:/Music/lv04bgm
-  guid: 59a7d13521953547b8a9f95f770253d9
+  Path: event:/Environment/lv01/lavaintro
+  guid: 3bee3d0bf829fb46907c5b5ea3434db5
   Banks:
-  - {fileID: 114790197941324696}
+  - {fileID: 114442297523120736}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6229
+--- !u!114 &114814244480444252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv03/sin
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv03/sin
+  guid: f9c3becb9cf6e345b6f4387d6807e63e
+  Banks:
+  - {fileID: 114257624017166768}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3984,7 +3990,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &114846900504124022
+--- !u!114 &114840231454830238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3993,14 +3999,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/bossbgm/BossWin
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv03/saw
   m_EditorClassIdentifier: 
-  Name: BossWin
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
+  Path: event:/Game/lv03/saw
+  guid: d64a2925ee92264f9dc4ee303a0d5c8c
+  Banks:
+  - {fileID: 114257624017166768}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 280
 --- !u!114 &114852284974233394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4053,6 +4065,24 @@ MonoBehaviour:
   Min: 1
   Max: 17
   Default: 1
+  Exists: 1
+--- !u!114 &114854067174649920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637273403152588681
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &114854688591312560
 MonoBehaviour:
@@ -4251,7 +4281,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114883236110004906
+--- !u!114 &114885206384764902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4261,12 +4291,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv03/saw
+  m_Name: event:/Game/lv04/saw
   m_EditorClassIdentifier: 
-  Path: event:/Game/lv03/saw
-  guid: d64a2925ee92264f9dc4ee303a0d5c8c
+  Path: event:/Game/lv04/saw
+  guid: f641ca812e8da8468fad317b78c551b3
   Banks:
-  - {fileID: 114647946247973842}
+  - {fileID: 114485110208603976}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4274,24 +4304,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 280
---- !u!114 &114890283877929366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Soundbanks/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637273201619523851
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &114890464731549676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4382,6 +4394,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114911347160745774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv03/tri
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv03/tri
+  guid: 146697a52029e142b2dcf0a75a32365d
+  Banks:
+  - {fileID: 114257624017166768}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114911420184081982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4400,6 +4435,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114913509761189282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: fade out
+  m_EditorClassIdentifier: 
+  Name: fade out
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &114920793593630314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4435,6 +4487,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114923421960569952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/enemydamaged
+  m_EditorClassIdentifier: 
+  Path: event:/Game/enemydamaged
+  guid: c5642520b77e9c41b9a6f2541ab15509
+  Banks:
+  - {fileID: 114066627748432526}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1088
 --- !u!114 &114925320077184570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4471,29 +4546,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114939295149259704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv04/saw
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv04/saw
-  guid: f641ca812e8da8468fad317b78c551b3
-  Banks:
-  - {fileID: 114790197941324696}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 280
 --- !u!114 &114940493528902968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4512,29 +4564,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114943620483247110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv04/squ
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv04/squ
-  guid: 1b7939755d7701428e5f73629167afe5
-  Banks:
-  - {fileID: 114790197941324696}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &114959179162924256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4628,7 +4657,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114985811075175096
+--- !u!114 &114986898987941952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4637,20 +4666,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment/lv01/lavaloop
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/lv02.bank
   m_EditorClassIdentifier: 
-  Path: event:/Environment/lv01/lavaloop
-  guid: 79da206c8f59a94e80f8360c0aa5b7de
-  Banks:
-  - {fileID: 114288633421024604}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 29875
+  Path: Assets/Audio/FMOD Soundbanks/Desktop/lv02.bank
+  SubDir: 
+  lastModified: 637273403152867774
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114988936294830296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4669,70 +4693,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &114990814400861798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/lv04/tri
-  m_EditorClassIdentifier: 
-  Path: event:/Game/lv04/tri
-  guid: ae3c3d61ef3dfc42b7bffda75dd09e90
-  Banks:
-  - {fileID: 114790197941324696}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &114990895530682338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: MusicBarGlobal
-  m_EditorClassIdentifier: 
-  Name: MusicBarGlobal
-  Min: 1
-  Max: 91
-  Default: 1
-  Exists: 1
---- !u!114 &114992057930640074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Game/playerdamaged
-  m_EditorClassIdentifier: 
-  Path: event:/Game/playerdamaged
-  guid: e6655e91bead3c4b958d3590aba1f46f
-  Banks:
-  - {fileID: 114504444317927148}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 114614803982633706}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &114992195372768394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4751,6 +4711,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114992369373665360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/lv03/squ
+  m_EditorClassIdentifier: 
+  Path: event:/Game/lv03/squ
+  guid: a4592b2d6e80c245b8b0a6516885916e
+  Banks:
+  - {fileID: 114257624017166768}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &114995010324620892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4769,3 +4752,20 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114995979855238718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/playerdamaged/enemy_damage_level
+  m_EditorClassIdentifier: 
+  Name: enemy_damage_level
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
