@@ -83,9 +83,8 @@
      <Compile Include="Assets\Scripts\ButtonScripts.cs" />
      <Compile Include="Assets\Scripts\CerasBranch\destructibletile.cs" />
      <Compile Include="Assets\Scripts\CerasBranch\Enemy.cs" />
-     <Compile Include="Assets\Scripts\CerasBranch\EnemyAir1.cs" />
      <Compile Include="Assets\Scripts\CerasBranch\EnemyBullet.cs" />
-     <Compile Include="Assets\Scripts\CerasBranch\EnemyGround1Script.cs" />
+     <Compile Include="Assets\Scripts\CerasBranch\EnemyLazar.cs" />
      <Compile Include="Assets\Scripts\CerasBranch\EventSandWorm.cs" />
      <Compile Include="Assets\Scripts\CerasBranch\eventtrigger.cs" />
      <Compile Include="Assets\Scripts\CerasBranch\SandWormHazard.cs" />
@@ -96,6 +95,7 @@
      <Compile Include="Assets\Scripts\DestroyByContact.cs" />
      <Compile Include="Assets\Scripts\DestroyByTime.cs" />
      <Compile Include="Assets\Scripts\DestroyOnExit.cs" />
+     <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\Enemy_Movement\Enemy_Movement_01.cs" />
      <Compile Include="Assets\Scripts\Enemy_Movement\Enemy_Movement_02.cs" />
      <Compile Include="Assets\Scripts\Enemy_Shots\Boss_Shot.cs" />
@@ -106,8 +106,10 @@
      <Compile Include="Assets\Scripts\FireballMover.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\lazarglow.cs" />
      <Compile Include="Assets\Scripts\Level3BossTrigger.cs" />
      <Compile Include="Assets\Scripts\LevelTransition.cs" />
+     <Compile Include="Assets\Scripts\LevelTransitionMusicStop.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\PipeSmoke.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

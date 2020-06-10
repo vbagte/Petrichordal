@@ -29218,27 +29218,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: 5580560504907002921, guid: 85ec51b4b687bc249a8c98bfac0d17d1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901053666471131899, guid: 85ec51b4b687bc249a8c98bfac0d17d1,
-        type: 3}
-      propertyPath: fireinterval_sec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901053666471131899, guid: 85ec51b4b687bc249a8c98bfac0d17d1,
-        type: 3}
-      propertyPath: health
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901053666471131899, guid: 85ec51b4b687bc249a8c98bfac0d17d1,
-        type: 3}
-      propertyPath: explosion
-      value: 
-      objectReference: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85ec51b4b687bc249a8c98bfac0d17d1, type: 3}
 --- !u!4 &2009042734 stripped
@@ -32468,22 +32447,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7901053666471131899, guid: 85ec51b4b687bc249a8c98bfac0d17d1,
+    - target: {fileID: 5580560504907002921, guid: 85ec51b4b687bc249a8c98bfac0d17d1,
         type: 3}
-      propertyPath: fireinterval_sec
-      value: 1
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7901053666471131899, guid: 85ec51b4b687bc249a8c98bfac0d17d1,
-        type: 3}
-      propertyPath: health
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901053666471131899, guid: 85ec51b4b687bc249a8c98bfac0d17d1,
-        type: 3}
-      propertyPath: explosion
-      value: 
-      objectReference: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85ec51b4b687bc249a8c98bfac0d17d1, type: 3}
 --- !u!4 &8786515956375474358 stripped
