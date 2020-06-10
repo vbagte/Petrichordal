@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class LevelTransition : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class LevelTransition : MonoBehaviour
 
     private bool enable = false;
 
+  
     IEnumerator Start()
     {
         yield return new WaitForSeconds(3.5f);
