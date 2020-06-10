@@ -52,6 +52,8 @@ public class WardenBoss : MonoBehaviour
     private bool lavaActive = false;
     private bool deadActive = false;
 
+    
+
     private void Start()
     {
         wardenPanel.SetActive(true);
@@ -61,6 +63,8 @@ public class WardenBoss : MonoBehaviour
         s.enemy02.GetComponent<Enemy_Movement_02>().fireTime = s.fireTime;
         s.enemy02.GetComponent<WeaponController>().fireRate = s.fireRate;
         BossHurt.bossActive = true;
+
+
     }
 
     private void Update()
@@ -182,6 +186,7 @@ public class WardenBoss : MonoBehaviour
 
     void Death()
     {
+        Lvl1_Manager.bossMusic.setParameterByName("BossWin", 1);
         StopAllCoroutines();
         GameObject.Find("GameController").GetComponent<GameController>().StartCoroutine("BossDefeat");
         GameObject.Find("GameController").GetComponent<GameController>().StartCoroutine("BossExplode"); 

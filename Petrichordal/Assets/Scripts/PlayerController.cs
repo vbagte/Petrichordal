@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 [System.Serializable]
 public class Boundary
@@ -83,10 +84,12 @@ public class PlayerController : MonoBehaviour
     private bool canShield = true;
     public Rigidbody2D rb;
 
-    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-    private FMOD.Studio.EventInstance sawInstance;
-    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-
+    // waveform ability sound instances
+    private string sxSaw;
+    private string sxTri;
+    private string sxSqu;
+    private string sxSin;
+    private EventInstance squInst;
     private void Start()
     {
     
@@ -100,6 +103,12 @@ public class PlayerController : MonoBehaviour
         sinChargeCurrent = sinChargeMax;
         DestroyByBoundary.playerLeft = false;
         BossHurt.bossActive = false;
+
+        sxSaw = "event:/Game/" + GameController.currentSongName + "/saw";
+        sxTri = "event:/Game/" + GameController.currentSongName + "/tri";
+        sxSqu = "event:/Game/" + GameController.currentSongName + "/squ";
+        sxSin = "event:/Game/" + GameController.currentSongName + "/sin";
+
     }
 
     private void Update()
@@ -115,16 +124,10 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(BeatSystem.bar);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
 
+        //primary attack (saw)
         if (Input.GetButton("Fire1") && Time.time > nextFire && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
-
         {
-
-            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-            sawInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Game/lv01/waveform abilities/main/saw");
-            sawInstance.start();
-            sawInstance.release();
-            //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-
+            FMODUnity.RuntimeManager.PlayOneShot(sxSaw);
             nextFire = Time.time + fireRate;
             // Instantiate(shotSawtooth, shotSpawn.position, shotSawtooth.GetComponent<Transform>().rotation);
             Instantiate(shotSawtooth, shotSpawn.position, transform.rotation);
@@ -132,9 +135,10 @@ public class PlayerController : MonoBehaviour
             StopCoroutine("VoltageRecharge");
             StartCoroutine("VoltageRecharge");
         }
-        //tri attack
+        //secondary attack (tri)
         if (Input.GetButtonDown("Fire2") && v.voltageTri <= voltageCurrent && triChargeCurrent >= triChargeMax && GameController.playerEnable == true)
         {
+            FMODUnity.RuntimeManager.PlayOneShot(sxTri);
             Instantiate(shotTriAOE, transform.position, shotTriAOE.GetComponent<Transform>().rotation);
             Vector3 start = new Vector3(0, 0, 0);
             GameObject.Find("TriAOE(Clone)").transform.localScale = start;
@@ -147,9 +151,12 @@ public class PlayerController : MonoBehaviour
             StopCoroutine("VoltageRecharge");
             StartCoroutine("VoltageRecharge");
         }
-        //shield
+        //shield (squ)
         if (Input.GetButtonDown("Fire3") && v.voltageSqu <= voltageCurrent && squChargeCurrent >= squChargeMax && canShield == true && GameController.playerEnable == true)
         {
+            squInst = FMODUnity.RuntimeManager.CreateInstance(sxSqu);
+            squInst.start();
+            squInst.release();
             canShield = false;
             Instantiate(shield, shieldSpawn.transform.position, shieldSpawn.GetComponent<Transform>().rotation);
             Vector3 start = new Vector3(2, 0, 0);
@@ -160,9 +167,10 @@ public class PlayerController : MonoBehaviour
             StopCoroutine("VoltageRecharge");
             StartCoroutine("VoltageRecharge");
         }
-        //heal
+        //heal (sin)
         if (Input.GetButtonDown("Fire4") && v.voltageSin <= voltageCurrent && sinChargeCurrent >= sinChargeMax && GetComponent<Health>().health < healthMax &&  GameController.playerEnable == true)
         {
+            FMODUnity.RuntimeManager.PlayOneShot(sxSin);
             heal.SetActive(true);
             GetComponent<Health>().health += (healthMax * (0.01f * healthRecoverPercent));
             StartCoroutine(Heal());
@@ -336,6 +344,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdeath");
             GameObject.Find("GameController").GetComponent<GameController>().PlayerDeath();
         }
     }
@@ -344,10 +353,12 @@ public class PlayerController : MonoBehaviour
     {
         hv.healthText.text = GetComponent<Health>().health + "/" + healthMax;
         hv.healthBar.UpdateBar(GetComponent<Health>().health, healthMax);
+        
     }
 
     IEnumerator Evade()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerboost");
         evadeActive = true;
         yield return new WaitForSeconds(evadeTime);
         evadeActive = false;
@@ -412,6 +423,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
         Destroy(GameObject.Find("Shield(Clone)"));
+        squInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         squChargeCurrent = 0;
         StopCoroutine("SquRecharge");
         StartCoroutine("SquRecharge");
