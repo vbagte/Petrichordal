@@ -14,6 +14,10 @@ public class DestroyByBoundary : MonoBehaviour
             GameObject.Find("GameController").GetComponent<GameController>().NextLevelPanel();
             GameObject.Find("GameController").GetComponent<GameController>().exitActive = false;
         }
+        else if(other.CompareTag("Boss"))
+        {
+            
+        }
         else
         {
             Destroy(other.gameObject);

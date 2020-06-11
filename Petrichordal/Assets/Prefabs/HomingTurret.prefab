@@ -46,10 +46,31 @@ PrefabInstance:
       propertyPath: flypattern
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: health
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
+        type: 3}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: fireinterval_sec
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2396212770519247424, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396212770519247424, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6040387581598683603, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
@@ -60,17 +81,17 @@ PrefabInstance:
     - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.5
+      value: -37.57
       objectReference: {fileID: 0}
     - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5
+      value: 10.109997
       objectReference: {fileID: 0}
     - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
@@ -115,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 8795379220773587826, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_Name
-      value: groundturret (17)
+      value: HomingTurret
       objectReference: {fileID: 0}
     - target: {fileID: 8795379220773587826, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}

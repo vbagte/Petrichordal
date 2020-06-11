@@ -13,12 +13,11 @@ TagManager:
   - Life
   - Pipe
   - ExplosionSpot
-  - BossPart
   - TriShot
   - Foreground
   - Shield
   - Land
-  - Music
+  - Boss
   layers:
   - Default
   - TransparentFX
