@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
         //shield (squ)
         if (Input.GetButtonDown("Fire3") && v.voltageSqu <= voltageCurrent && squChargeCurrent >= squChargeMax && canShield == true && GameController.playerEnable == true)
         {
-            squInst = FMODUnity.RuntimeManager.CreateInstance(sxSqu);
+            //squInst = FMODUnity.RuntimeManager.CreateInstance(sxSqu);
             squInst.start();
             squInst.release();
             canShield = false;
