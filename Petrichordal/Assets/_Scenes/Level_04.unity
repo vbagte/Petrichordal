@@ -1217,6 +1217,7 @@ GameObject:
   - component: {fileID: 177369123}
   - component: {fileID: 177369121}
   - component: {fileID: 177369122}
+  - component: {fileID: 177369124}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1293,6 +1294,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &177369124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177369120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent: 1
+  UnloadEvent: 2
+  Banks:
+  - lv04
+  CollisionTag: 
+  PreloadSamples: 1
 --- !u!1 &186977095
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,7 +4120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -74.763985, y: -80.63693}
+  m_AnchoredPosition: {x: -74.763985, y: -80.63721}
   m_SizeDelta: {x: 358.2, y: 91.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &484513276
@@ -30131,8 +30150,13 @@ MonoBehaviour:
   nextLevelPanel: {fileID: 0}
   fadePanel: {fileID: 0}
   foreground: {fileID: 1685616001}
+  midground: {fileID: 0}
+  background: {fileID: 0}
+  lvl2Boss: {fileID: 0}
   paused: 0
   player: {fileID: 784671940}
+  playerExit: {fileID: 0}
+  playerHealth: {fileID: 0}
   exitActive: 0
 --- !u!1001 &1812098016
 PrefabInstance:
