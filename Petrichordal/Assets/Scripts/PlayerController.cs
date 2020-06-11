@@ -200,8 +200,7 @@ public class PlayerController : MonoBehaviour
         }
         if (GetComponent<Health>().health <= 0)
         {
-            LifeLost();
-          //  GetComponent<Health>().health = 0;
+          GetComponent<Health>().health = 0;
         }
         if (GetComponent<Health>().health > healthMax)
         {
@@ -342,7 +341,7 @@ public class PlayerController : MonoBehaviour
             livesIcon[lives - 1].SetActive(false);
             lives -= 1;
         }
-        else
+        if (lives <= 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdeath");
             GameObject.Find("GameController").GetComponent<GameController>().PlayerDeath();
