@@ -108,7 +108,6 @@ public class PlayerController : MonoBehaviour
         sxTri = "event:/Game/" + GameController.currentSongName + "/tri";
         sxSqu = "event:/Game/" + GameController.currentSongName + "/squ";
         sxSin = "event:/Game/" + GameController.currentSongName + "/sin";
-
     }
 
     private void Update()
@@ -154,9 +153,10 @@ public class PlayerController : MonoBehaviour
         //shield (squ)
         if (Input.GetButtonDown("Fire3") && v.voltageSqu <= voltageCurrent && squChargeCurrent >= squChargeMax && canShield == true && GameController.playerEnable == true)
         {
-            squInst = FMODUnity.RuntimeManager.CreateInstance(sxSqu);
-            squInst.start();
-            squInst.release();
+            //squInst = FMODUnity.RuntimeManager.CreateInstance(sxSqu);
+            //squInst.start();
+            //squInst.release();
+            FMODUnity.RuntimeManager.PlayOneShot(sxSqu);
             canShield = false;
             Instantiate(shield, shieldSpawn.transform.position, shieldSpawn.GetComponent<Transform>().rotation);
             Vector3 start = new Vector3(2, 0, 0);
@@ -239,14 +239,20 @@ public class PlayerController : MonoBehaviour
         if (evadeActive == false)
         {
 
-            //float translationY = Input.GetAxis("Vertical") * speed;
-            //float translationX = Input.GetAxis("Horizontal") * speed;
+            float translationY = Input.GetAxis("Vertical");
+            float translationX = Input.GetAxis("Horizontal");
+            moveX = translationX;
+            moveY = -translationY;
+            if (moveX > -.1 && moveX < .1) moveX = 0;
+            if (moveY > -.1 && moveY < .1) moveY = 0;
             //translationY *= Time.deltaTime;
             //translationX *= Time.deltaTime;
             //if (transform.eulerAngles.z == 90)
             //{
             //     transform.Translate(-translationY, -translationX, 0);
             //} else  transform.Translate(translationX, -translationY, 0);
+       
+
             if (Input.GetKey(KeyCode.D))
             {
                 moveX = 1;
@@ -255,16 +261,16 @@ public class PlayerController : MonoBehaviour
             {
                 moveX = -1;
             }
-            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            if (Input.GetKeyUp(KeyCode.A) )
             {
                 moveX = 0;
                 stopped = false;
             }
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) )
             {
                 moveY = 1;
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S) )
             {
                 moveY = -1;
             }

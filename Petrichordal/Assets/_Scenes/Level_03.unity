@@ -7754,6 +7754,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7774,6 +7775,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: -1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent: 1
+  UnloadEvent: 2
+  Banks:
+  - lv03
+  CollisionTag: 
+  PreloadSamples: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -26051,7 +26070,7 @@ PrefabInstance:
     - target: {fileID: 1242850977496996892, guid: b532edd91bda5dc479536b32b3113213,
         type: 3}
       propertyPath: health
-      value: 24
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 1242850977496996892, guid: b532edd91bda5dc479536b32b3113213,
         type: 3}
@@ -26400,7 +26419,7 @@ PrefabInstance:
     - target: {fileID: 7684559580780033020, guid: b532edd91bda5dc479536b32b3113213,
         type: 3}
       propertyPath: m_Name
-      value: groundturret (27)
+      value: LAZARBOSSTURRET
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b532edd91bda5dc479536b32b3113213, type: 3}
