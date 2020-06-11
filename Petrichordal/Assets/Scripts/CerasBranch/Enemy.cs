@@ -243,8 +243,10 @@ public class Enemy : MonoBehaviour
                 {
                     Instantiate(explosion, transform.position, explosion.transform.rotation);
                     Destroy(gameObject);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
             }
             if (other.gameObject.tag == "TriShot")
             {
@@ -253,8 +255,10 @@ public class Enemy : MonoBehaviour
                 {
                     Instantiate(explosion, transform.position, explosion.transform.rotation);
                     Destroy(gameObject);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
             }
             if (other.gameObject.tag == "Player")
             {
@@ -266,8 +270,10 @@ public class Enemy : MonoBehaviour
                 if (playerHealth.health <= 0)
                 {
                     LifeLost();
+                    
                 }
                 other.gameObject.GetComponent<Animation>().Play("Player_Hurt");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdamaged"); // play sound
             }
         }
     }
@@ -386,6 +392,7 @@ public class Enemy : MonoBehaviour
     }
     public void LifeLost()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdeath"); // play sound
         GameObject.Find("GameController").GetComponent<GameController>().LifeLost();
     }
 

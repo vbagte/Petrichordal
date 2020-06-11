@@ -83,11 +83,12 @@ public class Lvl1_Manager : MonoBehaviour
     private Vector3 stalagmiteSpawnStart;
 
     private FMOD.Studio.EventInstance lavaLoopInst;
-    public static FMOD.Studio.EventInstance bossMusic;
+    public SoundManager soundManager;
 
     private void Start()
     {
-        lavaLoopInst = FMODUnity.RuntimeManager.CreateInstance("event:/Environment/lv01/lavaloop");
+        soundManager = GameObject.Find("Main Camera").GetComponent<SoundManager>();
+        lavaLoopInst = FMODUnity.RuntimeManager.CreateInstance("event:/Environment/lv01/lavaloop"); //play sound
         stalagtiteSpawnStart = new Vector3(10, stalag.stalagtiteYSpawn, 0);
         stalagmiteSpawnStart = new Vector3(10, stalag.stalagmiteYSpawn, 0);
         stalag.stalagtite.GetComponent<Mover>().speed = stalag.stalagSpeed;
@@ -117,15 +118,15 @@ public class Lvl1_Manager : MonoBehaviour
     {
               yield return new WaitForSeconds(playerStart.playerTakeOffDelay);
         playerStart.readyText.GetComponent<Animation>().Play();
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerignition");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerignition"); // play sound
         Vector2 movement = new Vector2(0, playerStart.takeOffSpeed);
         player.GetComponent<Rigidbody2D>().velocity = movement;
         yield return new WaitForSeconds(playerStart.playerEnable);
         playerStart.goText.GetComponent<Animation>().Play();
 
         // start music
-        GameController.songInstance.start();
-        GameController.songInstance.release();
+        //GameController.songInstance.start();
+        //GameController.songInstance.release();
 
         Vector2 movement2 = new Vector2(0, 0);
         player.GetComponent<Rigidbody2D>().velocity = movement2;
@@ -292,11 +293,7 @@ public class Lvl1_Manager : MonoBehaviour
 
     IEnumerator Boss()
     {
-        // stop level music and start boss music
-        GameController.songInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        bossMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/bossbgm");
-        bossMusic.start();
-        bossMusic.release();
+        soundManager.PlayBossMusic();
 
         yield return new WaitForSeconds(3);
         boss.SetActive(true);
