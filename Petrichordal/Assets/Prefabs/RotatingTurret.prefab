@@ -87,6 +87,12 @@ PrefabInstance:
       propertyPath: speed
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
+        type: 3}
     - target: {fileID: 2396212770519247424, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_Enabled
