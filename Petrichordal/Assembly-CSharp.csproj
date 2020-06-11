@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\_Level_Managers\Lvl2_Manager.cs" />
      <Compile Include="Assets\Scripts\Audio Scripts\BeatSystem.cs" />
      <Compile Include="Assets\Scripts\BGScrollerX.cs" />
+     <Compile Include="Assets\Scripts\Bosses\BossDead.cs" />
      <Compile Include="Assets\Scripts\Bosses\BossHurt.cs" />
      <Compile Include="Assets\Scripts\Bosses\Level_01\WardenBoss.cs" />
      <Compile Include="Assets\Scripts\Bosses\Level_04\Loop.cs" />
@@ -113,6 +114,7 @@
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\PipeSmoke.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\ReturnToMenu.cs" />
      <Compile Include="Assets\Scripts\SpeedChange.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
      <Compile Include="Assets\SnakeBoss.cs" />

@@ -147,7 +147,8 @@ MonoBehaviour:
   flypattern: 0
   projectile: {fileID: 6592826748695064272, guid: 31260884f1cf2ef46ba1c17c7fdfcb96,
     type: 3}
-  explosion: {fileID: 0}
+  explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
+    type: 3}
   projectilespeed: 3
   fireinterval_sec: 0.05
   burstcooldown_sec: 3
