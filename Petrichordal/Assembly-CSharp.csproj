@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\_Level_Managers\Lvl1_Manager.cs" />
     <Compile Include="Assets\Scripts\_Level_Managers\Lvl2_Manager.cs" />
     <Compile Include="Assets\Scripts\Audio Scripts\BeatSystem.cs" />
+    <Compile Include="Assets\Scripts\Audio Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\BGScrollerX.cs" />
     <Compile Include="Assets\Scripts\Bosses\BossDead.cs" />
     <Compile Include="Assets\Scripts\Bosses\BossHurt.cs" />

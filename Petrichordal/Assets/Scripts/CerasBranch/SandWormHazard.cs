@@ -7,10 +7,18 @@ public class SandWormHazard : MonoBehaviour
     private long initial_entry_frames=0;
     private long counter;
     private int swapnegative = -1;
+
+    private FMOD.Studio.EventInstance bossBgm;
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.songInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Environment/lv02/bigsandworm"); // play sound
+        bossBgm = FMODUnity.RuntimeManager.CreateInstance("event:/Music/bossbgm");
+        bossBgm.start();
+        bossBgm.release();
         
+
     }
 
     // Update is called once per frame

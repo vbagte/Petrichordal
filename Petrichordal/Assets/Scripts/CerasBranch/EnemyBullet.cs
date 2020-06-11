@@ -37,6 +37,7 @@ public class EnemyBullet : MonoBehaviour
                 LifeLost();
             }
             collision.gameObject.GetComponent<Animation>().Play("Player_Hurt");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdamaged");
             Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Shield")

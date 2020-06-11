@@ -84,12 +84,14 @@ public class PlayerController : MonoBehaviour
     private bool canShield = true;
     public Rigidbody2D rb;
 
+    public SoundManager soundManager;
+
     // waveform ability sound instances
-    private string sxSaw;
-    private string sxTri;
-    private string sxSqu;
-    private string sxSin;
-    private EventInstance squInst;
+    //private string sxSaw;
+    //private string sxTri;
+    //private string sxSqu;
+    //private string sxSin;
+    
     private void Start()
     {
     
@@ -104,10 +106,16 @@ public class PlayerController : MonoBehaviour
         DestroyByBoundary.playerLeft = false;
         BossHurt.bossActive = false;
 
-        sxSaw = "event:/Game/" + GameController.currentSongName + "/saw";
-        sxTri = "event:/Game/" + GameController.currentSongName + "/tri";
-        sxSqu = "event:/Game/" + GameController.currentSongName + "/squ";
-        sxSin = "event:/Game/" + GameController.currentSongName + "/sin";
+        //// assigns path of current level's corresponding ability sound events
+        //sxSaw = "event:/Game/" + SoundManager.currentSongName + "/saw";
+        //sxTri = "event:/Game/" + SoundManager.currentSongName + "/tri";
+        //sxSqu = "event:/Game/" + SoundManager.currentSongName + "/squ";
+        //sxSin = "event:/Game/" + SoundManager.currentSongName + "/sin";
+
+        //Debug.Log(sxSaw);
+        //Debug.Log(sxTri);
+        //Debug.Log(sxSqu);
+        //Debug.Log(sxSin);
 
     }
 
@@ -127,7 +135,8 @@ public class PlayerController : MonoBehaviour
         //primary attack (saw)
         if (Input.GetButton("Fire1") && Time.time > nextFire && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(sxSaw);
+            Debug.Log(SoundManager.sxSaw);
+            FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxSaw);
             nextFire = Time.time + fireRate;
             // Instantiate(shotSawtooth, shotSpawn.position, shotSawtooth.GetComponent<Transform>().rotation);
             Instantiate(shotSawtooth, shotSpawn.position, transform.rotation);
@@ -138,7 +147,7 @@ public class PlayerController : MonoBehaviour
         //secondary attack (tri)
         if (Input.GetButtonDown("Fire2") && v.voltageTri <= voltageCurrent && triChargeCurrent >= triChargeMax && GameController.playerEnable == true)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(sxTri);
+            FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxTri);
             Instantiate(shotTriAOE, transform.position, shotTriAOE.GetComponent<Transform>().rotation);
             Vector3 start = new Vector3(0, 0, 0);
             GameObject.Find("TriAOE(Clone)").transform.localScale = start;
@@ -157,7 +166,7 @@ public class PlayerController : MonoBehaviour
             //squInst = FMODUnity.RuntimeManager.CreateInstance(sxSqu);
             //squInst.start();
             //squInst.release();
-            FMODUnity.RuntimeManager.PlayOneShot(sxSqu);
+            FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxSqu);
             canShield = false;
             Instantiate(shield, shieldSpawn.transform.position, shieldSpawn.GetComponent<Transform>().rotation);
             Vector3 start = new Vector3(2, 0, 0);
@@ -171,7 +180,7 @@ public class PlayerController : MonoBehaviour
         //heal (sin)
         if (Input.GetButtonDown("Fire4") && v.voltageSin <= voltageCurrent && sinChargeCurrent >= sinChargeMax && GetComponent<Health>().health < healthMax &&  GameController.playerEnable == true)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(sxSin);
+            FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxSin);
             heal.SetActive(true);
             GetComponent<Health>().health += (healthMax * (0.01f * healthRecoverPercent));
             StartCoroutine(Heal());
@@ -339,6 +348,7 @@ public class PlayerController : MonoBehaviour
     {
         if (lives > 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdeath");
             livesIcon[lives - 1].SetActive(false);
             lives -= 1;
         }
@@ -423,7 +433,6 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
         Destroy(GameObject.Find("Shield(Clone)"));
-        squInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         squChargeCurrent = 0;
         StopCoroutine("SquRecharge");
         StartCoroutine("SquRecharge");
