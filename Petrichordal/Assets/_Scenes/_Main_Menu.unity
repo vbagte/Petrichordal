@@ -954,7 +954,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 340617355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c6ef6eceabf7e4981f3a6b23dac95e, type: 3}
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &340617357
@@ -2405,6 +2407,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 4918754}
   settingsMenu: {fileID: 992715458}
   fade: {fileID: 1118558455}
+  soundManager: {fileID: 0}
 --- !u!4 &1207834928
 Transform:
   m_ObjectHideFlags: 0
