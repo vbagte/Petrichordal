@@ -15,6 +15,7 @@ public class EnemyLazar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/bosslaser");
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
@@ -46,7 +47,8 @@ public class EnemyLazar : MonoBehaviour
                 LifeLost();
             }
             collision.gameObject.GetComponent<Animation>().Play("Player_Hurt");
-           // Destroy(gameObject);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdamaged");
+            // Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Shield")
         {

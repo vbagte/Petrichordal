@@ -186,7 +186,7 @@ public class WardenBoss : MonoBehaviour
 
     void Death()
     {
-        Lvl1_Manager.bossMusic.setParameterByName("BossWin", 1);
+        SoundManager.bossMusic.setParameterByName("BossWin", 1); // ends boss music with outro stinger
         StopAllCoroutines();
         GameObject.Find("GameController").GetComponent<GameController>().StartCoroutine("BossDefeat");
         GameObject.Find("GameController").GetComponent<GameController>().StartCoroutine("BossExplode"); 
