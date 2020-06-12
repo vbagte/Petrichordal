@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114915637585711810}
   m_Layer: 0
   m_Name: lazar
-  m_TagString: EnemyShot
+  m_TagString: Lazar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +125,4 @@ MonoBehaviour:
   damage: 500
   glow: {fileID: 6647453536593165373, guid: e11901e37c748b942945cc1682eb9331, type: 3}
   maxXscale: 0
+  Xscaler: 0
