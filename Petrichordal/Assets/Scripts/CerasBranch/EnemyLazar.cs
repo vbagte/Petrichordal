@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyLazar : MonoBehaviour
 {
     public int damage;
-    //public float speed;
     public GameObject glow;
+    public float maxXscale;
+    public float Xscaler;
     private long counter;
     private Health playerHealth;
-    public float maxXscale;
     private bool growing=true;
     // Start is called before the first frame update
     void Start()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/bosslaser");
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
@@ -29,10 +31,10 @@ public class EnemyLazar : MonoBehaviour
         {
             if (growing)
             {
-                transform.localScale += new Vector3(.2f, 0, 0); //make laser wider in the X direciton
+                transform.localScale += new Vector3(Xscaler, 0, 0); //make laser wider in the X direciton
                 if (transform.localScale.x >= maxXscale) growing = false; //if we reached the desired X scale
             }
-            else transform.localScale += new Vector3(-.2f, 0, 0); //make laser skinnier in the X direction
+            else transform.localScale += new Vector3(-Xscaler, 0, 0); //make laser skinnier in the X direction
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,7 +47,8 @@ public class EnemyLazar : MonoBehaviour
                 LifeLost();
             }
             collision.gameObject.GetComponent<Animation>().Play("Player_Hurt");
-           // Destroy(gameObject);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdamaged");
+            // Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Shield")
         {
@@ -59,3 +62,5 @@ public class EnemyLazar : MonoBehaviour
     }
 
 }
+
+

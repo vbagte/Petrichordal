@@ -16,6 +16,8 @@ public class Lvl2_Manager : MonoBehaviour
     {
         StartCoroutine(Killme());
         GameController.playerEnable = true;
+
+        
     }
 
     IEnumerator Killme()

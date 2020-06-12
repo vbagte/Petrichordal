@@ -2,25 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
+
+
 
 public class Enemy : MonoBehaviour
 {
+    public enum projectiledirections { forward = 1, toward_player = 2 }
+    public enum Eflypattern { none = 0, oneway = 1, hover = 2, stopngo = 3, loop = 4, squareexit = 5, rotating = 6, faceplayer = 7 };
+    public enum shottypes { none = 0, single = 1, dual = 2, triad = 3, spreader = 4, burst = 5, lazar = 6 }
+
+    [Header("[Enemy Health Options]")]
+    public GameObject explosion;
     public int health = 1;
     public int collisiondamage = 50;
-    public float speed;
-    public enum Eflypattern { none = 0, oneway = 1, hover = 2, stopngo = 3, loop = 4, squareexit = 5, rotating = 6, faceplayer=7 };
+
+    [Header("[Enemy Movement Options]")]
     public Eflypattern flypattern;
-    public GameObject projectile;
-    public GameObject explosion;
-    public float projectilespeed;
-    public float fireinterval_sec;
-    public float burstcooldown_sec;
-    public int projectiles_per_burst;
-    public enum shottypes { none = 0, single = 1, dual = 2, triad = 3, spreader = 4, burst = 5,lazar=6 }
+    public float speed;
+
+    [Header("[Enemy Weapon Options]")]
     public shottypes shottype;
-    public enum projectiledirections { forward = 1, toward_player = 2 }
+    [HideInInspector]
+    public float projectilespeed;
+    [HideInInspector]
+    public float fireinterval_sec;
+    [HideInInspector]
+    public float burstcooldown_sec;
+    [HideInInspector]
+    public int projectiles_per_burst;
+    [HideInInspector]
     public projectiledirections projectiledirection;
+    [HideInInspector]
+    public GameObject projectile;
+    [HideInInspector]
     public GameObject lazarglow;
+    [HideInInspector]
+    public float lazar_max_width=8f;
+    [HideInInspector]
+    public float lazar_grow_rate = .2f;
+    [HideInInspector]
+    public int lazar_damage = 500;
 
     private bool cooldown = false;
     private bool firing = true;
@@ -195,8 +217,14 @@ public class Enemy : MonoBehaviour
                 transform.Rotate(0, 0, speed * Time.deltaTime);
                 break;
             case 7: //faceplayer
+                bool lockdirection = false;
+                if (shottype == shottypes.lazar)
+                {
+                    Object activelaser = Object.FindObjectOfType<EnemyLazar>();
+                    if (activelaser != null) { lockdirection = true; } else lockdirection=false;
+                }
 
-                if (firinmahlazar == false) //if we are firin mah lazar then stop updating facing rotation
+                if (lockdirection==false) 
                 {
                     float angle = 0;
 
@@ -215,15 +243,15 @@ public class Enemy : MonoBehaviour
                     }
                     transform.Rotate(0, 0, angle);
                 }
-                else
-                {
-                    lazarcounter++;
-                    if (lazarcounter >= 60)
-                    {
-                        lazarcounter = 0;
-                        firinmahlazar = false;
-                    }
-                }
+                //else
+                //{
+                //    lazarcounter++;
+                //    if (lazarcounter >= 60*fireinterval_sec+30)
+                //    {
+                //        lazarcounter = 0;
+                //        firinmahlazar = false;
+                //    }
+                //}
 
                 break;
 
@@ -243,8 +271,10 @@ public class Enemy : MonoBehaviour
                 {
                     Instantiate(explosion, transform.position, explosion.transform.rotation);
                     Destroy(gameObject);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
             }
             if (other.gameObject.tag == "TriShot")
             {
@@ -253,8 +283,10 @@ public class Enemy : MonoBehaviour
                 {
                     Instantiate(explosion, transform.position, explosion.transform.rotation);
                     Destroy(gameObject);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
             }
             if (other.gameObject.tag == "Player")
             {
@@ -266,8 +298,10 @@ public class Enemy : MonoBehaviour
                 if (playerHealth.health <= 0)
                 {
                     LifeLost();
+                    
                 }
                 other.gameObject.GetComponent<Animation>().Play("Player_Hurt");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdamaged"); // play sound
             }
         }
     }
@@ -367,9 +401,11 @@ public class Enemy : MonoBehaviour
                    Instantiate(lazarglow, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
 
                 projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
-                    projectileGO.transform.localScale = new Vector3(0, 12, 1);
-                projectileGO.transform.Translate(0, 6.2f,0);
-                projectileGO.GetComponent<EnemyLazar>().maxXscale = 8;
+                    projectileGO.transform.localScale = new Vector3(0, 20, 1);
+                projectileGO.transform.Translate(0, 10f,0);
+                projectileGO.GetComponent<EnemyLazar>().maxXscale = lazar_max_width;
+                projectileGO.GetComponent<EnemyLazar>().damage = lazar_damage;
+                projectileGO.GetComponent<EnemyLazar>().Xscaler = lazar_grow_rate;
                     firinmahlazar = true;
                 //}
                 //else lazarcounter++;
@@ -386,7 +422,37 @@ public class Enemy : MonoBehaviour
     }
     public void LifeLost()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdeath"); // play sound
         GameObject.Find("GameController").GetComponent<GameController>().LifeLost();
     }
 
+}
+
+
+[CustomEditor(typeof(Enemy))]
+public class EnemyEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        Enemy enemy = (Enemy)target;
+   
+        if (enemy.shottype != Enemy.shottypes.none)
+        {
+            enemy.projectile = (GameObject)EditorGUILayout.ObjectField("Projectile Object" ,enemy.projectile, typeof(GameObject), true);
+            if (enemy.shottype != Enemy.shottypes.lazar) enemy.projectilespeed = EditorGUILayout.FloatField("Projectile Speed", enemy.projectilespeed);
+            enemy.fireinterval_sec = EditorGUILayout.FloatField("Firing Time(seconds)", enemy.fireinterval_sec);
+            enemy.burstcooldown_sec = EditorGUILayout.FloatField("Cooldown Time(seconds", enemy.burstcooldown_sec);
+            enemy.projectiles_per_burst = EditorGUILayout.IntField("Projectiles per Firing", enemy.projectiles_per_burst);
+            if (enemy.shottype != Enemy.shottypes.lazar)  enemy.projectiledirection = (Enemy.projectiledirections)EditorGUILayout.EnumPopup("Projectile Direction", enemy.projectiledirection);
+        }
+         if (enemy.shottype == Enemy.shottypes.lazar)
+        {
+            EditorGUILayout.LabelField("[Lazar Options]", EditorStyles.boldLabel);
+            enemy.lazarglow = (GameObject)EditorGUILayout.ObjectField("Firing Glow Object",enemy.lazarglow, typeof(GameObject),true);
+            enemy.lazar_damage = EditorGUILayout.IntField("Lazar Damage", enemy.lazar_damage);
+            enemy.lazar_grow_rate = EditorGUILayout.FloatField("Lazar Growth Rate", enemy.lazar_grow_rate);
+            enemy.lazar_max_width = EditorGUILayout.FloatField("Lazar Max Width", enemy.lazar_max_width);
+        }
+    }
 }
