@@ -180,7 +180,6 @@ public class GameController : MonoBehaviour
         playerHealth.health = player.GetComponent<PlayerController>().healthMax;
         if (player != null && player.GetComponent<PlayerController>().lives > 0)
         {
-            print("test");
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().HealthUpdate();
             player.GetComponent<PlayerController>().enabled = false;
             player.GetComponent<Collider2D>().enabled = false;

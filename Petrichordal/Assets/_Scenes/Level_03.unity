@@ -26310,7 +26310,7 @@ PrefabInstance:
     - target: {fileID: 1242850977496996892, guid: b532edd91bda5dc479536b32b3113213,
         type: 3}
       propertyPath: health
-      value: 24
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 1242850977496996892, guid: b532edd91bda5dc479536b32b3113213,
         type: 3}
@@ -26659,7 +26659,7 @@ PrefabInstance:
     - target: {fileID: 7684559580780033020, guid: b532edd91bda5dc479536b32b3113213,
         type: 3}
       propertyPath: m_Name
-      value: groundturret (27)
+      value: LAZARBOSSTURRET
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b532edd91bda5dc479536b32b3113213, type: 3}
