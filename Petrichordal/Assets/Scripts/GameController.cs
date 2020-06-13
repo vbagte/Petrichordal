@@ -85,10 +85,6 @@ public class GameController : MonoBehaviour
         //bS.AssignBeatEvent(songInstance);
         if (gameStart == false)
         {
-            // start music
-            Debug.Log("Current Song = " + SoundManager.currentSongName);
-            soundManager.PlayMusic();
-
             gameStart = true;
         }
 
