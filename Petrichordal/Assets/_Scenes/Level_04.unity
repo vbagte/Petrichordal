@@ -1195,6 +1195,7 @@ GameObject:
   - component: {fileID: 177369124}
   - component: {fileID: 177369125}
   - component: {fileID: 177369126}
+  - component: {fileID: 177369127}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1313,6 +1314,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d197ad906143f4f8ba49b05e9d222a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &177369127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177369120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: snapshot:/Level04Verb
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &186977095
 GameObject:
   m_ObjectHideFlags: 0
@@ -23369,7 +23393,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 2074574720}
   settingsMenu: {fileID: 1893370175}
   fade: {fileID: 0}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 177369125}
 --- !u!4 &1268918106
 Transform:
   m_ObjectHideFlags: 0
@@ -29057,7 +29081,7 @@ PrefabInstance:
     - target: {fileID: 4858860447773449596, guid: d013efed00a25c44fa8393e50842f3a7,
         type: 3}
       propertyPath: m_Name
-      value: eventsquare 1
+      value: eventsquare 1 (music)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d013efed00a25c44fa8393e50842f3a7, type: 3}
@@ -29802,7 +29826,7 @@ MonoBehaviour:
   playerExit: {fileID: 0}
   playerHealth: {fileID: 0}
   exitActive: 0
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 177369125}
 --- !u!1001 &1812098016
 PrefabInstance:
   m_ObjectHideFlags: 0

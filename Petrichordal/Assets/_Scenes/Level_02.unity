@@ -15897,20 +15897,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 9999
-  collisiondamage: 9999
-  speed: -3000
-  flypattern: 6
-  projectile: {fileID: 0}
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
+  health: 9999
+  collisiondamage: 9999
+  flypattern: 6
+  speed: -3000
+  shottype: 0
   projectilespeed: 0
   fireinterval_sec: 0
   burstcooldown_sec: 0
   projectiles_per_burst: 0
-  shottype: 0
   projectiledirection: 0
+  projectile: {fileID: 0}
   lazarglow: {fileID: 0}
+  lazar_max_width: 8
+  lazar_grow_rate: 0.2
+  lazar_damage: 500
 --- !u!114 &225448981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19715,20 +19718,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 9999
-  collisiondamage: 9999
-  speed: 3000
-  flypattern: 6
-  projectile: {fileID: 0}
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
+  health: 9999
+  collisiondamage: 9999
+  flypattern: 6
+  speed: 3000
+  shottype: 0
   projectilespeed: 0
   fireinterval_sec: 0
   burstcooldown_sec: 0
   projectiles_per_burst: 0
-  shottype: 0
   projectiledirection: 0
+  projectile: {fileID: 0}
   lazarglow: {fileID: 0}
+  lazar_max_width: 8
+  lazar_grow_rate: 0.2
+  lazar_damage: 500
 --- !u!114 &463279780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20659,6 +20665,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -20777,6 +20784,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d197ad906143f4f8ba49b05e9d222a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: snapshot:/Level02Verb
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &523535286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32626,20 +32656,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  collisiondamage: 9999
-  speed: 0
-  flypattern: 0
-  projectile: {fileID: 0}
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
+  health: 30
+  collisiondamage: 9999
+  flypattern: 0
+  speed: 0
+  shottype: 0
   projectilespeed: 0
   fireinterval_sec: 0
   burstcooldown_sec: 0
   projectiles_per_burst: 0
-  shottype: 0
   projectiledirection: 0
+  projectile: {fileID: 0}
   lazarglow: {fileID: 0}
+  lazar_max_width: 8
+  lazar_grow_rate: 0.2
+  lazar_damage: 500
 --- !u!111 &1094909778
 Animation:
   m_ObjectHideFlags: 0
@@ -33966,20 +33999,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  collisiondamage: 9999
-  speed: 0
-  flypattern: 0
-  projectile: {fileID: 0}
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
+  health: 30
+  collisiondamage: 9999
+  flypattern: 0
+  speed: 0
+  shottype: 0
   projectilespeed: 0
   fireinterval_sec: 0
   burstcooldown_sec: 0
   projectiles_per_burst: 0
-  shottype: 0
   projectiledirection: 0
+  projectile: {fileID: 0}
   lazarglow: {fileID: 0}
+  lazar_max_width: 8
+  lazar_grow_rate: 0.2
+  lazar_damage: 500
 --- !u!111 &1161920718
 Animation:
   m_ObjectHideFlags: 0
@@ -37003,20 +37039,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 9999
-  collisiondamage: 9999
-  speed: 3000
-  flypattern: 6
-  projectile: {fileID: 0}
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
+  health: 9999
+  collisiondamage: 9999
+  flypattern: 6
+  speed: 3000
+  shottype: 0
   projectilespeed: 0
   fireinterval_sec: 0
   burstcooldown_sec: 0
   projectiles_per_burst: 0
-  shottype: 0
   projectiledirection: 0
+  projectile: {fileID: 0}
   lazarglow: {fileID: 0}
+  lazar_max_width: 8
+  lazar_grow_rate: 0.2
+  lazar_damage: 500
 --- !u!114 &1329090801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41086,20 +41125,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 110
-  collisiondamage: 9999
-  speed: 0
-  flypattern: 0
-  projectile: {fileID: 0}
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
+  health: 110
+  collisiondamage: 9999
+  flypattern: 0
+  speed: 0
+  shottype: 0
   projectilespeed: 0
   fireinterval_sec: 0
   burstcooldown_sec: 0
   projectiles_per_burst: 0
-  shottype: 0
   projectiledirection: 0
+  projectile: {fileID: 0}
   lazarglow: {fileID: 0}
+  lazar_max_width: 8
+  lazar_grow_rate: 0.2
+  lazar_damage: 500
 --- !u!60 &1575325675
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -41311,20 +41353,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  collisiondamage: 9999
-  speed: 0
-  flypattern: 0
-  projectile: {fileID: 0}
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
+  health: 30
+  collisiondamage: 9999
+  flypattern: 0
+  speed: 0
+  shottype: 0
   projectilespeed: 0
   fireinterval_sec: 0
   burstcooldown_sec: 0
   projectiles_per_burst: 0
-  shottype: 0
   projectiledirection: 0
+  projectile: {fileID: 0}
   lazarglow: {fileID: 0}
+  lazar_max_width: 8
+  lazar_grow_rate: 0.2
+  lazar_damage: 500
 --- !u!111 &1587529419
 Animation:
   m_ObjectHideFlags: 0
@@ -44067,20 +44112,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 9999
-  collisiondamage: 9999
-  speed: -3000
-  flypattern: 6
-  projectile: {fileID: 0}
   explosion: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
     type: 3}
+  health: 9999
+  collisiondamage: 9999
+  flypattern: 6
+  speed: -3000
+  shottype: 0
   projectilespeed: 0
   fireinterval_sec: 0
   burstcooldown_sec: 0
   projectiles_per_burst: 0
-  shottype: 0
   projectiledirection: 0
+  projectile: {fileID: 0}
   lazarglow: {fileID: 0}
+  lazar_max_width: 8
+  lazar_grow_rate: 0.2
+  lazar_damage: 500
 --- !u!114 &1805712524
 MonoBehaviour:
   m_ObjectHideFlags: 0
