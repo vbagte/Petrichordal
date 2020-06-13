@@ -7,6 +7,7 @@ public class Lvl2_Manager : MonoBehaviour
 {
     public PlayerStart playerStart;
     public GameObject foreground;
+    
     //public float foregroundSpeed;
     //public GameObject player;
 
@@ -16,23 +17,27 @@ public class Lvl2_Manager : MonoBehaviour
     {
         StartCoroutine(Killme());
         GameController.playerEnable = true;
+        
 
         
     }
 
     IEnumerator Killme()
     {
- 
-    yield return new WaitForSeconds(playerStart.playerTakeOffDelay);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerignition"); // play sound
+        yield return new WaitForSeconds(playerStart.playerTakeOffDelay);
     playerStart.readyText.GetComponent<Animation>().Play();
-    //Vector2 movement = new Vector2(0, playerStart.takeOffSpeed);
-    yield return new WaitForSeconds(playerStart.playerEnable);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/ready");
+        
+        //Vector2 movement = new Vector2(0, playerStart.takeOffSpeed);
+        yield return new WaitForSeconds(playerStart.playerEnable);
     playerStart.goText.GetComponent<Animation>().Play();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/go");
         //foreground.GetComponent<Mover>().speed = foregroundSpeed;
-    //   // Vector2 movement2 = new Vector2(0, 0);
-    //   // player.GetComponent<Rigidbody2D>().velocity = movement2;
-    //   // player.GetComponent<PlayerController>().enabled = true;
-    //   //GameController.playerEnable = true;
+        //   // Vector2 movement2 = new Vector2(0, 0);
+        //   // player.GetComponent<Rigidbody2D>().velocity = movement2;
+        //   // player.GetComponent<PlayerController>().enabled = true;
+        //   //GameController.playerEnable = true;
     }
 
 

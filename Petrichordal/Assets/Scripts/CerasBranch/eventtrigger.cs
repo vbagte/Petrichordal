@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class eventtrigger : MonoBehaviour
 {
     private long counter;
-    public long seconds=8;
+    public long seconds = 8;
     public float speed_on_exit_multiplier = 1;
     public float new_speed_multiplier = 1;
         public GameObject foreground;
@@ -14,6 +15,9 @@ public class eventtrigger : MonoBehaviour
     //  public GameObject enemylayer;
     private float bgOS, mgOS, fgOS;
     public int slow_player_divider = 1;
+    
+    //public SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +25,7 @@ public class eventtrigger : MonoBehaviour
         bgOS = background.GetComponent<Scroll>().speed;
         mgOS = midground.GetComponent<Scroll>().speed;
         fgOS = foreground.GetComponent<Scroll>().speed;
-
+        //soundManager = GameObject.Find("Main Camera").GetComponent<SoundManager>();
         //elOS = enemylayer.GetComponent<Scroll>().layerspeed;
     }
 
@@ -30,9 +34,16 @@ public class eventtrigger : MonoBehaviour
     {
         if (transform.position.x <= 10 && transform.position.x >= -10 && transform.position.y >= -5.5 && transform.position.y < 3.5)    
         {
+            // plays level 04 music
+            //if (counter == 0 && gameObject.name == "eventsquare 1 (music)") 
+            //{
+            //    soundManager.PlayMusic();
+            //}
+
             counter++;
             if (Mathf.Floor(counter / 60) < seconds)
             {
+               
                 background.GetComponent<Scroll>().speed = bgOS * new_speed_multiplier;
                 midground.GetComponent<Scroll>().speed = mgOS * new_speed_multiplier;
                 foreground.GetComponent<Scroll>().speed = fgOS * new_speed_multiplier;
