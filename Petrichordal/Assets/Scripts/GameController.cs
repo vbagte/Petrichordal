@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 public class GameController : MonoBehaviour
 {
@@ -21,36 +22,77 @@ public class GameController : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject gameOverPanel;
     public GameObject blockPanel;
+    public GameObject nextLevelPanel;
+    public GameObject fadePanel;
+    public GameObject foreground;
+    public GameObject midground;
+    public GameObject background;
+    public GameObject lvl2Boss;
     public bool paused = false;
 
-    private GameObject player;
-    private GameObject playerExit;
+    public GameObject player;
+    public GameObject playerExit;
     private GameObject[] explosionSpots;
-    private Health playerHealth;
+    public Health playerHealth;
     private bool bossDead;
-    private bool exitActive = false;
+    public bool exitActive = false;
     private Vector3 exitSpot;
 
-    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-    private BeatSystem bS;
-    private FMOD.Studio.EventInstance songInstance;
-    //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+    //private string currentScene;
+    //public static string currentSongName;
+    //private BeatSystem bS;
+    //public static FMOD.Studio.EventInstance songInstance;
+    public static FMOD.Studio.Bus masterBus;
+    public static FMOD.Studio.Bus musicBus;
+    public static FMOD.Studio.Bus sfxBus;
+    public static FMOD.Studio.Bus uiBus;
+
+    public SoundManager soundManager;
 
     private void Start()
     {
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
+        sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
+        uiBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/UI");
+        soundManager = GameObject.Find("Main Camera").GetComponent<SoundManager>();
+        // gets current scene/level name, so that the correct level bgm is played
+        //currentScene = SceneManager.GetActiveScene().name;
+        //switch (currentScene)
+        //{
+        //    case "Level_01":
+        //        currentSongName = "lv01";
+        //       break;
+        //    case "Level_02":
+        //        currentSongName = "lv02";
+        //        break;
+        //    case "Level_03":
+        //        currentSongName = "lv03";
+        //        break;
+        //    case "Level_04":
+        //        currentSongName = "lv04";
+        //        break;
+        //    default:
+        //        currentSongName = "lv01";
+        //        break;
+        //}
+
         //Debug.Log(BeatSystem.bar);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
-        //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
-        songInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/lvl1/main");
-        bS = GetComponent<BeatSystem>();
-        bS.AssignBeatEvent(songInstance);
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
+
+        // songInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSongName + "bgm");
+        //bS = GetComponent<BeatSystem>();
+        //bS.AssignBeatEvent(songInstance);
         if (gameStart == false)
         {
-            songInstance.start();
-            songInstance.release();
+            // start music
+            Debug.Log("Current Song = " + SoundManager.currentSongName);
+            soundManager.PlayMusic();
+
             gameStart = true;
         }
-        //FMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMODFMOD
+
+
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -64,7 +106,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        //restart level
+        //pause menu toggle
         if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
         {
             pauseMenu.SetActive(true);
@@ -72,12 +114,20 @@ public class GameController : MonoBehaviour
             pausePanel.SetActive(true);
             paused = true;
             Time.timeScale = 0;
+            
+            //pause all sound
+            musicBus.setPaused(true);
+            sfxBus.setPaused(true);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && paused == true)
         {
             pausePanel.SetActive(false);
             paused = false;
             Time.timeScale = 1;
+
+            //unpause all sound
+            musicBus.setPaused(false);
+            sfxBus.setPaused(false);
         }
         //stop objects after player dies
         if (player.GetComponent<PlayerController>().lives <= 0 || player == null)
@@ -86,7 +136,6 @@ public class GameController : MonoBehaviour
             {
                 bg[i].GetComponent<BGScrollerX>().enabled = false;
             }
-            levelManager.GetComponent<Lvl1_Manager>().stalag.stalagSpeed = 0;
             levelManager.SetActive(false);
             stalags = GameObject.FindGameObjectsWithTag("Stalag");
             foreach (GameObject stalag in stalags)
@@ -102,12 +151,16 @@ public class GameController : MonoBehaviour
                 pipe.GetComponent<Rigidbody2D>().velocity = movement;
                 pipe.GetComponent<Mover>().speed = 0;
             }
-            for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++)
+            if (SceneManager.GetActiveScene().name == "Level_01")
             {
-                GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<WeaponController>().enabled = false;
+                for (int i = 0; i < GameObject.FindGameObjectsWithTag("Enemy").Length; i++)
+                {
+                    GameObject.FindGameObjectsWithTag("Enemy")[i].GetComponent<WeaponController>().enabled = false;
+                }
+                levelManager.GetComponent<Lvl1_Manager>().stalag.stalagSpeed = 0;
+                levelManager.GetComponent<Lvl1_Manager>().lava.fireballActive = false;
+                boss.GetComponent<WardenBoss>().enabled = false;
             }
-            levelManager.GetComponent<Lvl1_Manager>().lava.fireballActive = false;
-            boss.GetComponent<WardenBoss>().enabled = false;
         }
         if (exitActive)
         {
@@ -116,8 +169,8 @@ public class GameController : MonoBehaviour
         //if player leaves screen after defeating boss
         if (DestroyByBoundary.playerLeft == true)
         {
-            bossDead = false;
-            exitActive = false;            
+            bossDead = true;
+            //exitActive = true;            
         }
     }
 
@@ -129,11 +182,19 @@ public class GameController : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().HealthUpdate();
             player.GetComponent<PlayerController>().enabled = false;
-            player.GetComponent<BoxCollider2D>().enabled = false;
+            player.GetComponent<Collider2D>().enabled = false;
             player.GetComponent<Animation>().Stop();
             player.GetComponent<SpriteRenderer>().color = Color.white;
-            Vector2 respawn = new Vector2(-6, 0);
-            player.transform.position = respawn;
+            if (SceneManager.GetActiveScene().name != "Level_03")
+            {
+                Vector2 respawn = new Vector2(-6, 0);
+                player.transform.position = respawn;
+            }
+            else
+            {
+                Vector2 respawn = new Vector2(0, -3);
+                player.transform.position = respawn;
+            }
             Vector2 stay = new Vector2(0, 0);
             player.GetComponent<Rigidbody2D>().velocity = stay;
             player.GetComponent<Animation>().Play("Player_Respawning");
@@ -144,13 +205,54 @@ public class GameController : MonoBehaviour
     public void PlayerDeath()
     {
         Instantiate(explosion, player.transform.position, explosion.transform.rotation);
+        
         player.GetComponent<Health>().health = 0;
         player.GetComponent<PlayerController>().HealthUpdate();
         player.GetComponent<SpriteRenderer>().enabled = false;
         player.GetComponent<PlayerController>().enabled = false;
-        player.GetComponent<BoxCollider2D>().enabled = false;
+        player.GetComponent<Collider2D>().enabled = false;
+        if (SceneManager.GetActiveScene().name == "Level_02")
+        {
+            foreground.GetComponent<Scroll>().speed = 0;
+            foreach (Enemy script in foreground.GetComponentsInChildren<Enemy>())
+            {
+                script.enabled = false;
+            }
+            foreach (Enemy script in lvl2Boss.GetComponentsInChildren<Enemy>())
+            {
+                script.enabled = false;
+            }
+            midground.GetComponent<Scroll>().speed = 0;
+            background.GetComponent<Scroll>().speed = 0;
+        }
+        if (SceneManager.GetActiveScene().name == "Level_03")
+        {
+            foreground.GetComponent<Scroll>().speed = 0;
+            foreach (Enemy script in foreground.GetComponentsInChildren<Enemy>())
+            {
+                script.enabled = false;
+            }
+            background.GetComponent<Scroll>().speed = 0;
+        }
         StartCoroutine(GameOver());
     }
+
+    public void NextLevelPanel()
+    {
+        nextLevelPanel.GetComponent<Animation>().Play();
+    }
+
+    public void NextLevelButton()
+    {
+        StartCoroutine(LevelChange(0));
+    }
+
+    public IEnumerator LevelChange(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
 
     public IEnumerator BossDefeat()
     {
@@ -174,11 +276,15 @@ public class GameController : MonoBehaviour
         {
             bossParts[i].tag = "Untagged";
         }
-        GameObject lava = GameObject.Find("Lava");
-        lava.GetComponent<Collider2D>().enabled = false;
+        if (SceneManager.GetActiveScene().name == "Level_01")
+        {
+            GameObject lava = GameObject.Find("Lava");
+            lava.GetComponent<Collider2D>().enabled = false;
+        }
         player.GetComponent<PlayerController>().enabled = false;
         yield return new WaitForSeconds(1);
         exitActive = true;
+        print(exitSpot);
         yield return new WaitForSeconds(8);
         Vector2 stop2 = new Vector2(0, 0);
         boss.GetComponent<Rigidbody2D>().velocity = stop2;
@@ -197,6 +303,9 @@ public class GameController : MonoBehaviour
 
     IEnumerator GameOver()
     {
+        musicBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        sfxBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/gameover"); // play sound
         yield return new WaitForSeconds(2);
         gameOverPanel.SetActive(true);
         yield return new WaitForSeconds(1);
@@ -207,7 +316,7 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         player.GetComponent<PlayerController>().enabled = true;
-        player.GetComponent<BoxCollider2D>().enabled = true;
+        player.GetComponent<Collider2D>().enabled = true;
     }
 
 }

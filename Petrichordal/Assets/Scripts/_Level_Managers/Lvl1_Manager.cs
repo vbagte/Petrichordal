@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMOD.Studio;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -81,8 +82,13 @@ public class Lvl1_Manager : MonoBehaviour
     private Vector3 stalagtiteSpawnStart;
     private Vector3 stalagmiteSpawnStart;
 
+    private FMOD.Studio.EventInstance lavaLoopInst;
+    public SoundManager soundManager;
+
     private void Start()
     {
+        soundManager = GameObject.Find("Main Camera").GetComponent<SoundManager>();
+        lavaLoopInst = FMODUnity.RuntimeManager.CreateInstance("event:/Environment/lv01/lavaloop"); //play sound
         stalagtiteSpawnStart = new Vector3(10, stalag.stalagtiteYSpawn, 0);
         stalagmiteSpawnStart = new Vector3(10, stalag.stalagmiteYSpawn, 0);
         stalag.stalagtite.GetComponent<Mover>().speed = stalag.stalagSpeed;
@@ -110,12 +116,18 @@ public class Lvl1_Manager : MonoBehaviour
 
     IEnumerator PlayerStart()
     {
-        yield return new WaitForSeconds(playerStart.playerTakeOffDelay);
+              yield return new WaitForSeconds(playerStart.playerTakeOffDelay);
         playerStart.readyText.GetComponent<Animation>().Play();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerignition"); // play sound
         Vector2 movement = new Vector2(0, playerStart.takeOffSpeed);
         player.GetComponent<Rigidbody2D>().velocity = movement;
         yield return new WaitForSeconds(playerStart.playerEnable);
         playerStart.goText.GetComponent<Animation>().Play();
+
+        // start music
+        //GameController.songInstance.start();
+        //GameController.songInstance.release();
+
         Vector2 movement2 = new Vector2(0, 0);
         player.GetComponent<Rigidbody2D>().velocity = movement2;
         player.GetComponent<PlayerController>().enabled = true;
@@ -165,6 +177,9 @@ public class Lvl1_Manager : MonoBehaviour
         stalag.stalagtiteDelay += 3;
         yield return new WaitForSeconds(enemySpawnDelay + 6);
         lava.lavaObject.GetComponent<Animation>().Play("Lava_Enter");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Environment/lv01/lavaintro");
+        lavaLoopInst.start(); // plays lava sound
+        lavaLoopInst.release();
         yield return new WaitForSeconds(2);
         lava.fireballActive = true;
         StartCoroutine("FireballSpawn");
@@ -217,6 +232,7 @@ public class Lvl1_Manager : MonoBehaviour
         StopCoroutine("StalagSpawn");
         StartCoroutine("PipeSpawn");
         lava.lavaObject.GetComponent<Animation>().Play("Lava_Exit");
+        lavaLoopInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // stops lava looping
         yield return new WaitForSeconds(enemySpawnDelay);
         stoneFloor.GetComponent<Animation>().Play("Stone_Floor_Enter");
         yield return new WaitForSeconds(enemySpawnDelay);
@@ -277,6 +293,8 @@ public class Lvl1_Manager : MonoBehaviour
 
     IEnumerator Boss()
     {
+        soundManager.PlayBossMusic();
+
         yield return new WaitForSeconds(3);
         boss.SetActive(true);
         Vector2 move = new Vector2(-1.5f, 0);
@@ -307,6 +325,7 @@ public class Lvl1_Manager : MonoBehaviour
             yield return new WaitForSeconds(2);
             Vector2 fireballSpawn = new Vector2(Random.Range(-8, 8), -3.7f);
             Instantiate(lava.fireball, fireballSpawn, lava.fireball.transform.rotation);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Environment/lv01/fireball");
             yield return new WaitForSeconds(lava.lavaGlowDelay);
         } while (lava.fireballActive);
     }

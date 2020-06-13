@@ -13,7 +13,11 @@ TagManager:
   - Life
   - Pipe
   - ExplosionSpot
-  - BossPart
+  - TriShot
+  - Foreground
+  - Shield
+  - Land
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -24,7 +28,7 @@ TagManager:
   - 
   - 
   - Particles
-  - 
+  - ForegroundTile
   - 
   - 
   - 

@@ -19,8 +19,8 @@ MonoBehaviour:
   sourceBankPath: Assets\Audio\FMOD Soundbanks\Desktop
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 0
-  BankLoadType: 0
-  AutomaticSampleLoading: 0
+  BankLoadType: 1
+  AutomaticSampleLoading: 1
   EncryptionKey: 
   ImportType: 0
   TargetAssetPath: FMODBanks
@@ -32,7 +32,7 @@ MonoBehaviour:
     Value: 3
   SampleRateSettings:
   - Platform: 1
-    Value: 44100
+    Value: 48000
   - Platform: 2
     Value: 0
   - Platform: 20
@@ -41,14 +41,14 @@ MonoBehaviour:
   - Platform: 1
     Value: 1
   - Platform: 2
-    Value: 0
+    Value: 1
   - Platform: 20
     Value: 0
   OverlaySettings:
   - Platform: 1
-    Value: 0
+    Value: 1
   - Platform: 2
-    Value: 0
+    Value: 1
   - Platform: 20
     Value: 0
   LoggingSettings:
@@ -78,16 +78,14 @@ MonoBehaviour:
   - Master
   Banks:
   - Game
-  - music_lv01
-  - music_lv02
-  - music_lv03
-  - music_lv04
-  - music_lv05
-  - sfx_lv01
-  - sfx_lv02
-  - sfx_lv03
-  - sfx_lv04
-  - sfx_lv05
-  - UI
-  BanksToLoad: []
+  - lv01
+  - lv02
+  - lv03
+  - lv04
+  - start
+  BanksToLoad:
+  - Master.bank
+  - Master.strings.bank
+  - start.bank
+  - game.bank
   LiveUpdatePort: 9264
