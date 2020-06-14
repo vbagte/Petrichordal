@@ -2,7 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+#if UNITY_EDITOR
 using UnityEditor;
+[CustomEditor(typeof(Enemy))]
+public class EnemyEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        Enemy enemy = (Enemy)target;
+   
+        if (enemy.shottype != Enemy.shottypes.none)
+        {
+            enemy.projectile = (GameObject)EditorGUILayout.ObjectField("Projectile Object" ,enemy.projectile, typeof(GameObject), true);
+            if (enemy.shottype != Enemy.shottypes.lazar) enemy.projectilespeed = EditorGUILayout.FloatField("Projectile Speed", enemy.projectilespeed);
+            enemy.fireinterval_sec = EditorGUILayout.FloatField("Firing Time(seconds)", enemy.fireinterval_sec);
+            enemy.burstcooldown_sec = EditorGUILayout.FloatField("Cooldown Time(seconds", enemy.burstcooldown_sec);
+            enemy.projectiles_per_burst = EditorGUILayout.IntField("Projectiles per Firing", enemy.projectiles_per_burst);
+            if (enemy.shottype != Enemy.shottypes.lazar)  enemy.projectiledirection = (Enemy.projectiledirections)EditorGUILayout.EnumPopup("Projectile Direction", enemy.projectiledirection);
+        }
+         if (enemy.shottype == Enemy.shottypes.lazar)
+        {
+            EditorGUILayout.LabelField("[Lazar Options]", EditorStyles.boldLabel);
+            enemy.lazarglow = (GameObject)EditorGUILayout.ObjectField("Firing Glow Object",enemy.lazarglow, typeof(GameObject),true);
+            enemy.lazar_damage = EditorGUILayout.IntField("Lazar Damage", enemy.lazar_damage);
+            enemy.lazar_grow_rate = EditorGUILayout.FloatField("Lazar Growth Rate", enemy.lazar_grow_rate);
+            enemy.lazar_max_width = EditorGUILayout.FloatField("Lazar Max Width", enemy.lazar_max_width);
+        }
+    }
+}
+#endif
 
 
 
@@ -426,33 +456,4 @@ public class Enemy : MonoBehaviour
         GameObject.Find("GameController").GetComponent<GameController>().LifeLost();
     }
 
-}
-
-
-[CustomEditor(typeof(Enemy))]
-public class EnemyEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        Enemy enemy = (Enemy)target;
-   
-        if (enemy.shottype != Enemy.shottypes.none)
-        {
-            enemy.projectile = (GameObject)EditorGUILayout.ObjectField("Projectile Object" ,enemy.projectile, typeof(GameObject), true);
-            if (enemy.shottype != Enemy.shottypes.lazar) enemy.projectilespeed = EditorGUILayout.FloatField("Projectile Speed", enemy.projectilespeed);
-            enemy.fireinterval_sec = EditorGUILayout.FloatField("Firing Time(seconds)", enemy.fireinterval_sec);
-            enemy.burstcooldown_sec = EditorGUILayout.FloatField("Cooldown Time(seconds", enemy.burstcooldown_sec);
-            enemy.projectiles_per_burst = EditorGUILayout.IntField("Projectiles per Firing", enemy.projectiles_per_burst);
-            if (enemy.shottype != Enemy.shottypes.lazar)  enemy.projectiledirection = (Enemy.projectiledirections)EditorGUILayout.EnumPopup("Projectile Direction", enemy.projectiledirection);
-        }
-         if (enemy.shottype == Enemy.shottypes.lazar)
-        {
-            EditorGUILayout.LabelField("[Lazar Options]", EditorStyles.boldLabel);
-            enemy.lazarglow = (GameObject)EditorGUILayout.ObjectField("Firing Glow Object",enemy.lazarglow, typeof(GameObject),true);
-            enemy.lazar_damage = EditorGUILayout.IntField("Lazar Damage", enemy.lazar_damage);
-            enemy.lazar_grow_rate = EditorGUILayout.FloatField("Lazar Growth Rate", enemy.lazar_grow_rate);
-            enemy.lazar_max_width = EditorGUILayout.FloatField("Lazar Max Width", enemy.lazar_max_width);
-        }
-    }
 }

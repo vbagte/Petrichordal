@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -64,6 +65,7 @@ public class WardenBoss : MonoBehaviour
         s.enemy02.GetComponent<WeaponController>().fireRate = s.fireRate;
         BossHurt.bossActive = true;
 
+        
 
     }
 
@@ -186,7 +188,8 @@ public class WardenBoss : MonoBehaviour
 
     void Death()
     {
-        SoundManager.bossMusic.setParameterByName("BossWin", 1); // ends boss music with outro stinger
+        SoundManager.songInstance.setParameterByName("BossWin", 1); // ends boss music with outro stinger
+        
         StopAllCoroutines();
         GameObject.Find("GameController").GetComponent<GameController>().StartCoroutine("BossDefeat");
         GameObject.Find("GameController").GetComponent<GameController>().StartCoroutine("BossExplode"); 
