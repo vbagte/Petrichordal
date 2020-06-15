@@ -92,8 +92,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553df55d1ffe2d147b4b3857beb8f335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 8
-  new_speed_multiplier: 1
+  show_MustKill: 0
+  seconds: 0
+  TagsThatMustDie: 
+  speed_on_exit_multiplier: 4
+  new_speed_multiplier: 4
   foreground: {fileID: 0}
   midground: {fileID: 0}
   background: {fileID: 0}
+  slow_player_divider: 0

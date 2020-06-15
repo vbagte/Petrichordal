@@ -262,15 +262,16 @@ public class PlayerController : MonoBehaviour
 
         if (evadeActive == false)
         {
-
-            //float translationY = Input.GetAxis("Vertical") * speed;
-            //float translationX = Input.GetAxis("Horizontal") * speed;
-            //translationY *= Time.deltaTime;
-            //translationX *= Time.deltaTime;
-            //if (transform.eulerAngles.z == 90)
-            //{
-            //     transform.Translate(-translationY, -translationX, 0);
-            //} else  transform.Translate(translationX, -translationY, 0);
+            //Allow for joystick too
+            if( Input.GetJoystickNames().Length!=0)
+            {
+                float translationY = Input.GetAxis("Vertical");
+                float translationX = Input.GetAxis("Horizontal");
+                moveX = translationX;
+                moveY = -translationY;
+                if (moveX > -.1 && moveX < .1) moveX = 0;
+                if (moveY > -.1 && moveY < .1) moveY = 0;
+            }
             if (Input.GetKey(KeyCode.D))
             {
                 moveX = 1;

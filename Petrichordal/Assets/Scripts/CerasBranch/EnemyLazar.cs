@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿//==============================================================================
+//Project:       Petrichordal
+//File Name:     EnemyLazar.cs
+//Author:        Cera Baltzley
+//Class:         CS 185 2020 Spring Quarter
+//Description:   This script defines and manages the operation of the Lazar type beam weapon
+//
+//==============================================================================
+//Known Bugs: 
+//==============================================================================
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
