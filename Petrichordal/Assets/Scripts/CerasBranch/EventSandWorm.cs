@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿//==============================================================================
+//Project:       Petrichordal
+//File Name:     EventSandWorm.cs
+//Author:        Cera Baltzley
+//Class:         CS 185 2020 Spring Quarter
+//Description:   This script is used by an event trigger to spawn the sandworm
+//
+//==============================================================================
+//Known Bugs: 
+//==============================================================================
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,9 +21,7 @@ public class EventSandWorm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //sandGO=Instantiate(sandwormcontainer);
-        //sandGO.GetComponent<Transform>().Translate(-3, 0, 0);
-        //Destroy(gameObject);
+ 
     }
 
     // Update is called once per frame
