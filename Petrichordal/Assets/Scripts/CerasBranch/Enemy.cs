@@ -284,8 +284,8 @@ public class Enemy : MonoBehaviour
                 bool lockdirection = false;
                 if (shottype == shottypes.lazar)
                 {
-                    Object activelaser = Object.FindObjectOfType<EnemyLazar>();
-                    if (activelaser != null) { lockdirection = true; } else lockdirection=false;
+
+                    if (transform.childCount > 0) { lockdirection = true; } else lockdirection=false;
                 }
                 if (lockdirection==false) 
                 {
@@ -479,7 +479,7 @@ public class Enemy : MonoBehaviour
                 break;
             case 6: //lszar
                 Instantiate(lazarglow, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
-                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
+                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform);
                 projectileGO.transform.localScale = new Vector3(0, 20, 1);
                 projectileGO.transform.Translate(0, 10f,0);
                 projectileGO.GetComponent<EnemyLazar>().maxXscale = lazar_max_width;
