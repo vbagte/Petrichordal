@@ -15,10 +15,10 @@
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.SceneManagement;
 [CanEditMultipleObjects]
 [CustomEditor(typeof(eventtrigger))]
 public class eventtriggerEditor : Editor
