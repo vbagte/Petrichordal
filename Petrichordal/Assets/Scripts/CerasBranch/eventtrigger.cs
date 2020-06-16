@@ -19,6 +19,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
+[CanEditMultipleObjects]
 [CustomEditor(typeof(eventtrigger))]
 public class eventtriggerEditor : Editor
 {

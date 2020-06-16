@@ -25,9 +25,11 @@ using UnityEngine.UI;
 //----------------------------------------------------------------------
 #if UNITY_EDITOR
 using UnityEditor;
+[CanEditMultipleObjects]
 [CustomEditor(typeof(Enemy))]
 public class EnemyEditor : Editor
 {
+
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -113,7 +115,6 @@ public class Enemy : MonoBehaviour
     private float frames_per_projectile;
     private bool inBoundary = false;
     private Health playerHealth;
-    private bool firinmahlazar = false;
     private long lazarcounter = 0;
     // Start is called before the first frame update
     void Start()
@@ -477,19 +478,18 @@ public class Enemy : MonoBehaviour
                     angle += 30;
                 }
                 break;
-            case 6: //lszar
+            case 6: //lazar
                 Instantiate(lazarglow, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
                 projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform);
-                projectileGO.transform.localScale = new Vector3(0, 20, 1);
-                projectileGO.transform.Translate(0, 10f,0);
+                projectileGO.transform.localScale = new Vector3(0, 20f, 1);
+                projectileGO.transform.Translate(0, 10f, 0);
                 projectileGO.GetComponent<EnemyLazar>().maxXscale = lazar_max_width;
                 projectileGO.GetComponent<EnemyLazar>().damage = lazar_damage;
                 projectileGO.GetComponent<EnemyLazar>().Xscaler = lazar_grow_rate;
-                firinmahlazar = true;
                 break;
         }
-
     }
+
     public void LifeLost()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdeath"); // play sound
