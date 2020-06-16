@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿//==============================================================================
+//Project:       Petrichordal
+//File Name:     destructibletile.cs
+//Author:        Cera Baltzley
+//Class:         CS 185 2020 Spring Quarter
+//Description:   This script is not currently enabled in game(commented out), but may be used to
+//                    allow for the player to destroy individual tiles with its weapon
+
+//==============================================================================
+//Known Bugs:   
+//==============================================================================
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;

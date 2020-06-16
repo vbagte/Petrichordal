@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿//==============================================================================
+//Project:       Petrichordal
+//File Name:     EnemyBullet.cs
+//Author:        Cera Baltzley
+//Class:         CS 185 2020 Spring Quarter
+//Description:   This script defines and manages the operation of the Bullet style projectiles
+//
+//==============================================================================
+//Known Bugs: 
+//==============================================================================
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,8 +32,6 @@ public class EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  transform.up *= speed;
-       // transform.Rotate(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z));
         transform.Translate(new Vector3(0, Time.deltaTime*speed, 0));
         if (transform.position.y >= 5 || transform.position.x <=-9.5 || transform.position.y<=-5 || transform.position.x >=9.5) Destroy(gameObject);
     }

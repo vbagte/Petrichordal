@@ -582,6 +582,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[43].y
       value: -4.541667
       objectReference: {fileID: 0}
+    - target: {fileID: 2396212770519247424, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6040387581598683603, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_Sprite
@@ -666,7 +671,7 @@ PrefabInstance:
     - target: {fileID: 8795379220773587826, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 8795379220773587826, guid: 8c638e2d6d8a0574cbd7494225347fba,
         type: 3}
