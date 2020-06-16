@@ -11448,6 +11448,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazarTurret (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3409322701496503556, guid: c815d678a3cda7f4bba01f6da7983331,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c815d678a3cda7f4bba01f6da7983331, type: 3}
 --- !u!4 &1085812218 stripped
@@ -24400,6 +24405,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazarTurret (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3409322701496503556, guid: c815d678a3cda7f4bba01f6da7983331,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c815d678a3cda7f4bba01f6da7983331, type: 3}
 --- !u!4 &1214311832 stripped
@@ -25170,6 +25180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazarTurret
       objectReference: {fileID: 0}
+    - target: {fileID: 3409322701496503556, guid: c815d678a3cda7f4bba01f6da7983331,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c815d678a3cda7f4bba01f6da7983331, type: 3}
 --- !u!4 &1299527478 stripped
@@ -25801,6 +25816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LazarTurret (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409322701496503556, guid: c815d678a3cda7f4bba01f6da7983331,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c815d678a3cda7f4bba01f6da7983331, type: 3}
@@ -26529,6 +26549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LazarTurret (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409322701496503556, guid: c815d678a3cda7f4bba01f6da7983331,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c815d678a3cda7f4bba01f6da7983331, type: 3}
@@ -33286,6 +33311,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LazarTurret (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3409322701496503556, guid: c815d678a3cda7f4bba01f6da7983331,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c815d678a3cda7f4bba01f6da7983331, type: 3}
 --- !u!4 &1925830782 stripped
@@ -34421,6 +34451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LazarTurret (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409322701496503556, guid: c815d678a3cda7f4bba01f6da7983331,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c815d678a3cda7f4bba01f6da7983331, type: 3}
