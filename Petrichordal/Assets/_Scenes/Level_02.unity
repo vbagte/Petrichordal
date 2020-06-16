@@ -11758,11 +11758,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 109282, guid: 60da1df1f7edb3747bea8f735b2768d1, type: 3}
       propertyPath: m_Name
-      value: WardenHealthBar
+      value: BossHealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 197766, guid: 60da1df1f7edb3747bea8f735b2768d1, type: 3}
       propertyPath: m_Name
-      value: WardenHealthAmount
+      value: BossHealthAmount
       objectReference: {fileID: 0}
     - target: {fileID: 22403254, guid: 60da1df1f7edb3747bea8f735b2768d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41683,6 +41683,7 @@ GameObject:
   - component: {fileID: 1575325675}
   - component: {fileID: 1575325674}
   - component: {fileID: 1575325673}
+  - component: {fileID: 1575325671}
   m_Layer: 0
   m_Name: BOSSCONTAINER
   m_TagString: Boss
@@ -41708,6 +41709,20 @@ Transform:
   m_Father: {fileID: 1740347513}
   m_RootOrder: 150
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1575325671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575325669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9ea5e241cf578409fd8209da88e46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 333620345}
+  bossPanel: {fileID: 2059722865}
 --- !u!50 &1575325672
 Rigidbody2D:
   serializedVersion: 4
@@ -41819,7 +41834,7 @@ GameObject:
   - component: {fileID: 1575905252}
   - component: {fileID: 1575905251}
   m_Layer: 5
-  m_Name: WardenName
+  m_Name: BossName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41875,7 +41890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Prison Warden
+  m_Text: Sand Worm
 --- !u!222 &1575905252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -57482,7 +57497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2059722866}
   m_Layer: 5
-  m_Name: WardenUI
+  m_Name: BossUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
