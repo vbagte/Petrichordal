@@ -60,10 +60,10 @@ public class EnemyLazar : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdamaged");
             // Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Shield")
-        {
-            Destroy(gameObject);
-        }
+        //if (collision.gameObject.tag == "Shield")
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     public void LifeLost()
