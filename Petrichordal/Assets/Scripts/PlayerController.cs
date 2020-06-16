@@ -85,7 +85,11 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
 
     public SoundManager soundManager;
-
+    private int timelinePosition;
+    FMOD.Studio.PLAYBACK_STATE playbackState;
+    private bool triUsedOnce;
+    private bool squUsedOnce;
+    private bool sinUsedOnce;
     // waveform ability sound instances
     //private string sxSaw;
     //private string sxTri;
@@ -117,6 +121,8 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(sxSqu);
         //Debug.Log(sxSin);
 
+        
+
     }
 
     private void Update()
@@ -129,13 +135,16 @@ public class PlayerController : MonoBehaviour
         wc.triBar.UpdateBar(triChargeCurrent, triChargeMax);
         wc.squBar.UpdateBar(squChargeCurrent, squChargeMax);
         wc.sinBar.UpdateBar(sinChargeCurrent, sinChargeMax);
-        //Debug.Log(BeatSystem.bar);
+
+        // debug
+        Debug.Log(BeatSystem.bar);
+
+        // sets parameter to change bar of music
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
 
         //primary attack (saw)
         if (Input.GetButton("Fire1") && Time.time > nextFire && v.voltageSawtooth <= voltageCurrent && GameController.playerEnable == true)
         {
-            Debug.Log(SoundManager.sxSaw);
             FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxSaw);
             nextFire = Time.time + fireRate;
             // Instantiate(shotSawtooth, shotSpawn.position, shotSawtooth.GetComponent<Transform>().rotation);
@@ -143,11 +152,15 @@ public class PlayerController : MonoBehaviour
             voltageCurrent -= v.voltageSawtooth;
             StopCoroutine("VoltageRecharge");
             StartCoroutine("VoltageRecharge");
+
+            
         }
         //secondary attack (tri)
         if (Input.GetButtonDown("Fire2") && v.voltageTri <= voltageCurrent && triChargeCurrent >= triChargeMax && GameController.playerEnable == true)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxTri);
+            FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxTri); // play sound
+            triUsedOnce = true; 
+
             Instantiate(shotTriAOE, transform.position, shotTriAOE.GetComponent<Transform>().rotation);
             Vector3 start = new Vector3(0, 0, 0);
             GameObject.Find("TriAOE(Clone)").transform.localScale = start;
@@ -163,10 +176,9 @@ public class PlayerController : MonoBehaviour
         //shield (squ)
         if (Input.GetButtonDown("Fire3") && v.voltageSqu <= voltageCurrent && squChargeCurrent >= squChargeMax && canShield == true && GameController.playerEnable == true)
         {
-            //squInst = FMODUnity.RuntimeManager.CreateInstance(sxSqu);
-            //squInst.start();
-            //squInst.release();
             FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxSqu);
+            squUsedOnce = true;
+
             canShield = false;
             Instantiate(shield, shieldSpawn.transform.position, shieldSpawn.GetComponent<Transform>().rotation);
             Vector3 start = new Vector3(2, 0, 0);
@@ -181,6 +193,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire4") && v.voltageSin <= voltageCurrent && sinChargeCurrent >= sinChargeMax && GetComponent<Health>().health < healthMax &&  GameController.playerEnable == true)
         {
             FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxSin);
+            sinUsedOnce = true;
+
             heal.SetActive(true);
             GetComponent<Health>().health += (healthMax * (0.01f * healthRecoverPercent));
             StartCoroutine(Heal());
@@ -248,15 +262,16 @@ public class PlayerController : MonoBehaviour
 
         if (evadeActive == false)
         {
-
-            //float translationY = Input.GetAxis("Vertical") * speed;
-            //float translationX = Input.GetAxis("Horizontal") * speed;
-            //translationY *= Time.deltaTime;
-            //translationX *= Time.deltaTime;
-            //if (transform.eulerAngles.z == 90)
-            //{
-            //     transform.Translate(-translationY, -translationX, 0);
-            //} else  transform.Translate(translationX, -translationY, 0);
+            //Allow for joystick too
+            if( Input.GetJoystickNames().Length!=0)
+            {
+                float translationY = Input.GetAxis("Vertical");
+                float translationX = Input.GetAxis("Horizontal");
+                moveX = translationX;
+                moveY = -translationY;
+                if (moveX > -.1 && moveX < .1) moveX = 0;
+                if (moveY > -.1 && moveY < .1) moveY = 0;
+            }
             if (Input.GetKey(KeyCode.D))
             {
                 moveX = 1;
@@ -452,6 +467,15 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(triRechargeSpeed);
             triChargeCurrent += triRechargeAmount;
         }
+
+        // plays sound only after cooldown and it has been used once already
+        // (to prevent sound from playing at beginning of level)
+        if (triChargeCurrent >= triChargeMax)
+        {
+            Debug.Log("voltFull sound shoud be playing sound now!!!!");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/voltfull");
+            triUsedOnce = false;
+        }
     }
 
     IEnumerator SquRecharge()
@@ -461,6 +485,14 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(squRechargeSpeed);
             squChargeCurrent += squRechargeAmount;
         }
+
+        // plays sound only after cooldown and it has been used once already
+        // (to prevent sound from playing at beginning of level)
+        if (squChargeCurrent >= squChargeMax)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/voltfull");
+            squUsedOnce = false;
+        }
     }
 
     IEnumerator SinRecharge()
@@ -469,6 +501,14 @@ public class PlayerController : MonoBehaviour
         {
             yield return new WaitForSeconds(sinRechargeSpeed);
             sinChargeCurrent += sinRechargeAmount;
+        }
+
+        // plays sound only after cooldown and it has been used once already
+        // (to prevent sound from playing at beginning of level)
+        if (sinChargeCurrent >= sinChargeMax)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/voltfull");
+            sinUsedOnce = false;
         }
     }
 

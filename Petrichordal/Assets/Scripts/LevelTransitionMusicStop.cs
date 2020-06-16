@@ -11,11 +11,11 @@ public class LevelTransitionMusicStop : MonoBehaviour
 
     private bool enable = false;
 
-    FMOD.Studio.Bus MasterBus;
+    FMOD.Studio.Bus masterBus;
 
     private void Awake()
     {
-        MasterBus = FMODUnity.RuntimeManager.GetBus("Bus:/Master"); // gets FMOD bus to be stopped
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master"); // gets FMOD bus to be stopped
     }
 
     IEnumerator Start()
@@ -30,7 +30,7 @@ public class LevelTransitionMusicStop : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && enable)
         {
             fade.GetComponent<Animation>().Play("FadeOut_02");
-            MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //stops all events in that bus
+            masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // stops all sound events 
             StartCoroutine(NextLevel());
             enable = false;
         }

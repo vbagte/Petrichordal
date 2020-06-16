@@ -18,6 +18,8 @@ TagManager:
   - Shield
   - Land
   - Boss
+  - BossPart
+  - MIDBOSS
   layers:
   - Default
   - TransparentFX

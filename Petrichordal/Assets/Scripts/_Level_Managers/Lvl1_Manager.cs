@@ -116,14 +116,15 @@ public class Lvl1_Manager : MonoBehaviour
 
     IEnumerator PlayerStart()
     {
-              yield return new WaitForSeconds(playerStart.playerTakeOffDelay);
-        playerStart.readyText.GetComponent<Animation>().Play();
         FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerignition"); // play sound
+        yield return new WaitForSeconds(playerStart.playerTakeOffDelay);
+        playerStart.readyText.GetComponent<Animation>().Play();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/ready");
         Vector2 movement = new Vector2(0, playerStart.takeOffSpeed);
         player.GetComponent<Rigidbody2D>().velocity = movement;
         yield return new WaitForSeconds(playerStart.playerEnable);
         playerStart.goText.GetComponent<Animation>().Play();
-
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/go");
         // start music
         //GameController.songInstance.start();
         //GameController.songInstance.release();

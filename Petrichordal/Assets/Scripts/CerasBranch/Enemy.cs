@@ -1,13 +1,35 @@
-﻿using System.Collections;
+﻿//==============================================================================
+//Project:       Petrichordal
+//File Name:     Enemy.cs
+//Author:        Cera Baltzley, w/edits by Reed,Bryan
+//Class:         CS 185 2020 Spring Quarter
+//Description:   This script defines and manages enemy behaviour, including
+//               movement patterns, firing patterns, and collision behaviours.
+//               Also provides custom unity editor, and customizable options 
+//               allowing for creation of wide variety of custom enemy types
+//
+//==============================================================================
+//Known Bugs: 
+//==============================================================================
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//----------------------------------------------------------------------
+//Type:        Class
+//Description: Custom Unity Editor providing user friendly descriptions and
+//             layout for managing enemy options.
+//
+//Written by:  Cera Baltzley
+//----------------------------------------------------------------------
 #if UNITY_EDITOR
 using UnityEditor;
+[CanEditMultipleObjects]
 [CustomEditor(typeof(Enemy))]
 public class EnemyEditor : Editor
 {
+
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -30,12 +52,19 @@ public class EnemyEditor : Editor
             enemy.lazar_grow_rate = EditorGUILayout.FloatField("Lazar Growth Rate", enemy.lazar_grow_rate);
             enemy.lazar_max_width = EditorGUILayout.FloatField("Lazar Max Width", enemy.lazar_max_width);
         }
+        //allow changes to instances
+        if (PrefabUtility.GetPrefabInstanceStatus(target) != PrefabInstanceStatus.NotAPrefab) EditorUtility.SetDirty(target);
     }
 }
 #endif
 
 
-
+//----------------------------------------------------------------------
+//Type:        Custom Class
+//Description: This class controls behaviour of enemys
+//
+//Written by:  Cera Baltzley
+//----------------------------------------------------------------------
 public class Enemy : MonoBehaviour
 {
     public enum projectiledirections { forward = 1, toward_player = 2 }
@@ -86,7 +115,6 @@ public class Enemy : MonoBehaviour
     private float frames_per_projectile;
     private bool inBoundary = false;
     private Health playerHealth;
-    private bool firinmahlazar = false;
     private long lazarcounter = 0;
     // Start is called before the first frame update
     void Start()
@@ -107,31 +135,30 @@ public class Enemy : MonoBehaviour
         {
             if (start == 0) start = Time.time;
             elapsedseconds = Time.time - start;
-            movement();
+            //operate movement behaviour
+            movement(); 
             inBoundary = true;
+            //operate firing behaviour
             if (firing == true) //if the gun is turned on (sometimes the movement patterns turn it off)
             {
-
-                // if the weapon is cooling down,
+                // if the weapon is on cooling down
                 if (cooldown == true)
                 {
-              
                     counter_cooldown++; //counts frames we are in cooldown mode
-                    //and the cooldown timer is up, flip the cooldown flag reset the counter
+                    //and the cooldown timer is finished, flip the cooldown flag reset the counter
                     if ((float)counter_cooldown / 60.0 >= burstcooldown_sec)
                     {
                         cooldown = false;
                         counter_cooldown -= (int)(burstcooldown_sec * 60);
                     }
-
                 }
                 // if the weapon is in its fire phase
                 else if (cooldown == false)
                 {
-
                     counter_burst++; //counts frames we are in fire mode
                     //we have to divide the number of projectiles into the amount of time we are firing
                     frames_per_projectile = fireinterval_sec / projectiles_per_burst * 60f;
+                    //regulate the frequency of shots with counter
                     if (counter_burst >= (int)frames_per_projectile)
                     {
                         counter_burst -= (int)frames_per_projectile;
@@ -141,16 +168,33 @@ public class Enemy : MonoBehaviour
                         {
                             counter_projectile = 0;
                             cooldown = true;
-                        }
-   
+                        }   
                     }
                 }
             }
-
         }
-     //   if (transform.position.x < -10.5) Destroy(gameObject);
     }
-    public void movement() //    public enum Eflypattern { none=0,oneway=1,hover=2,stopngo=3,loop=4,squareexit=5 };
+    //----------------------------------------------------------------------
+    //Type:        Function
+    //Description: This function processes the movement and provides 8 options
+    //             
+    //             0. None: Enemy does not move.
+    //             1. Straight Line: Enemy moves forward at a constant custom speed indefinitely
+    //             2. Hover: Enemy moves forward for 2 seconds without firing
+    //                  at custom constant speed then stops and fires indefinitely
+    //             3. Stop n Go: Enemy moves forward for 2 seconds stops and fires for 4
+    //                  seconds and then stops firing and continues forward indefinitely 
+    //             4. Loop: Enemy moves onto screen without firing, then begins firing while
+    //                  moving from side to side indefinitely
+    //             5. SquareExit: Enemy moves onto screen without firing, moves sideways 
+    //                  while firing , then retreats off screen the way it came in
+    //             6. Rotating: Enemy stays in place but rotates at a custom speed,
+    //                  reversible direction by using negative numbers (useful for turrets)
+    //             7. Face Player: Enemy stays in place, but constantly rotates to face player
+    //
+    //Written by:  Cera Baltzley
+    //----------------------------------------------------------------------
+    public void movement()
     {
         switch ((int)flypattern)
         {
@@ -163,8 +207,7 @@ public class Enemy : MonoBehaviour
                 if (elapsedseconds <= 2)
                 {
                     firing = false;
-                    transform.Translate(0, Time.deltaTime * speed / 10f, 0);
-         
+                    transform.Translate(0, Time.deltaTime * speed / 10f, 0);         
                 }
                 else {
                     firing = true;
@@ -175,8 +218,7 @@ public class Enemy : MonoBehaviour
                 if (elapsedseconds <= 2)
                 {
                     transform.Translate(0, Time.deltaTime * speed / 10f, 0);
-                    firing = false;
-         
+                    firing = false;         
                 }
                 else if (elapsedseconds <= 6)
                 {
@@ -185,26 +227,22 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
-                    transform.Translate(0, Time.deltaTime * speed / 10f, 0);
-             
+                    transform.Translate(0, Time.deltaTime * speed / 10f, 0);             
                     firing = false;
                 }
                 break;
             case 4://loop
-
                 if (elapsedseconds <= 1.5)
                 {
                     firing = false;
-                    transform.Translate(0, Time.deltaTime * speed / 10f, 0);
-             
+                    transform.Translate(0, Time.deltaTime * speed / 10f, 0);             
                 }
                 else if (counter2 <= 90)
                 {
                     firing = true;
                     counter2++;
                     transform.Translate(Time.deltaTime * speed / 10f, 0, 0);
-                    hover();
-             
+                    hover();             
                 }
                 else if (counter2 >=180)
                 {
@@ -215,10 +253,8 @@ public class Enemy : MonoBehaviour
                     firing = true;
                     counter2++;
                     transform.Translate(-Time.deltaTime * speed / 10f, 0, 0);
-                    hover();
-   
+                    hover();   
                 }
-
                 break;
             case 5://squareexit
                 if (elapsedseconds <= 1.5)
@@ -239,8 +275,7 @@ public class Enemy : MonoBehaviour
                     firing = false;
                     Destroy(gameObject, 4);
                     transform.Translate(0, -Time.deltaTime * speed / 10f, 0);
-                    hover();
-  
+                    hover();  
                 }
                 break;
             case 6://rotating turret
@@ -250,10 +285,9 @@ public class Enemy : MonoBehaviour
                 bool lockdirection = false;
                 if (shottype == shottypes.lazar)
                 {
-                    Object activelaser = Object.FindObjectOfType<EnemyLazar>();
-                    if (activelaser != null) { lockdirection = true; } else lockdirection=false;
-                }
 
+                    if (transform.childCount > 0) { lockdirection = true; } else lockdirection=false;
+                }
                 if (lockdirection==false) 
                 {
                     float angle = 0;
@@ -273,22 +307,16 @@ public class Enemy : MonoBehaviour
                     }
                     transform.Rotate(0, 0, angle);
                 }
-                //else
-                //{
-                //    lazarcounter++;
-                //    if (lazarcounter >= 60*fireinterval_sec+30)
-                //    {
-                //        lazarcounter = 0;
-                //        firinmahlazar = false;
-                //    }
-                //}
-
                 break;
-
         }
-
-
     }
+    //----------------------------------------------------------------------
+    //Type:        Function
+    //Description: This function defines behaviour upon collisions with various
+    //                 objects
+    //
+    //Written by:  Reed?
+    //----------------------------------------------------------------------
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (inBoundary)
@@ -335,7 +363,13 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
+    //----------------------------------------------------------------------
+    //Type:        Function
+    //Description: This function is used by the movement function to account for level scrolling
+    //                so that it stays in the same place
+    //
+    //Written by:  Cera Baltzley
+    //----------------------------------------------------------------------
     public void hover()
     {
         float temp = transform.eulerAngles.z;
@@ -348,9 +382,30 @@ public class Enemy : MonoBehaviour
         {
             transform.Translate(-transform.parent.GetComponent<Scroll>().speed*Time.deltaTime, 0, 0);
         }
-
         transform.Rotate(0, 0, -(180 - temp));
     }
+    //----------------------------------------------------------------------
+    //Type:        Function
+    //Description: This function processes the weapon firing and provides 2 options for
+    //                fire direction combined withh 7 options for weapon type.
+    //                the weapon firing may also be customized with burst fire and cooldown
+    //                periods, and number of projectiles fired per period
+    //             
+    //             Projectile Direction: 
+    //                  1: Forward: Fires forward
+    //                  2: Toward Player: Fires at angle corresponding to player location
+    //             
+    //             Shot Type:
+    //             0. None: Enemy does not fire
+    //             1. Single: Enemy fires a single stream
+    //             2. Dual: Enemy fires two parallel streams
+    //             3. Triad: Enemy fires 3 streams, forward, left and right at a 45 degree angle
+    //             4. Spreader: Enemy fires 6 streams forward at regularly spaced angles
+    //             5. Burst: Enemy fires 12 streams outward in all directions
+    //             6: Lazar: Enemy fires a beam weapon of customizable width and duration
+    //
+    //Written by:  Cera Baltzley
+    //----------------------------------------------------------------------
     public void firelaser()
     {
         GameObject projectileGO;
@@ -423,33 +478,18 @@ public class Enemy : MonoBehaviour
                     angle += 30;
                 }
                 break;
-            case 6: //lazar     
-                    //if (firinmahlazar==false)
-                    //{
-
-                //GameObject glow = GameObject.Find("lazarglow");
-                   Instantiate(lazarglow, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
-
-                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
-                    projectileGO.transform.localScale = new Vector3(0, 20, 1);
-                projectileGO.transform.Translate(0, 10f,0);
+            case 6: //lazar
+                Instantiate(lazarglow, new Vector2(transform.position.x, transform.position.y), transform.rotation, GameObject.FindWithTag("Foreground").transform);
+                projectileGO = Instantiate(projectile, new Vector2(transform.position.x, transform.position.y), transform.rotation, transform);
+                projectileGO.transform.localScale = new Vector3(0, 20f, 1);
+                projectileGO.transform.Translate(0, 10f, 0);
                 projectileGO.GetComponent<EnemyLazar>().maxXscale = lazar_max_width;
                 projectileGO.GetComponent<EnemyLazar>().damage = lazar_damage;
                 projectileGO.GetComponent<EnemyLazar>().Xscaler = lazar_grow_rate;
-                    firinmahlazar = true;
-                //}
-                //else lazarcounter++;
-                //if (lazarcounter >= 5)
-                //{
-                //    lazarcounter = 0;
-                //    firinmahlazar = false;
-                //}
-
-
                 break;
         }
-
     }
+
     public void LifeLost()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdeath"); // play sound

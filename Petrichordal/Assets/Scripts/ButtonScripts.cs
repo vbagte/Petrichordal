@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using FMOD;
+using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
@@ -41,15 +43,28 @@ public class ButtonScripts : MonoBehaviour
 
     public void Restart()
     {
+        FMOD.Studio.PLAYBACK_STATE playbackState;
+        
         SoundManager.songInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        SoundManager.songInstance.release();
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        GameController.musicBus.setPaused(false);
-        GameController.sfxBus.setPaused(false);
+        
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         //soundManager.Start();
-        soundManager.PlayMusic();
         
+
+        GameController.musicBus.setPaused(false);
+        GameController.sfxBus.setPaused(false);
+        soundManager.RestartMusic();
+        //SoundManager.songInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + SoundManager.currentSongName + "bgm");
+        
+        //SoundManager.songInstance.start();
+        SoundManager.songInstance.getPlaybackState(out  playbackState);
+        
+        UnityEngine.Debug.Log(playbackState.ToString());
+      
+       
     }
 
     public void Settings()

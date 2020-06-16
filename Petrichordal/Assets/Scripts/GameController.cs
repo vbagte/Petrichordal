@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
+using UnityEngine.Tilemaps;
 
 public class GameController : MonoBehaviour
 {
@@ -85,10 +86,6 @@ public class GameController : MonoBehaviour
         //bS.AssignBeatEvent(songInstance);
         if (gameStart == false)
         {
-            // start music
-            Debug.Log("Current Song = " + SoundManager.currentSongName);
-            soundManager.PlayMusic();
-
             gameStart = true;
         }
 
@@ -185,14 +182,37 @@ public class GameController : MonoBehaviour
             player.GetComponent<Collider2D>().enabled = false;
             player.GetComponent<Animation>().Stop();
             player.GetComponent<SpriteRenderer>().color = Color.white;
-            if (SceneManager.GetActiveScene().name != "Level_03")
+            if (SceneManager.GetActiveScene().name == "Level_03")
             {
-                Vector2 respawn = new Vector2(-6, 0);
+                Vector2 respawn = new Vector2(0, -3);
+                player.transform.position = respawn;
+         
+            }
+            else if (SceneManager.GetActiveScene().name == "Level_02")
+            {
+                foreground.GetComponent<Scroll>().enabled = false;
+                midground.GetComponent<Scroll>().enabled = false;
+                background.GetComponent<Scroll>().enabled = false;
+                bool badspot = true;
+                Vector2 respawn = new Vector2(0, 3);
+                while (badspot == true)
+                {
+                    badspot = false;
+                    foreach (GameObject land in GameObject.FindGameObjectsWithTag("Land"))
+                    {
+                        if (land.GetComponent<TilemapCollider2D>().OverlapPoint(respawn))
+                        {
+                            Debug.Log(land.name);
+                            badspot = true;
+                        }
+                    }
+                    if (badspot == true) respawn += new Vector2(0, -.5f);
+                }
                 player.transform.position = respawn;
             }
             else
             {
-                Vector2 respawn = new Vector2(0, -3);
+                Vector2 respawn = new Vector2(-6, 0);
                 player.transform.position = respawn;
             }
             Vector2 stay = new Vector2(0, 0);
@@ -315,6 +335,12 @@ public class GameController : MonoBehaviour
     IEnumerator PlayerRespawn()
     {
         yield return new WaitForSeconds(2);
+        if (SceneManager.GetActiveScene().name == "Level_02")
+        {
+            foreground.GetComponent<Scroll>().enabled = true;
+            midground.GetComponent<Scroll>().enabled = true;
+            background.GetComponent<Scroll>().enabled = true;
+        }
         player.GetComponent<PlayerController>().enabled = true;
         player.GetComponent<Collider2D>().enabled = true;
     }
