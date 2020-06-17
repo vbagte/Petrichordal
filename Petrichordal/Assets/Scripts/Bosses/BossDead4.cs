@@ -26,7 +26,7 @@ public class BossDead4 : MonoBehaviour
 
     private void Update()
     {
-        if (bossMain.GetComponent<Enemy>().health < 1 && deadActive == false)
+        if (bossMain.GetComponent<SpaceStationWhole>().hitpoints < 1 && deadActive == false)
         {
             StartCoroutine(Death());
             StartCoroutine(BossExplode());
