@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BossDead : MonoBehaviour
+public class BossDead3 : MonoBehaviour
 {
 
     public GameObject player;
@@ -13,8 +13,10 @@ public class BossDead : MonoBehaviour
     public GameObject explosion;
     public GameObject[] explosionSpots;
     public float exitSpeed;
+    public float bossExitSpeed;
 
     private bool deadActive = false;
+    private bool explosionActive = false;
     private bool exitActive = false;
 
     private void Start()
@@ -29,6 +31,7 @@ public class BossDead : MonoBehaviour
             StartCoroutine(Death());
             StartCoroutine(BossExplode());
             deadActive = true;
+            explosionActive = true;
         }
         if (exitActive)
         {
@@ -40,25 +43,26 @@ public class BossDead : MonoBehaviour
     IEnumerator Death()
     {
         //Lvl1_Manager.bossMusic.setParameterByName("BossWin", 1);
+        player.tag = "Untagged";
         player.GetComponent<PlayerController>().enabled = false;
+        player.GetComponent<Collider2D>().isTrigger = true;
         bossMain.GetComponent<Enemy>().enabled = false;
-        if (SceneManager.GetActiveScene().name == "Level_02")
-        {
-            player.tag = "Untagged";
-        }
-        foreach(Enemy script in GetComponentsInChildren<Enemy>())
+        Enemy[] scripts = GameObject.FindObjectsOfType<Enemy>();
+        foreach (Enemy script in scripts)
         {
             script.enabled = false;
         }
-        foreach (Collider2D collider in GetComponentsInChildren<Collider2D>())
+        eventtrigger[] events = GameObject.FindObjectsOfType<eventtrigger>();
+        foreach (eventtrigger Event in events)
         {
-            collider.enabled = false;
+            Event.enabled = false;
         }
         Vector2 stop = new Vector2(0, 0);
         player.GetComponent<Rigidbody2D>().velocity = stop;
         yield return new WaitForSeconds(1);
         exitActive = true;
         yield return new WaitForSeconds(2);
+        explosionActive = false;
         GameObject.Find("GameController").GetComponent<GameController>().NextLevelPanel();
     }
 
@@ -67,8 +71,8 @@ public class BossDead : MonoBehaviour
         do
         {
             Instantiate(explosion, explosionSpots[Random.Range(0, 8)].transform.position, explosion.transform.rotation);
-            yield return new WaitForSeconds(0.5f);
-        } while (deadActive);
+            yield return new WaitForSeconds(0.2f);
+        } while (explosionActive);
     }
 
 }
