@@ -16,18 +16,24 @@ using UnityEngine.Tilemaps;
 
 public class destructibletile : MonoBehaviour
 {
-  
+
+    public int collision_damage=50;
+    private Health playerHealth;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        }
+
     }
 
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D collision)
     {
               Tilemap tilemap = GetComponent<Tilemap>();
-        if (collision.gameObject.tag == "PlayerShot")
+        if (collision.gameObject.tag == "PlayerShot" || collision.gameObject.tag == "EnemyShot")
         {
         //Vector3 hitPosition = new Vector3();
         //    foreach (ContactPoint2D hit in collision.contacts)
@@ -40,9 +46,36 @@ public class destructibletile : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player")
         {
-       
-            collision.gameObject.GetComponent<Health>().health -= 20;
+            collision.gameObject.GetComponent<Health>().health -= collision_damage;
+            if (playerHealth.health <= 0)
+            {
+                LifeLost();
+            }
+            collision.gameObject.GetComponent<Animation>().Play("Player_Hurt");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdamaged");
+
         }
 
     }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+                  collision.gameObject.GetComponent<Health>().health -= 5;
+            if (playerHealth.health <= 0)
+            {
+                LifeLost();
+            }
+            collision.gameObject.GetComponent<Animation>().Play("Player_Hurt");
+            if (Time.frameCount % 2 == 0) FMODUnity.RuntimeManager.PlayOneShot("event:/Game/playerdamaged");
+
+
+        }
+    }
+
+    public void LifeLost()
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().LifeLost();
+    }
+
 }
