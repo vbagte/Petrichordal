@@ -26,7 +26,7 @@ public class BossDead4 : MonoBehaviour
 
     private void Update()
     {
-        if (bossMain.GetComponent<SpaceStationWhole>().hitpoints < 1 && deadActive == false)
+        if (deadActive == false && bossMain.GetComponent<SpaceStationWhole>().hitpoints < 1)
         {
             StartCoroutine(Death());
             StartCoroutine(BossExplode());
@@ -42,7 +42,7 @@ public class BossDead4 : MonoBehaviour
                 bossDown = false;
             }
         }
-        if (exitActive)
+        if (exitActive && player!=null)
         {
             float step = exitSpeed * Time.deltaTime; // calculate distance to move
             player.transform.position = Vector3.MoveTowards(player.transform.position, exitSpot.transform.position, step);
@@ -55,7 +55,6 @@ public class BossDead4 : MonoBehaviour
         player.tag = "Untagged";
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<Collider2D>().isTrigger = true;
-        bossMain.GetComponent<Enemy>().enabled = false;
         Enemy[] scripts = GameObject.FindObjectsOfType<Enemy>();
         foreach (Enemy script in scripts)
         {

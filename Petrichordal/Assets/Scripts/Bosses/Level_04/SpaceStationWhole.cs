@@ -14,8 +14,8 @@ public class SpaceStationWhole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hitpoints < 1){
-            Destroy(gameObject);
-        }
+        //if(hitpoints < 1){
+        //    Destroy(gameObject);
+        //}
     }
 }
