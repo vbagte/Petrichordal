@@ -327,9 +327,12 @@ public class Enemy : MonoBehaviour
                 health -= 1;
                 if (health < 1)
                 {
-                    Instantiate(explosion, transform.position, explosion.transform.rotation);
-                    Destroy(gameObject);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                    if (name != "BOSSCONTAINER" && name != "LAZARBOSSTURRET")
+                    {
+                        Instantiate(explosion, transform.position, explosion.transform.rotation);
+                        Destroy(gameObject);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                    }
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
@@ -339,9 +342,12 @@ public class Enemy : MonoBehaviour
                 health -= 5;
                 if (health < 1)
                 {
-                    Instantiate(explosion, transform.position, explosion.transform.rotation);
-                    Destroy(gameObject);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                    if (name != "BOSSCONTAINER" && name != "LAZARBOSSTURRET")
+                    {
+                        Instantiate(explosion, transform.position, explosion.transform.rotation);
+                        Destroy(gameObject);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                    }
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
