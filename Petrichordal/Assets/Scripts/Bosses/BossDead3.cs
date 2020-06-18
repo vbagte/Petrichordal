@@ -46,7 +46,7 @@ public class BossDead3 : MonoBehaviour
         player.tag = "Untagged";
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<Collider2D>().isTrigger = true;
-        Destroy(bossMain);
+        bossMain.SetActive(false);
             //bossMain.GetComponent<Enemy>().enabled = false;
         Enemy[] scripts = GameObject.FindObjectsOfType<Enemy>();
         foreach (Enemy script in scripts)
