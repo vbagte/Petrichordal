@@ -103,6 +103,11 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        //keep track of playtime
+        if (player.GetComponent<PlayerController>().lives > 0 && paused == false && player.GetComponent<PlayerController>().enabled == true)
+        {
+            playerstats.playtime += Time.deltaTime;
+        }
         //pause menu toggle
         if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
         {
