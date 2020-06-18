@@ -62,7 +62,7 @@ public class SoundManager : MonoBehaviour
         //Debug.Log(sxTri);
         //Debug.Log(sxSqu);
         //Debug.Log(sxSin);
-        Debug.Log("CURRENT SONG = " + currentSongName);
+        //Debug.Log("CURRENT SONG = " + currentSongName);
 
         //masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
         musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
@@ -101,9 +101,12 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBossMusic()
     {
+        // start beat system again
         // stop level music and start boss music
         musicBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         songInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/bossbgm");
+        bS = GameObject.Find("Main Camera").GetComponent<BeatSystem>();
+        bS.AssignBeatEvent(songInstance);
         songInstance.start();
         songInstance.release();
     }
