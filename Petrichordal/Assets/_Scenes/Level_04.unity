@@ -916,7 +916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1369.7576, y: -0}
+  m_AnchoredPosition: {x: -1369.7576, y: 0}
   m_SizeDelta: {x: 782.4, y: 331.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &110232005
@@ -1544,8 +1544,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3597094234747163342, guid: b532edd91bda5dc479536b32b3113213, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b532edd91bda5dc479536b32b3113213, type: 3}
 --- !u!1 &177369120
 GameObject:
@@ -4500,8 +4499,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3597094234747163342, guid: b532edd91bda5dc479536b32b3113213, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b532edd91bda5dc479536b32b3113213, type: 3}
 --- !u!4 &453453907 stripped
 Transform:
@@ -24153,8 +24151,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3597094234747163342, guid: b532edd91bda5dc479536b32b3113213, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b532edd91bda5dc479536b32b3113213, type: 3}
 --- !u!4 &1147384476 stripped
 Transform:
@@ -26481,7 +26478,7 @@ PrefabInstance:
     - target: {fileID: 6109745010827895524, guid: c815d678a3cda7f4bba01f6da7983331,
         type: 3}
       propertyPath: burstcooldown_sec
-      value: 15
+      value: 12.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8367161388256062518, guid: c815d678a3cda7f4bba01f6da7983331, type: 3}
@@ -34070,7 +34067,7 @@ PrefabInstance:
     - target: {fileID: 6109745010827895524, guid: c815d678a3cda7f4bba01f6da7983331,
         type: 3}
       propertyPath: burstcooldown_sec
-      value: 15
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 6109745010827895524, guid: c815d678a3cda7f4bba01f6da7983331,
         type: 3}
@@ -34685,8 +34682,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3597094234747163342, guid: b532edd91bda5dc479536b32b3113213, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b532edd91bda5dc479536b32b3113213, type: 3}
 --- !u!1 &1978387618
 GameObject:
