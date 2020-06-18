@@ -319,9 +319,11 @@ public class Enemy : MonoBehaviour
     //----------------------------------------------------------------------
     void scoreupdate()
     {
-        if (tag == "Boss" || tag == "BossPart") playerstats.score += 25000;
-        if (tag == "MIDBOSS") playerstats.score += 10000;
-        if (tag == "Enemy") playerstats.score += 1000;
+        if (tag == "Boss" || tag == "BossPart") {
+            playerstats.levelscore += 25000;
+        }
+        if (tag == "MIDBOSS") playerstats.levelscore += 10000;
+        if (tag == "Enemy") playerstats.levelscore += 1000;
     }
     //----------------------------------------------------------------------
     //Type:        Function
