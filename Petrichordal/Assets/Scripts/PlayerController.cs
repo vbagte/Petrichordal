@@ -269,8 +269,11 @@ public class PlayerController : MonoBehaviour
                 float translationX = Input.GetAxis("Horizontal");
                 moveX = translationX;
                 moveY = -translationY;
-                if (moveX > -.1 && moveX < .1) moveX = 0;
-                if (moveY > -.1 && moveY < .1) moveY = 0;
+                if (moveX > -.05 && moveX < .05) moveX = 0;
+                if (moveY > -.05 && moveY < .05) moveY =0;
+                if (moveX > -.7 && moveX < .7)moveX*=.8f;
+                if (moveY > -.7 && moveY < .7) moveY*=.8f;
+
             }
             if (Input.GetKey(KeyCode.D))
             {
