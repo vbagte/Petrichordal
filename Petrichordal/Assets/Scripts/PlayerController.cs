@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
     public GameObject shotSawtooth;
     public GameObject shotTriAOE;
     public GameObject shotTri;
+    public GameObject shotTriFlip;
     public GameObject shield;
     public GameObject heal;
     public Transform shotSpawn;
@@ -397,14 +398,20 @@ public class PlayerController : MonoBehaviour
         {
             shotTri.transform.localRotation = Quaternion.Euler(shotTri.transform.localRotation.x, shotTri.transform.localRotation.y, 90);
             shotTri.GetComponent<Mover>().direction = Mover.Edirection.vertical;
+            shotTriFlip.transform.localRotation = Quaternion.Euler(shotTri.transform.localRotation.x, shotTri.transform.localRotation.y, 90);
+            shotTriFlip.GetComponent<Mover>().direction = Mover.Edirection.vertical;
         }
         else
         {
             shotTri.transform.localRotation = Quaternion.Euler(shotTri.transform.localRotation.x, shotTri.transform.localRotation.y, 0);
             shotTri.GetComponent<Mover>().direction = Mover.Edirection.horizontal;
+            shotTriFlip.transform.localRotation = Quaternion.Euler(shotTri.transform.localRotation.x, shotTri.transform.localRotation.y, 0);
+            shotTriFlip.GetComponent<Mover>().direction = Mover.Edirection.horizontal;
         }
-        shotTri.GetComponent<Mover>().speed = -15;
-        Instantiate(shotTri, transform.position, transform.rotation);
+        //shotTri.GetComponent<SpriteRenderer>().flipX = true;
+        shotTriFlip.GetComponent<Mover>().speed = -15;
+        Instantiate(shotTriFlip, transform.position, transform.rotation);
+      // shotTri.GetComponent<SpriteRenderer>().flipX = false;
         shotTri.GetComponent<Mover>().speed = 15;
         Instantiate(shotTri, transform.position, transform.rotation);
     }
