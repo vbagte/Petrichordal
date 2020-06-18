@@ -51,9 +51,11 @@ public class DestroyByContact : MonoBehaviour
             Destroy(other.gameObject);
             if (this.GetComponent<Health>().health <= 0)
             {
+                scoreupdate();
                 Instantiate(explosion, this.transform.position, this.transform.rotation);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath");
                 Destroy(this.gameObject);
+               
             }
         }
         // player projectile hits land
@@ -69,6 +71,7 @@ public class DestroyByContact : MonoBehaviour
             this.GetComponent<Health>().health -= other.GetComponent<Damage>().damage;
             if (this.GetComponent<Health>().health <= 0)
             {
+                scoreupdate();
                 Instantiate(explosion, this.transform.position, this.transform.rotation);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath");
                 Destroy(this.gameObject);
@@ -130,7 +133,12 @@ public class DestroyByContact : MonoBehaviour
             StartCoroutine("SmokeHurt");
         }
     }
-
+    void scoreupdate()
+    {
+        if (tag == "Boss" || tag == "BossPart") playerstats.score += 25000;
+        if (tag == "MIDBOSS") playerstats.score += 10000;
+        if (tag == "Enemy") playerstats.score += 1000;
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (this.name == "Lava" && other.CompareTag("Player"))
