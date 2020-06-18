@@ -1582,6 +1582,8 @@ MonoBehaviour:
   shotTriAOE: {fileID: 5035245819000217371, guid: d2db6d8aa7879e0428371519497dddb4,
     type: 3}
   shotTri: {fileID: 3751351678840606543, guid: c33ed1e4efa4ae44ab8532fc2e6691cb, type: 3}
+  shotTriFlip: {fileID: 7876641189287431527, guid: b14d3674bae768a4d93d0390fe7c34cd,
+    type: 3}
   shield: {fileID: 6610022613688850496, guid: 5e99133f1e4a147448380463ca87d60b, type: 3}
   heal: {fileID: 1254040729}
   shotSpawn: {fileID: 985672944}
