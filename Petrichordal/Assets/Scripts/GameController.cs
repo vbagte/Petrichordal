@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
+using UnityEngine.Tilemaps;
 
 public class GameController : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class GameController : MonoBehaviour
     public Health playerHealth;
     private bool bossDead;
     public bool exitActive = false;
+    private bool continueEnable = false;
     private Vector3 exitSpot;
 
     //private string currentScene;
@@ -98,6 +100,8 @@ public class GameController : MonoBehaviour
         playerExit = GameObject.Find("PlayerExitSpot");
         exitSpot = (playerExit.transform.position - player.transform.position);
         playerEnable = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
@@ -109,6 +113,8 @@ public class GameController : MonoBehaviour
             settingsMenu.SetActive(false);
             pausePanel.SetActive(true);
             paused = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             
             //pause all sound
@@ -119,14 +125,20 @@ public class GameController : MonoBehaviour
         {
             pausePanel.SetActive(false);
             paused = false;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
 
             //unpause all sound
             musicBus.setPaused(false);
             sfxBus.setPaused(false);
         }
+        if (Input.GetKeyDown(KeyCode.E) && continueEnable == true)
+        {
+            StartCoroutine(LevelChange(0));
+        }
         //stop objects after player dies
-        if (player.GetComponent<PlayerController>().lives <= 0 || player == null)
+        if (player == null || player.GetComponent<PlayerController>().lives <= 0)
         {
             for (int i = 0; i < bg.Length; i++)
             {
@@ -181,14 +193,37 @@ public class GameController : MonoBehaviour
             player.GetComponent<Collider2D>().enabled = false;
             player.GetComponent<Animation>().Stop();
             player.GetComponent<SpriteRenderer>().color = Color.white;
-            if (SceneManager.GetActiveScene().name != "Level_03")
+            if (SceneManager.GetActiveScene().name == "Level_03")
             {
-                Vector2 respawn = new Vector2(-6, 0);
+                Vector2 respawn = new Vector2(0, -3);
+                player.transform.position = respawn;
+         
+            }
+            else if (SceneManager.GetActiveScene().name == "Level_02")
+            {
+                foreground.GetComponent<Scroll>().enabled = false;
+                midground.GetComponent<Scroll>().enabled = false;
+                background.GetComponent<Scroll>().enabled = false;
+                bool badspot = true;
+                Vector2 respawn = new Vector2(0, 3);
+                while (badspot == true)
+                {
+                    badspot = false;
+                    foreach (GameObject land in GameObject.FindGameObjectsWithTag("Land"))
+                    {
+                        if (land.GetComponent<TilemapCollider2D>().OverlapPoint(respawn))
+                        {
+                            Debug.Log(land.name);
+                            badspot = true;
+                        }
+                    }
+                    if (badspot == true) respawn += new Vector2(0, -.5f);
+                }
                 player.transform.position = respawn;
             }
             else
             {
-                Vector2 respawn = new Vector2(0, -3);
+                Vector2 respawn = new Vector2(-6, 0);
                 player.transform.position = respawn;
             }
             Vector2 stay = new Vector2(0, 0);
@@ -230,11 +265,14 @@ public class GameController : MonoBehaviour
             }
             background.GetComponent<Scroll>().speed = 0;
         }
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         StartCoroutine(GameOver());
     }
 
     public void NextLevelPanel()
     {
+        continueEnable = true;
         nextLevelPanel.GetComponent<Animation>().Play();
     }
 
@@ -311,6 +349,12 @@ public class GameController : MonoBehaviour
     IEnumerator PlayerRespawn()
     {
         yield return new WaitForSeconds(2);
+        if (SceneManager.GetActiveScene().name == "Level_02")
+        {
+            foreground.GetComponent<Scroll>().enabled = true;
+            midground.GetComponent<Scroll>().enabled = true;
+            background.GetComponent<Scroll>().enabled = true;
+        }
         player.GetComponent<PlayerController>().enabled = true;
         player.GetComponent<Collider2D>().enabled = true;
     }

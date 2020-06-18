@@ -1,4 +1,18 @@
-﻿using System.Collections;
+﻿//==============================================================================
+//Project:       Petrichordal
+//File Name:     SandWormHazard.cs
+//Author:        Cera Baltzley, FMOD portions by Matt
+//Class:         CS 185 2020 Spring Quarter
+//Description:   This script defines and manages the behaviour of the giant sandworm
+//                   The sandworm will move onto the screen for a period of time,
+//                   Then rotate rapidly for a period of time oscillating forward and back,
+//                   Then retreat off screen
+//
+//==============================================================================
+//Known Bugs:   The sandworm should really enter the screen a set unit of distance, not a set time, as
+//                  any machine slowdowns/lag has an undesired effect on all time based actions 
+//==============================================================================
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,8 +31,6 @@ public class SandWormHazard : MonoBehaviour
         bossBgm = FMODUnity.RuntimeManager.CreateInstance("event:/Music/bossbgm");
         bossBgm.start();
         bossBgm.release();
-        
-
     }
 
     // Update is called once per frame

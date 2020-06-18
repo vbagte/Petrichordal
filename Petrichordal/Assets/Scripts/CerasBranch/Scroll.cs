@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿//==============================================================================
+//Project:       Petrichordal
+//File Name:     Scroll.cs
+//Author:        Cera Baltzley
+//Class:         CS 185 2020 Spring Quarter
+//Description:   This script is used for scrolling backgrounds and enemies, with 
+//                  option for horizontal or vertial, and speed (negative speed
+//                  values may be used to reverse direction)
+//==============================================================================
+//Known Bugs: 
+//==============================================================================
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

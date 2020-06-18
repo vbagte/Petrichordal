@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3172688780604240294}
   - component: {fileID: 2269196121095740328}
   - component: {fileID: 1045542266}
-  - component: {fileID: 1045542269}
-  - component: {fileID: 8809084448008963392}
-  - component: {fileID: 1009498337}
+  - component: {fileID: 1553015570}
+  - component: {fileID: 605501691}
+  - component: {fileID: 605501690}
   m_Layer: 0
   m_Name: SpaceStationExterior
   m_TagString: Boss
@@ -93,7 +93,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -116,7 +116,7 @@ PolygonCollider2D:
       - {x: 0.07, y: -0.5}
       - {x: 0.5, y: -0.5}
       - {x: 0.5, y: 0.4}
---- !u!114 &1045542269
+--- !u!114 &1553015570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,11 +125,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 2894192550668683089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ca67e9f749c1d748ba66c152d3c39c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 767b70f20dd45d84f9ee359981cde449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 0}
---- !u!114 &8809084448008963392
+  collision_damage: 50
+--- !u!50 &605501691
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894192550668683089}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &605501690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,37 +159,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2894192550668683089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f05b5f2398197847967fc08c7dfd389, type: 3}
+  m_Script: {fileID: 11500000, guid: 767b70f20dd45d84f9ee359981cde449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  collisiondamage: 2000
-  speed: 0
-  flypattern: 0
-  projectile: {fileID: 7162232096174853374, guid: 60ab0d3922600da42a7928804dcec5ed,
-    type: 3}
-  explosion: {fileID: 0}
-  projectilespeed: 5
-  fireinterval_sec: 5
-  burstcooldown_sec: 5
-  projectiles_per_burst: 1
-  shottype: 6
-  projectiledirection: 1
-  lazarglow: {fileID: 6647453536593165373, guid: e11901e37c748b942945cc1682eb9331,
-    type: 3}
---- !u!111 &1009498337
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2894192550668683089}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: d39f80ca7199cc7449aedc36feca384f, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  collision_damage: 50

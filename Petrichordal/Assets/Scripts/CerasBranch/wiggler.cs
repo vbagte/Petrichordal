@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿//==============================================================================
+//Project:       Petrichordal
+//File Name:     wiggle.cs
+//Author:        Cera Baltzley
+//Class:         CS 185 2020 Spring Quarter
+//Description:   This script is is used for the level 2 boss to "wiggle" the body parts by
+//                  oscillating side to side for a custom amount of frames in each direction
+//==============================================================================
+//Known Bugs: 
+//==============================================================================
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

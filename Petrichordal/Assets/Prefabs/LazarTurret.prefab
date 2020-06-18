@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6151686340184376950
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: shottype
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7162232096174853374, guid: 60ab0d3922600da42a7928804dcec5ed,
+        type: 3}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: fireinterval_sec
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: burstcooldown_sec
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: projectiles_per_burst
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: lazarglow
+      value: 
+      objectReference: {fileID: 8951682505763291705, guid: 8a628f6d04241c841bb4253f87e7a116,
+        type: 3}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: lazar_damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: lazar_grow_rate
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: lazar_max_width
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: flypattern
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: health
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000205796123794, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 699949489236583834, guid: eca44f65a25095f44902dc4a7168c010,
+        type: 3}
+    - target: {fileID: 2396212770519247424, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396212770519247424, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040387581598683603, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6685dd077fd7cae4e8925a397a10b0da,
+        type: 3}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.008726558
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.999962
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218072883800537374, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795379220773587826, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_Name
+      value: HomingTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795379220773587826, guid: 8c638e2d6d8a0574cbd7494225347fba,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c638e2d6d8a0574cbd7494225347fba, type: 3}
