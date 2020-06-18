@@ -104,7 +104,7 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 a6e3c7eb90cba24ee3ab1cd02ed0046b Assembly-CSharp-firstpass.dll:FMODUnity.StudioEventEmitter
 fb9ffa19cc5f6f8e5c4464a77236fffa Assembly-CSharp-firstpass.dll:FMODUnity.StudioGlobalParameterTrigger
 4228efcf2e29565c604f08e3a53e0af1 Assembly-CSharp.dll:.UpdateHealthBar
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.destructibletile
+84dec5521da2a27496358b9167681acb Assembly-CSharp.dll:.destructibletile
 cb53fd7161a0965e5654839c80fe7a1f Assembly-CSharp.dll:.Enemy
 3a01bc12e3cd18b19c10a4184fb07a84 Assembly-CSharp.dll:UnityEngine.RuleTile
 3789ba0ceed0fb7b30853271a0c7de9e Assembly-CSharp.dll:.Scroll
@@ -191,7 +191,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 4fb4e655d23b22579b323315b70561fd Assembly-CSharp.dll:.SpaceStationHealth
-972b248f20a9409624aa1465c56de640 Assembly-CSharp.dll:.BossDead
+9c667a089916f54d0a75ce6565fbd306 Assembly-CSharp.dll:.BossDead
 35a9693c388776aaf487636491a20f11 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e1300922cc039f41ab46a47f4cb05898 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 4cf7b57437576cd7ccd427a5fe0748f7 Assembly-CSharp.dll:.PlayerController
@@ -243,3 +243,6 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 39abe8ae2d89af2dc09cf3c0bee60d97 Assembly-CSharp.dll:SimpleHealthBar_SpaceshipExample.GameManager
 bc69ab14922420aa47de97b18843cbe1 Assembly-CSharp.dll:.SpaceStationParts
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SandWormHazard
+b666ac13329fc9b211f506f8c1e4f7d7 Assembly-CSharp.dll:.BossDead3
+b666ac13329fc9b211f506f8c1e4f7d7 Assembly-CSharp.dll:.BossDead4
+b666ac13329fc9b211f506f8c1e4f7d7 Assembly-CSharp.dll:.BossDead2

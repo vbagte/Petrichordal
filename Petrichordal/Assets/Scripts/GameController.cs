@@ -127,7 +127,7 @@ public class GameController : MonoBehaviour
             sfxBus.setPaused(false);
         }
         //stop objects after player dies
-        if (player.GetComponent<PlayerController>().lives <= 0 || player == null)
+        if (player == null || player.GetComponent<PlayerController>().lives <= 0)
         {
             for (int i = 0; i < bg.Length; i++)
             {
