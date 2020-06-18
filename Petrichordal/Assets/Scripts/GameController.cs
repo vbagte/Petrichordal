@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
     public Health playerHealth;
     private bool bossDead;
     public bool exitActive = false;
+    private bool continueEnable = false;
     private Vector3 exitSpot;
 
     //private string currentScene;
@@ -99,6 +100,8 @@ public class GameController : MonoBehaviour
         playerExit = GameObject.Find("PlayerExitSpot");
         exitSpot = (playerExit.transform.position - player.transform.position);
         playerEnable = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
@@ -110,6 +113,8 @@ public class GameController : MonoBehaviour
             settingsMenu.SetActive(false);
             pausePanel.SetActive(true);
             paused = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             
             //pause all sound
@@ -120,11 +125,17 @@ public class GameController : MonoBehaviour
         {
             pausePanel.SetActive(false);
             paused = false;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
 
             //unpause all sound
             musicBus.setPaused(false);
             sfxBus.setPaused(false);
+        }
+        if (Input.GetKeyDown(KeyCode.E) && continueEnable == true)
+        {
+            StartCoroutine(LevelChange(0));
         }
         //stop objects after player dies
         if (player == null || player.GetComponent<PlayerController>().lives <= 0)
@@ -254,11 +265,14 @@ public class GameController : MonoBehaviour
             }
             background.GetComponent<Scroll>().speed = 0;
         }
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         StartCoroutine(GameOver());
     }
 
     public void NextLevelPanel()
     {
+        continueEnable = true;
         nextLevelPanel.GetComponent<Animation>().Play();
     }
 

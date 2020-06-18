@@ -29,6 +29,8 @@ public class ButtonScripts : MonoBehaviour
     {
         //fade.SetActive(true);
         //StartCoroutine(StartGame());
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -38,6 +40,8 @@ public class ButtonScripts : MonoBehaviour
         GameController.sfxBus.setPaused(false);
         pausePanel.SetActive(false);
         GameObject.Find("GameController").GetComponent<GameController>().paused = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
     }
 
@@ -48,7 +52,9 @@ public class ButtonScripts : MonoBehaviour
         SoundManager.songInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SoundManager.songInstance.release();
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         //soundManager.Start();
