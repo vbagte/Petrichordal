@@ -17,7 +17,7 @@ public class scoreupdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       TextComponent.text = playerstats.score.ToString();
+       TextComponent.text = (playerstats.score + playerstats.levelscore).ToString();
    
     }
 }

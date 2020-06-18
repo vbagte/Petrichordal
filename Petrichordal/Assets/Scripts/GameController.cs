@@ -58,39 +58,11 @@ public class GameController : MonoBehaviour
         sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
         uiBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/UI");
         soundManager = GameObject.Find("Main Camera").GetComponent<SoundManager>();
-        // gets current scene/level name, so that the correct level bgm is played
-        //currentScene = SceneManager.GetActiveScene().name;
-        //switch (currentScene)
-        //{
-        //    case "Level_01":
-        //        currentSongName = "lv01";
-        //       break;
-        //    case "Level_02":
-        //        currentSongName = "lv02";
-        //        break;
-        //    case "Level_03":
-        //        currentSongName = "lv03";
-        //        break;
-        //    case "Level_04":
-        //        currentSongName = "lv04";
-        //        break;
-        //    default:
-        //        currentSongName = "lv01";
-        //        break;
-        //}
-
-        //Debug.Log(BeatSystem.bar);
-        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
-
-        // songInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/" + currentSongName + "bgm");
-        //bS = GetComponent<BeatSystem>();
-        //bS.AssignBeatEvent(songInstance);
+        
         if (gameStart == false)
         {
             gameStart = true;
         }
-
-
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -122,9 +94,9 @@ public class GameController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             
-            //pause all sound
+            //pause music
             musicBus.setPaused(true);
-            sfxBus.setPaused(true);
+            //sfxBus.setPaused(true);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && paused == true)
         {
@@ -134,9 +106,9 @@ public class GameController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
 
-            //unpause all sound
+            //unpause music
             musicBus.setPaused(false);
-            sfxBus.setPaused(false);
+            //sfxBus.setPaused(false);
         }
         if (Input.GetKeyDown(KeyCode.E) && continueEnable == true)
         {
