@@ -30,6 +30,8 @@ public class LevelTransition : MonoBehaviour
 
     IEnumerator NextLevel()
     {
+        playerstats.score += playerstats.levelscore;
+        playerstats.levelscore = 0;        
         yield return new WaitForSeconds(2.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

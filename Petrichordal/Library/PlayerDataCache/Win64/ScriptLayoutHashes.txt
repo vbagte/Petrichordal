@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/shumw/Downloads/Petrichordal.exe
+C:/Users/shumw/Documents/PetrichordalAssets/Petrrichordal/Petrichordal.exe
 SceneListBegin?
 Assets/_Scenes/_Main_Menu.unity
 Assets/_Scenes/Level_00.unity
@@ -103,7 +103,8 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 92583f5c853ea78ec8d05eed0dcbb497 Assembly-CSharp.dll:UnityEngine.Tilemaps.RandomTile
 a6e3c7eb90cba24ee3ab1cd02ed0046b Assembly-CSharp-firstpass.dll:FMODUnity.StudioEventEmitter
 fb9ffa19cc5f6f8e5c4464a77236fffa Assembly-CSharp-firstpass.dll:FMODUnity.StudioGlobalParameterTrigger
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.destructibletile
+4228efcf2e29565c604f08e3a53e0af1 Assembly-CSharp.dll:.UpdateHealthBar
+84dec5521da2a27496358b9167681acb Assembly-CSharp.dll:.destructibletile
 cb53fd7161a0965e5654839c80fe7a1f Assembly-CSharp.dll:.Enemy
 3a01bc12e3cd18b19c10a4184fb07a84 Assembly-CSharp.dll:UnityEngine.RuleTile
 3789ba0ceed0fb7b30853271a0c7de9e Assembly-CSharp.dll:.Scroll
@@ -155,6 +156,7 @@ ea3568fca2eb40938a710de637107e8f Assembly-CSharp.dll:.EnemyLazar
 e1bbf0ab858085e38fae6b12ebbdcd35 Assembly-CSharp-firstpass.dll:.FMODEventTrack
 a9e98492510752ee563a5d56b12b058e Assembly-CSharp.dll:.BossHurt
 cbc8c5f99071d5bb294894b63613983b Assembly-CSharp.dll:.GameController
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SoundManager
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 17189a9968145c7b818f312a3761eca6 Assembly-CSharp.dll:.SnakeBoss
 8e86bc31f8558646148e41bcc42e686b Assembly-CSharp.dll:.Enemy_Movement_01
@@ -188,7 +190,8 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-972b248f20a9409624aa1465c56de640 Assembly-CSharp.dll:.BossDead
+4fb4e655d23b22579b323315b70561fd Assembly-CSharp.dll:.SpaceStationHealth
+9c667a089916f54d0a75ce6565fbd306 Assembly-CSharp.dll:.BossDead
 35a9693c388776aaf487636491a20f11 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e1300922cc039f41ab46a47f4cb05898 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 4cf7b57437576cd7ccd427a5fe0748f7 Assembly-CSharp.dll:.PlayerController
@@ -215,6 +218,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 3b760e6526e13f7504f59e210145899a Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 507174d46dacbc5fe45e28485db5dd1e Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.Enemy_Shot_02
+10fadd5f8d92d5fde3e45b2bc6f8aa09 Assembly-CSharp.dll:.ReturnToMenu
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 10fadd5f8d92d5fde3e45b2bc6f8aa09 Assembly-CSharp.dll:.LevelTransitionMusicStop
 af18424ab4310bab8befde4fcb8b8ca8 Assembly-CSharp-firstpass.dll:FMODUnity.StudioParameterTrigger
@@ -223,7 +227,7 @@ af18424ab4310bab8befde4fcb8b8ca8 Assembly-CSharp-firstpass.dll:FMODUnity.StudioP
 7ba35897a6eb27627ed456c682c34253 Assembly-CSharp.dll:UnityEngine.Tilemaps.TerrainTile
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PipeSmoke
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Level3BossTrigger
-0dd731ec0ce0eb9c8e5c1986a0f0137d Assembly-CSharp.dll:.eventtrigger
+d61497fdd9b52c49228e06e5c7a7c876 Assembly-CSharp.dll:.eventtrigger
 def533f1f0b96697fdbc03c751a82b54 Assembly-CSharp.dll:.DestroyByContact
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.BeatSystem
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
@@ -239,5 +243,6 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 39abe8ae2d89af2dc09cf3c0bee60d97 Assembly-CSharp.dll:SimpleHealthBar_SpaceshipExample.GameManager
 bc69ab14922420aa47de97b18843cbe1 Assembly-CSharp.dll:.SpaceStationParts
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SandWormHazard
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SoundManager
-10fadd5f8d92d5fde3e45b2bc6f8aa09 Assembly-CSharp.dll:.ReturnToMenu
+b666ac13329fc9b211f506f8c1e4f7d7 Assembly-CSharp.dll:.BossDead3
+b666ac13329fc9b211f506f8c1e4f7d7 Assembly-CSharp.dll:.BossDead4
+b666ac13329fc9b211f506f8c1e4f7d7 Assembly-CSharp.dll:.BossDead2

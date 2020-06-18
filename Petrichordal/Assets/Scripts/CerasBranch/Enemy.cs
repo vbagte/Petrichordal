@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour
 
     [Header("[Enemy Health Options]")]
     public GameObject explosion;
+    public float initial_cooldown = 0;
     public int health = 1;
     public int collisiondamage = 50;
 
@@ -111,11 +112,9 @@ public class Enemy : MonoBehaviour
     private float elapsedseconds;
     private int counter_projectile = 0;
     private float start = 0;
-    private bool clone = true;
     private float frames_per_projectile;
     private bool inBoundary = false;
     private Health playerHealth;
-    private long lazarcounter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -131,13 +130,14 @@ public class Enemy : MonoBehaviour
         //elapsedseconds = framecounter / 60;
 
         //Only update the object if it is within 1 tile of the camera field
-        if (transform.position.x <= 10 && transform.position.x >= -10 && transform.position.y > -4.5 && transform.position.y <= 5)
+        if (transform.position.x <= 9 && transform.position.x >= -9 && transform.position.y > -4.5 && transform.position.y <= 5)
         {
             if (start == 0) start = Time.time;
             elapsedseconds = Time.time - start;
             //operate movement behaviour
-            movement(); 
+            movement();
             inBoundary = true;
+            if (elapsedseconds <= initial_cooldown) firing = false; else firing = true;
             //operate firing behaviour
             if (firing == true) //if the gun is turned on (sometimes the movement patterns turn it off)
             {
@@ -168,11 +168,12 @@ public class Enemy : MonoBehaviour
                         {
                             counter_projectile = 0;
                             cooldown = true;
-                        }   
+                        }
                     }
                 }
             }
         }
+        else { start = 0; cooldown = false; counter_burst = 0; counter_cooldown = 0; counter_projectile = 0; }
     }
     //----------------------------------------------------------------------
     //Type:        Function
@@ -312,6 +313,20 @@ public class Enemy : MonoBehaviour
     }
     //----------------------------------------------------------------------
     //Type:        Function
+    //Description: This function updates the score based on tag (could be more detailed)
+    //
+    //Written by:  Cera
+    //----------------------------------------------------------------------
+    void scoreupdate()
+    {
+        if (tag == "Boss" || tag == "BossPart") {
+            playerstats.levelscore += 25000;
+        }
+        if (tag == "MIDBOSS") playerstats.levelscore += 10000;
+        if (tag == "Enemy") playerstats.levelscore += 1000;
+    }
+    //----------------------------------------------------------------------
+    //Type:        Function
     //Description: This function defines behaviour upon collisions with various
     //                 objects
     //
@@ -327,9 +342,15 @@ public class Enemy : MonoBehaviour
                 health -= 1;
                 if (health < 1)
                 {
-                    Instantiate(explosion, transform.position, explosion.transform.rotation);
-                    Destroy(gameObject);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                    scoreupdate();
+                    if (name != "BOSSCONTAINER" && name != "LAZARBOSSTURRET")
+                    {
+                        Instantiate(explosion, transform.position, explosion.transform.rotation);
+                        Destroy(gameObject);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                       
+                    }
+                  
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
@@ -339,9 +360,15 @@ public class Enemy : MonoBehaviour
                 health -= 5;
                 if (health < 1)
                 {
-                    Instantiate(explosion, transform.position, explosion.transform.rotation);
-                    Destroy(gameObject);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                    scoreupdate();
+                    if (name != "BOSSCONTAINER" && name != "LAZARBOSSTURRET")
+                    {
+                        Instantiate(explosion, transform.position, explosion.transform.rotation);
+                        Destroy(gameObject);
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                        
+                    }
+                 
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
