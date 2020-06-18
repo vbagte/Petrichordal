@@ -312,6 +312,18 @@ public class Enemy : MonoBehaviour
     }
     //----------------------------------------------------------------------
     //Type:        Function
+    //Description: This function updates the score based on tag (could be more detailed)
+    //
+    //Written by:  Cera
+    //----------------------------------------------------------------------
+    void scoreupdate()
+    {
+        if (tag == "Boss" || tag == "BossPart") playerstats.score += 25000;
+        if (tag == "MIDBOSS") playerstats.score += 10000;
+        if (tag == "Enemy") playerstats.score += 1000;
+    }
+    //----------------------------------------------------------------------
+    //Type:        Function
     //Description: This function defines behaviour upon collisions with various
     //                 objects
     //
@@ -327,12 +339,15 @@ public class Enemy : MonoBehaviour
                 health -= 1;
                 if (health < 1)
                 {
+                    scoreupdate();
                     if (name != "BOSSCONTAINER" && name != "LAZARBOSSTURRET")
                     {
                         Instantiate(explosion, transform.position, explosion.transform.rotation);
                         Destroy(gameObject);
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                       
                     }
+                  
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
@@ -342,12 +357,15 @@ public class Enemy : MonoBehaviour
                 health -= 5;
                 if (health < 1)
                 {
+                    scoreupdate();
                     if (name != "BOSSCONTAINER" && name != "LAZARBOSSTURRET")
                     {
                         Instantiate(explosion, transform.position, explosion.transform.rotation);
                         Destroy(gameObject);
                         FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydeath"); // play sound
+                        
                     }
+                 
                 }
                 this.GetComponent<Animation>().Play("Enemy_Hurt");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Game/enemydamaged"); // play sound
