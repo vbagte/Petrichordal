@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
     public GameObject shotSawtooth;
     public GameObject shotTriAOE;
     public GameObject shotTri;
+    public GameObject shotTriFlip;
     public GameObject shield;
     public GameObject heal;
     public Transform shotSpawn;
@@ -85,16 +86,11 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
 
     public SoundManager soundManager;
-    private int timelinePosition;
-    FMOD.Studio.PLAYBACK_STATE playbackState;
-    private bool triUsedOnce;
-    private bool squUsedOnce;
-    private bool sinUsedOnce;
-    // waveform ability sound instances
-    //private string sxSaw;
-    //private string sxTri;
-    //private string sxSqu;
-    //private string sxSin;
+    //private int timelinePosition;
+    //FMOD.Studio.PLAYBACK_STATE playbackState;
+    //private bool triUsedOnce;
+    //private bool squUsedOnce;
+    //private bool sinUsedOnce;
     
     private void Start()
     {
@@ -110,19 +106,6 @@ public class PlayerController : MonoBehaviour
         DestroyByBoundary.playerLeft = false;
         BossHurt.bossActive = false;
 
-        //// assigns path of current level's corresponding ability sound events
-        //sxSaw = "event:/Game/" + SoundManager.currentSongName + "/saw";
-        //sxTri = "event:/Game/" + SoundManager.currentSongName + "/tri";
-        //sxSqu = "event:/Game/" + SoundManager.currentSongName + "/squ";
-        //sxSin = "event:/Game/" + SoundManager.currentSongName + "/sin";
-
-        //Debug.Log(sxSaw);
-        //Debug.Log(sxTri);
-        //Debug.Log(sxSqu);
-        //Debug.Log(sxSin);
-
-        
-
     }
 
     private void Update()
@@ -137,7 +120,7 @@ public class PlayerController : MonoBehaviour
         wc.sinBar.UpdateBar(sinChargeCurrent, sinChargeMax);
 
         // debug
-        Debug.Log(BeatSystem.bar);
+        //Debug.Log(BeatSystem.bar);
 
         // sets parameter to change bar of music
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MusicBarGlobal", BeatSystem.bar);
@@ -159,7 +142,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire2") && v.voltageTri <= voltageCurrent && triChargeCurrent >= triChargeMax && GameController.playerEnable == true)
         {
             FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxTri); // play sound
-            triUsedOnce = true; 
+            //triUsedOnce = true; 
 
             Instantiate(shotTriAOE, transform.position, shotTriAOE.GetComponent<Transform>().rotation);
             Vector3 start = new Vector3(0, 0, 0);
@@ -177,7 +160,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire3") && v.voltageSqu <= voltageCurrent && squChargeCurrent >= squChargeMax && canShield == true && GameController.playerEnable == true)
         {
             FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxSqu);
-            squUsedOnce = true;
+            //squUsedOnce = true;
 
             canShield = false;
             Instantiate(shield, shieldSpawn.transform.position, shieldSpawn.GetComponent<Transform>().rotation);
@@ -193,7 +176,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire4") && v.voltageSin <= voltageCurrent && sinChargeCurrent >= sinChargeMax && GetComponent<Health>().health < healthMax &&  GameController.playerEnable == true)
         {
             FMODUnity.RuntimeManager.PlayOneShot(SoundManager.sxSin);
-            sinUsedOnce = true;
+            //sinUsedOnce = true;
 
             heal.SetActive(true);
             GetComponent<Health>().health += (healthMax * (0.01f * healthRecoverPercent));
@@ -415,14 +398,20 @@ public class PlayerController : MonoBehaviour
         {
             shotTri.transform.localRotation = Quaternion.Euler(shotTri.transform.localRotation.x, shotTri.transform.localRotation.y, 90);
             shotTri.GetComponent<Mover>().direction = Mover.Edirection.vertical;
+            shotTriFlip.transform.localRotation = Quaternion.Euler(shotTri.transform.localRotation.x, shotTri.transform.localRotation.y, 90);
+            shotTriFlip.GetComponent<Mover>().direction = Mover.Edirection.vertical;
         }
         else
         {
             shotTri.transform.localRotation = Quaternion.Euler(shotTri.transform.localRotation.x, shotTri.transform.localRotation.y, 0);
             shotTri.GetComponent<Mover>().direction = Mover.Edirection.horizontal;
+            shotTriFlip.transform.localRotation = Quaternion.Euler(shotTri.transform.localRotation.x, shotTri.transform.localRotation.y, 0);
+            shotTriFlip.GetComponent<Mover>().direction = Mover.Edirection.horizontal;
         }
-        shotTri.GetComponent<Mover>().speed = -15;
-        Instantiate(shotTri, transform.position, transform.rotation);
+        //shotTri.GetComponent<SpriteRenderer>().flipX = true;
+        shotTriFlip.GetComponent<Mover>().speed = -15;
+        Instantiate(shotTriFlip, transform.position, transform.rotation);
+      // shotTri.GetComponent<SpriteRenderer>().flipX = false;
         shotTri.GetComponent<Mover>().speed = 15;
         Instantiate(shotTri, transform.position, transform.rotation);
     }
@@ -475,9 +464,9 @@ public class PlayerController : MonoBehaviour
         // (to prevent sound from playing at beginning of level)
         if (triChargeCurrent >= triChargeMax)
         {
-            Debug.Log("voltFull sound shoud be playing sound now!!!!");
+            //Debug.Log("voltFull sound shoud be playing sound now!!!!");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game/voltfull");
-            triUsedOnce = false;
+            //triUsedOnce = false;
         }
     }
 
@@ -494,7 +483,7 @@ public class PlayerController : MonoBehaviour
         if (squChargeCurrent >= squChargeMax)
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game/voltfull");
-            squUsedOnce = false;
+            //squUsedOnce = false;
         }
     }
 
@@ -511,7 +500,7 @@ public class PlayerController : MonoBehaviour
         if (sinChargeCurrent >= sinChargeMax)
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game/voltfull");
-            sinUsedOnce = false;
+            //sinUsedOnce = false;
         }
     }
 

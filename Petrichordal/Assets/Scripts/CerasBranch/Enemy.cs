@@ -130,14 +130,15 @@ public class Enemy : MonoBehaviour
         //elapsedseconds = framecounter / 60;
 
         //Only update the object if it is within 1 tile of the camera field
-        if (transform.position.x <= 9 && transform.position.x >= -9 && transform.position.y > -4.5 && transform.position.y <= 5)
+        if (transform.position.x <= 10 && transform.position.x >= -10 && transform.position.y > -4.5 && transform.position.y <= 5)
         {
             if (start == 0) start = Time.time;
             elapsedseconds = Time.time - start;
             //operate movement behaviour
             movement();
             inBoundary = true;
-            if (elapsedseconds <= initial_cooldown) firing = false; else firing = true;
+            if (elapsedseconds > initial_cooldown)
+            { 
             //operate firing behaviour
             if (firing == true) //if the gun is turned on (sometimes the movement patterns turn it off)
             {
@@ -172,6 +173,8 @@ public class Enemy : MonoBehaviour
                     }
                 }
             }
+            }
+
         }
         else { start = 0; cooldown = false; counter_burst = 0; counter_cooldown = 0; counter_projectile = 0; }
     }
@@ -274,7 +277,7 @@ public class Enemy : MonoBehaviour
                 else
                 {
                     firing = false;
-                    Destroy(gameObject, 4);
+                    Destroy(gameObject, 2);
                     transform.Translate(0, -Time.deltaTime * speed / 10f, 0);
                     hover();  
                 }
